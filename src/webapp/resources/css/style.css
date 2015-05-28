@@ -1,0 +1,100 @@
+/*STYLE BY NAZIK*/
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+/*STYLE FOR NAV*/
+nav {
+	background: transparent!important;
+	border: none!important;
+}
+ul.nav {
+	box-shadow: inset 0 0 150px 100px rgba(0,0,0,.2), 0 0 26px 5px rgba(0,0,0,.3);
+}
+.nav {
+	margin-top: 15px;
+}
+.nav > li > a {
+	padding: 10px 4px!important;
+	color: #fff!important;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	background-color: transparent!important;
+	color:#f00!important;
+}
+.navbar-brand {
+	width: 200px;
+	height: 60px;
+	margin-top: 5px;
+	background: url('../images/logo.png') no-repeat;
+	background-size: 100%;
+
+}
+/*END NAV*/
+/*SECTION-1*/
+#fullpage .section {height: 100%!important}
+#fullpage .section:first-child {
+	background: url('../images/section1.jpg') no-repeat;
+	background-size: 100%;
+	color:#fff;
+	text-transform: uppercase;
+	z-index: 0!important;
+}
+#fullpage .section:first-child:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	/*background: rg(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .1));*/
+    background: -moz-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -webkit-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -o-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -ms-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    z-index: -1;
+}
+.fp-tableCell {
+	vertical-align: inherit!important;
+}
+.header_text {
+	font-size: 46px;
+	margin-top: 150px;
+	word-spacing: 5px;
+  	line-height: 60px;
+}
+.header_text .special {
+	background: rgba(255,255,255, .7);
+	color: #f00;
+	padding: 5px;
+  	margin: -5px;
+}
+/*button request*/
+.btn-request {
+	display: block;
+	width: 217px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 10px 15px;
+	background: #f00;
+	border-radius: 3px;
+	font-size: 26px;
+	font-weight: normal;
+	color:#fff!important;
+}
+/*end button request*/
+/*my 'first' classes*/
+.z_index_1 {
+	z-index: 1!important;
+}
+/*.font_size_46 {
+	font-size: 46px;
+}
+.margin_top_150 {
+	margin-top: 150px;
+}*/
