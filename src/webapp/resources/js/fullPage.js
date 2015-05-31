@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	if ($(document).width() <= 768) { 
+	if ($(document).width() <= 992) { 
 		tf = true;
 	}
 	else {

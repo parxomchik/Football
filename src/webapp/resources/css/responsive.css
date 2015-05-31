@@ -1,4 +1,4 @@
-/*nav*/
+nav*/
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border-color: #fff;
 }
@@ -53,12 +53,120 @@
 /*end section1*/
 /*section2*/
 @media(max-width: 992px) {
-
-}
-@media(max-width: 768px) {
 	.steps {
 	background: #fff;
 	color:#3b3b3b;
 	}
 }
+@media(max-width: 768px) {
+}
 /*end section2*/
+/*section 3*/
+	.league_mob div:not(.btn){
+		position: relative;
+		display: inline-block;
+		width: 300px;
+		height: 550px;
+		margin-bottom: 20px;
+		background-size: 100%;
+	}
+	.leagues .col-xs-12:not(:first-child) .league_mob {
+		margin-top: -270px;
+	}
+	.leagues .col-xs-12:nth-child(3) .league_mob div:first-child {
+		overflow: hidden;
+	}
+	.leagues .col-xs-12:first-child .league_mob div:first-child {
+		background: url('../images/league_mob1.png') no-repeat;
+	}
+	.leagues .col-xs-12:nth-child(2) .league_mob div:first-child {
+		background: url('../images/league_mob2.png') no-repeat;
+	}
+	.leagues .col-xs-12:nth-child(3) .league_mob div:first-child {
+		background: url('../images/league_mob3.png') no-repeat;
+	}
+	.league_mob div .header {
+		display: block;
+		width: 60%;
+		margin: 0 auto;
+  		margin-top: 35px;
+  		background-size: 100%;
+  		clear: both;
+	}
+	.leagues .col-xs-12:first-child .league_mob div .header {
+		background: url('../images/league_mob1_header.png') no-repeat;
+	}	
+	.leagues .col-xs-12:nth-child(2) .league_mob div .header {
+		background: url('../images/league_mob2_header.png') no-repeat;
+	}
+	.leagues .col-xs-12:nth-child(3) .league_mob div .header {
+		background: url('../images/league_mob3_header.png') no-repeat;
+		width: 80%;
+	}
+	.league_mob div .body1 {
+		  display: block;
+		  width: 35%;
+		  margin: 0 auto;
+		  margin-top: -400px;
+		  background-size: 100%;
+	}
+	.leagues .col-xs-12:first-child .league_mob div .body1 {
+		background: url('../images/league_mob1_body1.png') no-repeat;
+	}	
+	.leagues .col-xs-12:nth-child(2) .league_mob div .body1 {
+		background: url('../images/league_mob2_body1.png') no-repeat;
+		width: 45%;
+	}
+	.leagues .col-xs-12:nth-child(3) .league_mob div .body1 {
+		background: url('../images/league_mob3_body1.png') no-repeat;
+		width: 43%;
+	}
+	.league_mob div .body2 {
+		  display: block;
+		  width: 42%;
+		  margin: 0 auto;
+		  margin-top: -440px;
+		  background-size: 100%;
+	}
+	.leagues .col-xs-12:first-child .league_mob div .body2 {
+		background: url('../images/league_mob1_body2.png') no-repeat;
+	}	
+	.leagues .col-xs-12:nth-child(2) .league_mob div .body2 {
+		background: url('../images/league_mob2_body2.png') no-repeat;
+	}
+	.leagues .col-xs-12:nth-child(3) .league_mob div .body2 {
+		background: url('../images/league_mob3_body2.png') no-repeat;
+	}	
+	/*buttons*/
+	.order_button_mob {
+		position: relative;
+		display: inline-block;
+		top: -360px;
+		left: -5px;
+		width: auto;
+		margin: 0 auto;
+		padding: 5px 10px;
+  		font-size: 22px;
+  		text-transform: uppercase;
+  		color: #16262d;  		
+
+	}
+	.order_button_mob.first {
+		background: #ceff0c;
+	}
+	.order_button_mob.second {
+		background: #ffba00;
+	}
+	.order_button_mob.third {
+		background: #ff0c3a;
+	}
+	/*end buttons*/
+@media(max-width: 768px) {
+/*	.leagues .league img {	
+  		left: 0!important;
+		width: 100%;
+  	}
+	.leagues .col-md-4:nth-child(2) img { left: 10px!important; }
+	.leagues .league .order_button { left: 138px!important; } */
+}
+/*end section 3
