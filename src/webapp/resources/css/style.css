@@ -167,32 +167,100 @@ ul.nav {
 .leagues .col-md-4:nth-child(3) img{ 
   	left: -75px;
 }
-/*.leagues .league .order_button {
-  	position: absolute;
-  	top: 420px;  
-  	width: 100px;
-  	padding: 5px 10px;
-  	font-size: 16px;
-  	text-transform: uppercase;
 
+/*end section 3*/
+/*section 4*/
+.about_footbal {
+	width: 100%;
+	height: 100%;
+	background: url('../images/section4.jpg') no-repeat;
+	background-size: cover;
+	color: #fff;
 }
-.leagues .col-md-4:first-child .league .order_button{
-  	left: 75px;
-  	background: #ceff0c;
-  	color: #16262d;
+.about_footbal p {
+  	margin-top: 150px;
+  	font-size: 32px;
+  	font-style: italic;
+  	text-shadow: 0 0 10px rgba(0,0,0,.9);
 }
-.leagues .col-md-4:nth-child(2) .league .order_button{
-	left: 102px;
-  	background: #ffba00;
-  	color: #16262d;
+.about_footbal p span{
+	color:#f00;
 }
-.leagues .col-md-4:nth-child(3) .league .order_button{
-	right: 66px;
-  	background: #ff0c3a;
-  	color: #16262d;
-}*/
-
-/*end section 3
+/*end section 4*/
+/*section 5*/
+#section5 .row:first-child{
+	background-color: #f1f1f1;
+	padding-bottom: 10px;
+}
+.team {}
+.team h1 {
+	text-transform: uppercase;
+}
+.team .teammate {
+	display: inline-block;
+  	height: 250px;
+  	width: 250px;
+  	border: 5px solid #fff;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.team .teammate img{
+  position: relative;
+  right: 80px;
+  height: 100%;
+}
+.about_teammate span {
+	display: block;
+	clear: both;
+}
+.about_teammate .name {
+	font-size: 18px;
+	font-weight: bold;
+}
+.about_teammate .post {
+	color:#777;
+}
+.about_teammate .social, .about_teammate .social .fa-stack  {
+	display: inline-block;
+}
+.about_teammate a {
+	text-decoration: none;
+	color:inherit;
+}
+/*sposors*/
+.sponsors {
+	margin-top: 20px;
+}
+.sponsors>div>a>img {
+	display: inline-block;
+	max-width: 100%;
+}
+.sponsors>div:nth-child(2)>a>img {
+	margin-top: 20px;
+}
+.sponsors>div:nth-child(8)>a>img {
+	max-height: 130px!important;
+}
+.sponsors>div:nth-child(5){
+	margin-top: 22px;
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(6){
+	margin-top: 40px;
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(7){
+	margin-top: 77px;
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(8){
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(9){
+	margin-top: 70px;
+	margin-right: 25px;
+}
+/*end section 5*/
 /*my classes*/
 .z_index_1 {
 	z-index: 1!important;

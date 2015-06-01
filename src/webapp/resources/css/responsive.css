@@ -161,12 +161,73 @@ nav*/
 		background: #ff0c3a;
 	}
 	/*end buttons*/
-@media(max-width: 768px) {
-/*	.leagues .league img {	
-  		left: 0!important;
-		width: 100%;
-  	}
-	.leagues .col-md-4:nth-child(2) img { left: 10px!important; }
-	.leagues .league .order_button { left: 138px!important; } */
+/*end section 3*/
+/*section 4*/
+@media(max-width: 992px) {
+	.about_footbal p {
+		margin-top: 100px;
+	}
 }
-/*end section 3
+@media(max-width: 768px) {
+	.about_footbal {
+		padding-left: 15px;
+		background: #fff;
+		color: #3b3b3b;
+	}
+	.about_footbal p {
+	margin-top: 20px;
+	font-size: 22px;
+	text-shadow: none;
+	}
+}
+/*end section 4*/
+/*section 5*/
+@media(max-width: 992px) {
+	.sponsors>div:nth-child(5){
+		margin-top: 46px;
+		margin-right: 15px;
+	}
+	.sponsors>div:nth-child(6){
+		margin-top: 58px;
+		margin-right: 15px;
+	}
+	.sponsors>div:nth-child(7){
+		margin-top: 84px;
+		margin-right: 15px;
+	}
+	.sponsors>div:nth-child(8){
+		margin-right: 15px;
+	}
+	.sponsors>div:nth-child(9){
+		margin-top: 79px;
+		margin-right: 15px;
+	}
+}
+@media(max-width: 768px) {
+	.sponsors>div {
+		margin-bottom: 15px;
+	}
+	.sponsors>div:nth-child(5){
+		margin-top: 0;
+		margin-right: 0;
+	}
+	.sponsors>div:nth-child(6){
+		margin-top: 0;
+		margin-right: 0;
+	}
+	.sponsors>div:nth-child(7){
+		margin-top: 0;
+		margin-right: 0;
+	}
+	.sponsors>div:nth-child(8){
+		margin-right: 0;
+	}
+	.sponsors>div:nth-child(9){
+		margin-top: 0;
+		margin-right: 0;
+	}
+	.sponsors>div:nth-child(8)>a>img {
+		max-height: inherit!important;
+	}	
+}
+/*end section 5*/
