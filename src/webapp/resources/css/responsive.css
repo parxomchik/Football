@@ -231,3 +231,35 @@ nav*/
 	}	
 }
 /*end section 5*/
+/*section 6*/
+@media(max-width: 992px) { 
+	.contact {
+		background-size: cover;
+	}
+}
+@media(max-width: 768px) {
+	.contact form input, .contact form textarea {
+		margin-bottom: 5px;
+		padding: 5px;
+		width: 100%;
+		border-radius: 3px;
+		/*outline: inherit;*/
+		border: none;
+		color: #3b3b3b;
+	}
+	.contact form .col-md-6:last-child textarea {
+		height: 100px; 
+		max-height: 100px;
+		max-width: 100%;
+	}	
+	.contact .row.padding_fix {
+		padding-left: 15px;
+	}
+	.btn-box_contact {
+		top:20px;
+	}
+	.btn-box_contact a{
+		font-size: 16px;
+	}
+}
+/*end section 6*/

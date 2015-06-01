@@ -13,12 +13,22 @@
 	margin: 0 auto;
 	top:-149px;
 }
+.btn-box_contact {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	margin: 0 auto;
+}
+.btn-box_contact a {
+	text-transform: uppercase;
+	background: #ff0c3a;
+}
 .btn-request {
 	display: inline;
 	width: auto;
 	margin: 0 auto;
 	padding: 10px 15px;
-	background-color: #f00;
+	background-color: #ff0c3a;
 	border-radius: 3px;
 	font-size: 26px;
 	font-weight: normal;

@@ -75,7 +75,7 @@ ul.nav {
 }
 .header_text .special {
 	background: rgba(255,255,255, .7);
-	color: #f00;
+	color: #ff0c3a;
 	padding: 5px;
   	margin: -5px;
 }
@@ -98,8 +98,9 @@ ul.nav {
 	font-size: 12px;
 	margin-bottom: 5px;
 }
-.news p:last-child {
+.news p:last-child a {
 	color:#f00;
+	text-decoration: none;
 }
 
 .steps {
@@ -183,8 +184,9 @@ ul.nav {
   	font-style: italic;
   	text-shadow: 0 0 10px rgba(0,0,0,.9);
 }
-.about_footbal p span{
+.about_footbal p span a{
 	color:#f00;
+	text-decoration: none;
 }
 /*end section 4*/
 /*section 5*/
@@ -198,8 +200,8 @@ ul.nav {
 }
 .team .teammate {
 	display: inline-block;
-  	height: 250px;
-  	width: 250px;
+  	height: 220px;
+  	width: 220px;
   	border: 5px solid #fff;
 	border-radius: 50%;
 	overflow: hidden;
@@ -261,9 +263,68 @@ ul.nav {
 	margin-right: 25px;
 }
 /*end section 5*/
+/*section 6*/
+.contact {
+	width: 100%;
+	height: 100%;
+	background: url('../images/section6.png') no-repeat;
+	background-size: cover;
+	color:#fff;
+}
+.contact h1 {
+	text-transform: uppercase;
+}
+.contact form label{
+	width: 100%;	
+}
+.contact form input, .contact form textarea {
+	margin-bottom: 25px;
+	padding: 15px;
+	width: 100%;
+	border-radius: 3px;
+	/*outline: inherit;*/
+	border: none;
+	color: #3b3b3b;
+}
+.contact form .col-md-6:last-child textarea {
+	height: 210px; 
+	max-height: 300px;
+	max-width: 120%;
+}
+.footer {
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	line-height: 70px; 
+	vertical-align: middle;
+	color:#3b3b3b;
+}
+.footer p {
+	display: inline-block;
+	color: #555;
+}
+.footer .social {
+	float: right;
+	margin-right: 30px;
+}
+.footer .social, .footer .social .fa-stack  {
+	display: inline-block;
+}
+.footer a {
+	text-decoration: none;
+	color:inherit;
+}
+/*end section 6*/
 /*my classes*/
 .z_index_1 {
 	z-index: 1!important;
+}
+.margin_fix {
+	margin: 0;
 }
 .margin_top_10 {
 	margin-top: 10px;
@@ -276,6 +337,12 @@ ul.nav {
 }
 .margin_top_30 {
 	margin-top: 30px;
+}
+.padding_fix {
+	padding: 0;
+}
+.padding_right_15 {
+	padding-right: 15px;
 }
 .upper {
 	text-transform: uppercase;
