@@ -25,6 +25,22 @@ nav*/
 }
 /*end nav*/
 /*section1*/
+@media(min-width: 1600px) {
+	.container {
+		width: 1170px;
+	}
+	.header_text {
+		font-size: 48px;
+		margin-top: 276px;
+	}
+	.btn-box {
+	  	margin-top: 280px;
+  		margin-bottom: 65px;
+	}
+	.btn-request {
+		font-size: 27px;
+	}
+}
 @media(max-width: 992px) {
 	.header_text {
 	font-size: 32px;
@@ -52,6 +68,35 @@ nav*/
 }
 /*end section1*/
 /*section2*/
+@media(min-width: 1600px) {
+	#section1{
+	  margin-top: -15px;
+	  background-color: #fff;
+	  padding-top: 50px;
+	}
+	.news .caption h4 {
+		font-size: 27px;
+	}
+	.news p {
+  		font-size: 18px;
+	}
+	.steps {
+	   height: auto; 
+	}
+	.circle {
+  		position: relative;
+  		width: 230px;
+  		height: 230px;
+  	}
+	.circle img {
+  		bottom: 0;
+	}  	
+	.circle + p {
+		font-size: 27px;
+		margin-top: 30px;
+		margin-bottom: 45px;
+	}
+}
 @media(max-width: 992px) {
 	.steps {
 	background: #fff;
@@ -62,6 +107,45 @@ nav*/
 }
 /*end section2*/
 /*section 3*/
+@media(min-width: 1600px) {
+	#section2 p {
+	  	font-size: 24px;
+	}	
+	#secton2 p+h3 {
+		font-size: 24px;
+  		font-weight: bold;
+	}
+	.leagues .league img {
+	  	height: 700px;
+	  	top: -100px;
+	  	left: -190px;
+	  	margin-bottom: -50px;
+	}
+	.btn-box_order {
+		top: -145px;
+	}
+	.btn-box_order.first {
+	  	left: 50px;
+	}	
+	.order_button {
+	  	padding: 10px 20px;
+	  	font-size: 19px;
+	}
+	.leagues .col-md-4:nth-child(2) img {
+  		height: 702px;
+  		top: -70px;
+  		left: -116px;
+	}
+	.btn-box_order.second {
+  		left: 112px;
+	}
+	.leagues .col-md-4:nth-child(3) img {
+  		left: -70px;
+	}
+	.btn-box_order.third {
+  		left: 170px;
+	}
+}
 	.league_mob div:not(.btn){
 		position: relative;
 		display: inline-block;
@@ -163,6 +247,21 @@ nav*/
 	/*end buttons*/
 /*end section 3*/
 /*section 4*/
+@media(min-width: 1600px) {
+	.about_footbal h1{
+	  font-size: 61px;
+	  margin-top: 150px;
+	}	
+	.about_footbal p {
+  		margin-top: 60px;
+  		margin-bottom: 220px;
+  		font-size: 30px;
+  		font-style: normal; 
+	}
+	.about_footbal p span a {
+		  font-style: italic;
+	}
+}
 @media(max-width: 992px) {
 	.about_footbal p {
 		margin-top: 100px;
@@ -182,6 +281,40 @@ nav*/
 }
 /*end section 4*/
 /*section 5*/
+@media(min-width: 1600px) {
+	.team h1 {
+	  	margin-top: 80px;
+	  	margin-bottom: 100px;
+	  	font-size: 60px;
+	}
+	.team .teammate {
+  		height: 360px;
+ 		width: 360px
+	}
+	.team .about_teammate {
+		margin-bottom: 100px;
+	}	
+	.about_teammate .name {
+  		font-size: 19px;
+  		font-weight: bold;
+  		margin: 0;
+  		margin-top: 10px;
+	}
+	.about_teammate .post {
+  		margin-bottom: 10px;
+	}
+	.sponsors {
+	  	margin-top: 120px;
+	  	margin-bottom: 120px;
+	}
+	.team .teammate img {
+  		right: 150px;
+  		height: 200%;
+	}
+	.team .col-md-6:last-child .teammate img {
+  		right: 60px;
+	}
+}
 @media(max-width: 992px) {
 	.sponsors>div:nth-child(5){
 		margin-top: 46px;
@@ -232,6 +365,35 @@ nav*/
 }
 /*end section 5*/
 /*section 6*/
+@media(min-width: 1600px) {
+	.contact h1 {
+	  	margin-top: 120px;
+	  	font-size: 49px;
+	}
+	.contact h1 + p {
+		font-size: 19px;
+  		color: #555;
+  		font-style: italic;
+	}
+	.contact form {
+		margin-top: 80px;
+	}
+	.btn-box_contact {
+ 		margin-top: 35px;
+  		margin-bottom: 140px;
+	}
+	.btn-request {
+  		font-size: 22px;
+  		font-weight: bold;
+	}
+	.footer p {
+  		font-size: 17px;
+	}
+	.footer .social {
+   		float: inherit; 
+  		margin-left: 120px;
+	}
+}
 @media(max-width: 992px) { 
 	.contact {
 		background-size: cover;
@@ -254,6 +416,7 @@ nav*/
 	}	
 	.contact .row.padding_fix {
 		padding-left: 15px;
+		padding-right: inherit;
 	}
 	.btn-box_contact {
 		top:20px;

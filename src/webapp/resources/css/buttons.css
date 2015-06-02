@@ -4,7 +4,8 @@
 	display: inline-block;
 	width: auto;
 	margin: 0 auto;
-	margin-top: 100px;
+ 	margin-top: 165px;
+ 	margin-bottom: 40px;
 }
 .btn-box_order {
 	position: relative;
@@ -27,12 +28,12 @@
 	display: inline;
 	width: auto;
 	margin: 0 auto;
-	padding: 10px 15px;
+	padding: 15px 30px;
 	background-color: #ff0c3a;
-	border-radius: 3px;
-	font-size: 26px;
-	font-weight: normal;
-	color:#fff!important;
+ 	border-radius: 3px;
+	font-size: 19px;
+	font-weight: 100;
+	color: #fff!important;
 }
 .order_button {
 	display: inline;
