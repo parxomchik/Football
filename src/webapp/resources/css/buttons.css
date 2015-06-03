@@ -5,7 +5,7 @@
 	width: auto;
 	margin: 0 auto;
  	margin-top: 165px;
- 	margin-bottom: 40px;
+ 	margin-bottom: 45px;
 }
 .btn-box_order {
 	position: relative;
@@ -18,7 +18,8 @@
 	position: relative;
 	display: inline-block;
 	width: auto;
-	margin: 0 auto;
+	margin-top: 25px;
+  	margin-bottom: 70px;
 }
 .btn-box_contact a {
 	text-transform: uppercase;
@@ -48,8 +49,8 @@
 .order_button.second {background-color: #ffba00;}
 .order_button.third {background-color: #ff0c3a;}
 .btn-box_order.first {left: 65px;}
-.btn-box_order.second {left: 100px;}
-.btn-box_order.third {left: 135px;}
+.btn-box_order.second {left: 91px;}
+.btn-box_order.third {left: 115px;}
 .btn-request > span, .order_button > span {
 	display: inline-block;
 	opacity: 0;

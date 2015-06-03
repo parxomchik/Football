@@ -84,6 +84,11 @@ ul.nav {
 }
 /*end section1*/
 /*section 2*/
+#section1{
+	margin-top: 0px;
+	background-color: #fff;
+	padding-top: 45px;
+}
 .news {
 	border:none;
 }
@@ -109,14 +114,15 @@ ul.nav {
 .steps {
 	background: url('../images/section2.jpg') no-repeat;
 	background-size: 100%;
-	/*height: 47%;*/
-	height: 315px;
+	height: auto;
 	color:#fff;
 }
-.steps .h2 {
-	margin-top: 15px;
+.steps h2 {
+	font-size: 22px;
+	margin-bottom: 35px;
 }
 .circle {
+	position: relative;
 	height: 160px;
 	width: 160px;
 	margin: 0 auto;
@@ -129,25 +135,31 @@ ul.nav {
 	top:0;
 	left: 0;
 	right: 0;
-	bottom: 27px;
+	bottom: 0;
 	margin: auto;
 }
 .circle + p{
-	font-size: 16px;
+	font-size: 19px;
+	margin-bottom: 25px;
+	margin-top: 25px;
 }
 /*end section 2*/
 /*section 3*/
+#section2 .row:first-child {
+	height: 680px;
+	overflow: hidden;
+}
 #section2 p {
-	font-size: 18px;
+	font-size: 20px;
 	text-align: center;
 	color: #3b3b3b;
+	font-weight: normal;
 }
-/*.leagues .league {
-	height: 500px;
-	background: url('../images/league1.png') no-repeat;
-	background-size: 100%;
-	background-position: center;
-}*/
+#section2 h3 {
+	font-size: 22px;
+	margin-top: 35px;
+	margin-right: -10px;
+}
 .leagues .league img{
   	position: relative;
 	height: 580px;
@@ -166,10 +178,10 @@ ul.nav {
 .leagues .col-md-4:nth-child(2) img{
   	height: 582px;
   	top: -55px;
-  	left: -100px;
+  	left: -109px;
 }
 .leagues .col-md-4:nth-child(3) img{ 
-  	left: -75px;
+  	left: -95px;
 }
 
 /*end section 3*/
@@ -181,13 +193,18 @@ ul.nav {
 	background-size: cover;
 	color: #fff;
 }
+.about_footbal h1 {
+	margin-top: 100px;
+  	font-size: 44px;
+}
 .about_footbal p {
-  	margin-top: 150px;
-  	font-size: 32px;
-  	font-style: italic;
-  	text-shadow: 0 0 10px rgba(0,0,0,.9);
+  margin-top: 45px;
+  margin-bottom: 150px;
+  font-size: 22px;
+  text-shadow: 0 0 10px rgba(0,0,0,.9);
 }
 .about_footbal p span a{
+	font-style: italic;
 	color:#f00;
 	text-decoration: none;
 }
@@ -200,23 +217,34 @@ ul.nav {
 .team {}
 .team h1 {
 	text-transform: uppercase;
+	font-size: 44px;
+  	margin-top: 50px;
+  	margin-bottom: 70px;
 }
 .team .teammate {
 	display: inline-block;
-  	height: 220px;
-  	width: 220px;
+  	height: 260px;
+  	width: 260px;
   	border: 5px solid #fff;
 	border-radius: 50%;
 	overflow: hidden;
 }
 .team .teammate img{
   position: relative;
-  right: 80px;
-  height: 100%;
+  right: 110px;
+  height: 200%;
+}
+.team .col-md-6:last-child .teammate img {
+	right: 45px;
+}
+.about_teammate {
+	margin-top: 10px;
+	margin-bottom: 70px;
 }
 .about_teammate span {
 	display: block;
 	clear: both;
+	margin-bottom: 5px;
 }
 .about_teammate .name {
 	font-size: 18px;
@@ -234,7 +262,8 @@ ul.nav {
 }
 /*sposors*/
 .sponsors {
-	margin-top: 20px;
+  	margin-top: 70px;
+  	margin-bottom: 70px;
 }
 .sponsors>div>a>img {
 	display: inline-block;
@@ -276,22 +305,27 @@ ul.nav {
 	color:#fff;
 }
 .contact h1 {
+	font-size: 36px;
+  	margin-top: 70px;
 	text-transform: uppercase;
+}
+.contact h1 + p {
+  	color: #555;
+  	font-style: italic;
 }
 .contact form label{
 	width: 100%;	
 }
 .contact form input, .contact form textarea {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 	padding: 15px;
 	width: 100%;
 	border-radius: 3px;
-	/*outline: inherit;*/
 	border: none;
 	color: #3b3b3b;
 }
 .contact form .col-md-6:last-child textarea {
-	height: 210px; 
+	height: 200px; 
 	max-height: 300px;
 	max-width: 120%;
 }
@@ -313,8 +347,7 @@ ul.nav {
 	margin: 0;
 }
 .footer .social {
-	float: right;
-	margin-right: 30px;
+	margin-left: 110px;
 }
 .footer .social, .footer .social .fa-stack  {
 	display: inline-block;
@@ -326,7 +359,9 @@ ul.nav {
 /*end section 6*/
 /*my classes*/
 .row {
-	max-width: 100%;
+	/*max-width: 100%;*/
+	margin-left: 0;
+	margin-right: 0;
 }
 .z_index_1 {
 	z-index: 1!important;
@@ -342,6 +377,9 @@ ul.nav {
 }
 .margin_top_20 {
 	margin-top: 20px;
+}
+.margin_top_25 {
+	margin-top: 25px;
 }
 .margin_top_30 {
 	margin-top: 30px;
@@ -366,4 +404,4 @@ ul.nav {
 }
 .margin_top_150 {
 	margin-top: 150px;
-}*/
+}

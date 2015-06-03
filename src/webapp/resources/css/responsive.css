@@ -220,7 +220,13 @@ nav*/
 	}
 	.leagues .col-xs-12:nth-child(3) .league_mob div .body2 {
 		background: url('../images/league_mob3_body2.png') no-repeat;
-	}	
+	}
+	@media(max-width: 992px) {
+		#section2 .row:first-child {
+			height: inherit;
+		}	
+	}
+
 	/*buttons*/
 	.order_button_mob {
 		position: relative;
@@ -338,7 +344,7 @@ nav*/
 }
 @media(max-width: 768px) {
 	.sponsors>div {
-		margin-bottom: 15px;
+		margin-bottom: 25px;
 	}
 	.sponsors>div:nth-child(5){
 		margin-top: 0;
@@ -395,6 +401,9 @@ nav*/
 	}
 }
 @media(max-width: 992px) { 
+	.footer .social {
+  		margin-left: 5px;
+  	}
 	.contact {
 		background-size: cover;
 	}
@@ -409,9 +418,13 @@ nav*/
 		border: none;
 		color: #3b3b3b;
 	}
+	.contact form .col-md-6:last-child label,  .contact form .col-md-6:last-child{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 	.contact form .col-md-6:last-child textarea {
-		height: 100px; 
-		max-height: 100px;
+		height: 120px; 
+		max-height: 140px;
 		max-width: 100%;
 	}	
 	.contact .row.padding_fix {
@@ -423,6 +436,10 @@ nav*/
 	}
 	.btn-box_contact a{
 		font-size: 16px;
+	}
+	.footer {
+		min-height: 70px;
+		text-align: center;
 	}
 }
 /*end section 6*/
