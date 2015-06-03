@@ -108,6 +108,9 @@ nav*/
 /*end section2*/
 /*section 3*/
 @media(min-width: 1600px) {
+	#section2 .row:first-child {
+		height: inherit;
+	}
 	#section2 p {
 	  	font-size: 24px;
 	}	
