@@ -155,7 +155,7 @@ nav*/
 	.league_mob div:not(.btn){
 		position: relative;
 		display: inline-block;
-		width: 100%;
+		width: 280px;
 		height: 550px;
 		margin-bottom: 20px;
 		background-size: 100%;
