@@ -70,13 +70,13 @@ ul.nav {
 .fp-tableCell {
 	vertical-align: inherit!important;
 }
-.header_text {
+.header_text, .header_text_mob {
 	font-size: 46px;
 	margin-top: 165px;
 	word-spacing: 5px;
   	line-height: 60px;
 }
-.header_text .special {
+.header_text .special, .header_text_mob .special {
 	background: rgba(255,255,255, .7);
 	color: #ff0c3a;
 	padding: 5px;
@@ -136,6 +136,8 @@ ul.nav {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	width: 65%;
+	height: 65%;
 	margin: auto;
 }
 .circle + p{
@@ -226,11 +228,12 @@ ul.nav {
   	width: 260px;
   	border: 5px solid #fff;
 	border-radius: 50%;
-	overflow: hidden!important;
+	overflow: hidden;
 -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 }
 .team .teammate img{
   position: relative;
+  display: block;
   right: 110px;
   height: 200%;
 }

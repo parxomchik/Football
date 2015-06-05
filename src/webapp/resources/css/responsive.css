@@ -49,8 +49,8 @@ nav*/
 }
 @media(max-width: 992px) {
 	.header_text {
-	font-size: 32px;
-	margin-top: 50px;
+		font-size: 32px;
+		margin-top: 50px;
 	}
 	.btn-request {
 		margin-top: 50px;
@@ -60,11 +60,13 @@ nav*/
 	.section:first-child {
 	  	background-size: cover!important;
 	}
-	.header_text {
+	.header_text_mob {
+		display: inline-block;
 	  	font-size: 26px;
-  		margin-top: -5px;
+  		/*margin-top: auto!important;*/
   		word-spacing: 5px;
   		line-height: 36px;
+  		vertical-align: middle!important;
 	}
 	.btn-request {
 		margin-top: 50px;
@@ -104,10 +106,10 @@ nav*/
 	}
 }
 @media(max-width: 992px) {
-	.steps {
+/*	.steps {
 	background: #fff;
 	color:#3b3b3b;
-	}
+	}*/
 }
 @media(max-width: 768px) {
 	.steps h2 {
@@ -240,7 +242,18 @@ nav*/
 	@media(max-width: 992px) {
 		#section2 .row:first-child {
 			height: inherit;
+			margin-bottom: -50px;
+		}
+		.leagues {
+			padding-left: 0;
+  			padding-right: 80px;
 		}	
+	}
+	@media(max-width: 768px) {
+		.leagues {
+			padding-left: inherit;
+  			padding-right: inherit;
+		}			
 	}
 
 	/*buttons*/
@@ -365,6 +378,9 @@ nav*/
 	}
 }
 @media(max-width: 768px) {
+	.team .teammate {
+		border: none;
+	}
 	.team h1 {
 		font-size: 26px;
 	}
