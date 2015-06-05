@@ -113,7 +113,7 @@ ul.nav {
 
 .steps {
 	background: url('../images/section2.jpg') no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	height: auto;
 	color:#fff;
 }
@@ -226,7 +226,8 @@ ul.nav {
   	width: 260px;
   	border: 5px solid #fff;
 	border-radius: 50%;
-	overflow: hidden;
+	overflow: hidden!important;
+-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 }
 .team .teammate img{
   position: relative;

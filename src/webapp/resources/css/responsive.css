@@ -23,6 +23,12 @@ nav*/
 .nav > li > a {
 	text-align: center;
 }
+/*FOR SAFARI*/
+@media(max-width: 992px) {
+	.nav > li > a {
+		font-size: 13px
+	}	
+}
 /*end nav*/
 /*section1*/
 @media(min-width: 1600px) {
@@ -155,10 +161,13 @@ nav*/
 	.league_mob div:not(.btn){
 		position: relative;
 		display: inline-block;
-		width: 280px;
+		width: 260px;
 		height: 550px;
 		margin-bottom: 20px;
 		background-size: 100%;
+	}
+	.leagues .col-md-4:not(:last-child) .league_mob>.text-center {
+		margin-bottom: 300px!important;
 	}
 	.leagues .col-xs-12:not(:first-child) .league_mob {
 		margin-top: -270px;
@@ -307,7 +316,8 @@ nav*/
 	}
 	.team .teammate {
   		height: 360px;
- 		width: 360px
+ 		width: 360px;
+ 		overflow: auto;
 	}
 	.team .about_teammate {
 		margin-bottom: 100px;
