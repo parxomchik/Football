@@ -28,8 +28,6 @@
                 <property value="true" name="showSql"/>
                 <property value="true" name="generateDdl"/>
                 <property name="database" value="MYSQL"/>
-
-                <!--<property name="databasePlatform" value="org.eclipse.persistence.platform.database.DerbyPlatform"/>-->
             </bean>
         </property>
         <property name="loadTimeWeaver">
@@ -45,7 +43,8 @@
 
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-
+    <!--INIT REST COMPONENTS-->
+    <bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
 
 
 
