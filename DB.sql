@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS `players`;
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NOT NULL,
   `role` VARCHAR(45) NOT NULL,
-  `capitan` TINYINT NOT NULL DEFAULT 0,
+  `captain` TINYINT NOT NULL DEFAULT 0,
   `team_id` INT(11),
   PRIMARY KEY (id),
   CONSTRAINT fk_team_id FOREIGN KEY (team_id) REFERENCES teams (id));
