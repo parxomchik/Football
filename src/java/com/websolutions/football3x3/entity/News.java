@@ -2,11 +2,13 @@ package com.websolutions.football3x3.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 /**
  * Created by Владислав on 05.06.2015.
  */
 @Entity
+@Table(name="NEWS")
 public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,5 +66,34 @@ public class News {
 
     public void setPicture(byte[] picture) {
         this.picture = picture;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        News news = (News) o;
+
+        if (id != news.id) return false;
+        if (!date.equals(news.date)) return false;
+        if (!header.equals(news.header)) return false;
+        if (!Arrays.equals(picture, news.picture)) return false;
+        if (shortDescription != null ? !shortDescription.equals(news.shortDescription) : news.shortDescription != null)
+            return false;
+        if (!text.equals(news.text)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + header.hashCode();
+        result = 31 * result + (shortDescription != null ? shortDescription.hashCode() : 0);
+        result = 31 * result + text.hashCode();
+        result = 31 * result + date.hashCode();
+        result = 31 * result + Arrays.hashCode(picture);
+        return result;
     }
 }
