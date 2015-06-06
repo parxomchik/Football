@@ -2,7 +2,7 @@
 /*Style by Nazar Kokhan*/
 /**/
 body {
-	font-family: 'Roboto Condensed', sans-serif;
+	font-family: 'MyriadProBold', sans-serif;
 }
 hr {
 	margin: 0;
@@ -71,7 +71,7 @@ ul.nav {
 	vertical-align: inherit!important;
 }
 .header_text, .header_text_mob {
-	font-size: 46px;
+ 	font-size: 43px;
 	margin-top: 165px;
 	word-spacing: 5px;
   	line-height: 60px;
@@ -103,6 +103,7 @@ ul.nav {
 	margin-bottom: 5px;	
 }
 .news p {
+	font-family: 'MyriadProRegular', sans-serif;
 	font-size: 12px;
 	margin-bottom: 5px;
 }
@@ -152,6 +153,7 @@ ul.nav {
 	overflow: hidden;
 }
 #section2 p {
+	font-family: 'MyriadProRegular', sans-serif;
 	font-size: 20px;
 	text-align: center;
 	color: #3b3b3b;
@@ -167,6 +169,8 @@ ul.nav {
   	top: -80px;
   	left: -143px;
   	pointer-events: none;
+  	-webkit-user-select: none;
+  	-moz-user-select: none;
 }
 .leagues .league img:before {
 	position: absolute;
@@ -199,13 +203,14 @@ ul.nav {
   	font-size: 44px;
 }
 .about_footbal p {
-  margin-top: 45px;
-  margin-bottom: 150px;
-  font-size: 22px;
-  text-shadow: 0 0 10px rgba(0,0,0,.9);
-}
+	font-family: 'MyriadProRegular', sans-serif;
+  	margin-top: 45px;
+  	margin-bottom: 150px;
+  	font-size: 22px;
+  	text-shadow: 0 0 10px rgba(0,0,0,.9);
+}	
 .about_footbal p span a{
-	font-style: italic;
+	font-family: 'MyriadProItalic', sans-serif;
 	color:#f00;
 	text-decoration: none;
 }
@@ -227,9 +232,11 @@ ul.nav {
   	height: 260px;
   	width: 260px;
   	border: 5px solid #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
 	border-radius: 50%;
 	overflow: hidden;
--webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 }
 .team .teammate img{
   position: relative;
@@ -245,6 +252,7 @@ ul.nav {
 	margin-bottom: 70px;
 }
 .about_teammate span {
+	font-family: 'MyriadProSemiBold', sans-serif;
 	display: block;
 	clear: both;
 	margin-bottom: 5px;
@@ -314,7 +322,7 @@ ul.nav {
 }
 .contact h1 + p {
   	color: #555;
-  	font-style: italic;
+	font-family: 'MyriadProItalic', sans-serif;
 }
 .contact form label{
 	width: 100%;	
@@ -326,6 +334,7 @@ ul.nav {
 	border-radius: 3px;
 	border: none;
 	color: #3b3b3b;
+	font-family: 'MyriadProRegular', sans-serif;
 }
 .contact form .col-md-6:last-child textarea {
 	height: 200px; 
@@ -360,6 +369,64 @@ ul.nav {
 	color:inherit;
 }
 /*end section 6*/
+/*modal*/
+.modal-backdrop.in {
+  	opacity: 0.8;
+}
+.modal-header {
+	border: none;
+	font-family: 'MyriadProBold', sans-serif;
+}
+.modal-header button{
+	padding: 5px 10px;
+	border: 2px solid #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	text-align: center;
+	color:#fff!important;
+	opacity: .7;
+	font-family: 'MyriadProRegular', sans-serif;
+	outline: none;
+}
+.modal-header button:hover {
+	opacity: 1;
+}
+.modal-content {
+  	box-shadow: none!important;
+   	background-color: transparent; 
+   	border: none!important; 
+   	border-radius: 0;  
+  	color: #fff;
+  	font-size: 26px;
+  	font-weight: normal;
+  	font-family: 'MyriadProRegular', sans-serif;
+}
+.modal-content .modal-body p {
+	margin-bottom: 20px;
+}
+.modal_icon {
+  position: absolute;
+  top: 53px;
+  width: 27px;
+  height: 30px;
+  background: url('../images/league_icon.png') no-repeat;
+  background-size: 100%;
+  background-position-y: -1px;
+  z-index: 1;
+  border: none;
+  outline: 0;
+}
+.modal_icon.first {
+  	right: 84px;
+}
+.modal_icon.second {
+  	right: 60px;
+}
+.modal_icon.third {
+  	right: 36px;
+}
+/*end modal*/
 /*my classes*/
 .row {
 	/*max-width: 100%;*/

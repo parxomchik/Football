@@ -18,8 +18,10 @@
 	position: relative;
 	display: inline-block;
 	width: auto;
+	margin: 0;
 	margin-top: 25px;
   	margin-bottom: 70px;
+  	font-family: 'MyriadProSemiBold', sans-serif;
 }
 .btn-box_contact a {
 	text-transform: uppercase;
@@ -35,6 +37,7 @@
 	font-size: 19px;
 	font-weight: 100;
 	color: #fff!important;
+	font-family: 'MyriadProSemiBold', sans-serif;
 }
 .order_button {
 	display: inline;

@@ -36,7 +36,7 @@ nav*/
 		width: 1170px;
 	}
 	.header_text {
-		font-size: 48px;
+		font-size: 49px;
 		margin-top: 276px;
 	}
 	.btn-box {
@@ -330,7 +330,6 @@ nav*/
 	.team .teammate {
   		height: 360px;
  		width: 360px;
- 		overflow: auto;
 	}
 	.team .about_teammate {
 		margin-bottom: 100px;
@@ -484,3 +483,31 @@ nav*/
 	}
 }
 /*end section 6*/
+/*modal*/
+@media(min-width: 1600px) {
+	.modal-dialog {
+	width: 1070px;
+	}
+	.modal-content .modal-body p {
+		margin-bottom: 50px;
+	}
+	.modal_icon {
+  		top: 60px;
+  		width: 35px;
+  		height: 35px;
+	}
+	.modal_icon.first {
+	  	right: 130px;
+	}
+	.modal_icon.second {
+	  	right: 67px;
+	}
+	.modal_icon.third {
+  		right: 10px;
+	}		
+} 
+@media(min-width: 992px) {
+	.modal-dialog {
+	width: 960px;
+	}
+} 

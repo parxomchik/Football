@@ -13,6 +13,7 @@
     <link href="./resources/css/style.css" rel="stylesheet">
     <link href="./resources/css/buttons.css" rel="stylesheet">
     <link href="./resources/css/responsive.css" rel="stylesheet">
+    <link href="./resources/css/fonts.css" rel="stylesheet">
     <!--GOOGLE FONTS-->
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
 
@@ -142,12 +143,13 @@
         <div class="row margin_top_25">
           <div class="container">
             <p>На рынок спортивных событий Украины выходит качественно новый продукт, своего рода стартап футбольных событий - чемпионат по футболу 3х3 среди всей Startup экосистемы.</p>
-            <h3 class="row text-center strong">В чемпионате играется 3 лиги – «Startups League» , «Investor League», «IT-Industry League»</h3>
+            <h3 class="row text-center">В чемпионате играется 3 лиги – «Startups League» , «Investor League», «IT-Industry League»</h3>
           </div>
           <div class="row">
             <div class="container leagues">
               <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
                 <div class="league  hidden-xs">
+                  <button type="button" class="modal_icon first" data-toggle="modal" data-target="#myModal"></button>
                   <img src="./resources/images/league1.png" alt="">
                   <div class="btn-box_order first">
                   <a href="#" class="btn order_button first" data-text="заявка">
@@ -170,6 +172,7 @@
               </div>
               <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
                 <div class="league  hidden-xs">
+                  <button type="button" class="modal_icon second" data-toggle="modal" data-target="#myModal"></button>
                   <img src="./resources/images/league2.png" alt="">
                   <div class="btn-box_order second">
                   <a href="#" class="btn order_button second" data-text="заявка">
@@ -192,6 +195,7 @@
               </div>
               <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
                 <div class="league  hidden-xs">
+                  <button type="button" class="modal_icon third" data-toggle="modal" data-target="#myModal"></button>
                   <img src="./resources/images/league3.png" alt="">
                   <div class="btn-box_order third">
                   <a href="#" class="btn order_button third" data-text="заявка">
@@ -393,6 +397,29 @@
             </div>
         </div>
       </div>
+      <!--MODAL-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<!--           <span class="fa-stack fa-lg" aria-hidden="true">
+            <i class="fa fa-circle-thin fa-stack-2x fa-inverse"></i>
+            <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+          </span> -->
+          X
+        </button>
+        Start-UP League
+      </div>
+      <div class="modal-body">
+        <p>В Start-up League может заявиться до 32 команд. Стоимость участия для одной команды – 599 грн.</p>
+        <p>В заявку одной команды может входить от 3-х до 4-х участников. В случае, если команды принимает решение привлекать одного игрока со стороны, то есть игрока, который не имеет посредственного отношения к проекту, обязательно необходимо указать в специальном поле заявочного листа про наличие такого игрока, и отметить его в заявочном листе.</p>
+        <p>По регламенту проведения чемпионата в Start-up League все команды-участники делятся на группы по 4 команды в каждой группе. Схема розыгрыша состоит из двух этапов – групповой и Play-off. На групповом этапе каждая команда в группе играет один круг по одной игре с каждой командой в группе. По результату набранных очей, первые два места выходят в дивизион Play-of GOLD  а третье и четвертое место  дивизион Play-of Silver, где каждая команда сможет посоревноваться за первое, второе и третье места.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
