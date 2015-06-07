@@ -1,5 +1,7 @@
 package com.websolutions.football3x3.entity;
 
+import com.websolutions.football3x3.entity.enums.League;
+
 import javax.persistence.*;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +15,8 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String league;
+    @Enumerated(EnumType.STRING)
+    private League league;
     private String company;
     private String website;
     private String name;
@@ -33,11 +36,11 @@ public class Team {
         this.id = id;
     }
 
-    public String getLeague() {
+    public League getLeague() {
         return league;
     }
 
-    public void setLeague(String league) {
+    public void setLeague(League league) {
         this.league = league;
     }
 
