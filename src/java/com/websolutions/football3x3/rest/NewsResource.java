@@ -29,7 +29,11 @@ public class NewsResource {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public News getNewsById(@PathParam("id") Integer id) {
-        return newsDao.find(id);
+        News news = newsDao.find(id);
+        if (news==null) {
+            throw new WebApplicationException(404);
+        }
+        return news;
     }
 
     @POST
