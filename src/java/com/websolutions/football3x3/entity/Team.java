@@ -1,6 +1,8 @@
 package com.websolutions.football3x3.entity;
 
 import com.websolutions.football3x3.entity.enums.League;
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Arrays;
@@ -25,7 +27,8 @@ public class Team {
     @Lob
     private byte[] logo;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "team",fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    //@JsonBackReference
     private List<Player> players;
 
     public int getId() {
@@ -90,6 +93,14 @@ public class Team {
 
     public void setLogo(byte[] logo) {
         this.logo = logo;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 
     @Override

@@ -1,5 +1,9 @@
 package com.websolutions.football3x3.entity;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +22,8 @@ public class Player {
 
     @ManyToOne
     @JoinColumn(name = "team_id")
+    //@JsonManagedReference
+    @JsonIgnore
     private Team team;
 
     public int getId() {

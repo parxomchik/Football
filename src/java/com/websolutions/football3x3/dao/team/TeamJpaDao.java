@@ -3,6 +3,7 @@ package com.websolutions.football3x3.dao.team;
 import com.websolutions.football3x3.dao.JpaDao;
 import com.websolutions.football3x3.entity.Team;
 import com.websolutions.football3x3.entity.enums.League;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by Владислав on 07.06.2015.
  */
+@Repository
 public class TeamJpaDao extends JpaDao<Team, Integer> implements TeamDao {
     public TeamJpaDao() {
         super(Team.class);
