@@ -15,11 +15,11 @@ ul.nav {
 	margin-top: 15px;
   	box-shadow: none;
 }
-.navbar-brand {
+/*.navbar-brand {
 	margin-top: 10px;
-	background: url('../images/logo2.png') no-repeat;
+	background: url('../images/logo.png') no-repeat;
 	background-size: 100%;
-}
+}*/
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
    max-height: inherit!important; 
 }
