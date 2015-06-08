@@ -518,3 +518,9 @@ nav*/
 	width: 960px;
 	}
 } 
+/*diferent style*/
+@media(max-width: 768px) { 
+	.text_center_mob{
+		text-align: center;
+	}
+}
