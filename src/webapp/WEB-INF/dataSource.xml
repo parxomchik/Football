@@ -8,5 +8,8 @@
         <property name="username" value="root"/>
         <property name="password" value="gfhjkm"/>
         <property name="url" value="jdbc:mysql://localhost:3306/football?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <!--<property name="username" value="adminX9pHYv8"/>-->
+        <!--<property name="password" value="yAdW3qXue3pj"/>-->
+        <!--<property name="url" value="jdbc:mysql://127.4.136.130:3306/football3x3"/>-->
     </bean>
 </beans>
