@@ -393,6 +393,17 @@ ul.nav {
 }
 /*end section 6*/
 /*modal*/
+.modal-open .modal {
+  	overflow-x: hidden;
+  	overflow-y: hidden;
+  	color: red;
+  	background-color: #000;
+  	opacity: .8;
+}
+/*.modal-open {
+  	padding: 0!important;
+
+}*/
 .modal-backdrop.in {
   	opacity: 0.8;
 }
