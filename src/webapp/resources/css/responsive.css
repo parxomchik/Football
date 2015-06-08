@@ -91,6 +91,10 @@ nav*/
 	.steps {
 	   height: auto; 
 	}
+	.steps .col-md-4:not(:last-child):before {
+	  	background-size: 18%;
+  		background-position: 330px 118px;
+  	}
 	.circle {
   		position: relative;
   		width: 230px;
@@ -110,6 +114,9 @@ nav*/
 	background: #fff;
 	color:#3b3b3b;
 	}*/
+	.steps .col-md-4:not(:last-child):before {
+		display: none;
+	}
 }
 @media(max-width: 768px) {
 	.steps h2 {

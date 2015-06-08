@@ -29,12 +29,11 @@
 <!--   <div class="container">
     <div class="circles"></div>
   </div> -->
-  <!--END LOADER-->   
-  <div id="fullpage">
-      <div class="section" data-anchor="fisrtPage">
-      <div class="z_index_1">
-          <nav class="navbar navbar-default container">
-  <div class="container-fluid">
+  <!--END LOADER--> 
+  <!--NAV-->  
+      <div id="navbar-top">
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -43,22 +42,26 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand nav-external" href="#"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul id="menu" class="nav navbar-nav navbar-right">
-        <li class="active" data-menuanchor="firstPage"><a href="#firstPage">Главная</a></li>
-        <li data-menuanchor="secondPage"><a href="#secondPage">Новости</a></li>
-        <li data-menuanchor="3Page"><a href="#3Page">Заявка</a></li>
-        <li data-menuanchor="4Page"><a href="#4Page">Партнеры</a></li>
-        <li data-menuanchor="5Page"><a href="#fifthPage">Организаторы</a></li>
-        <li data-menuanchor="6Page"><a href="#sixPage">Контакты</a></li>
+        <li class="active"><a href="#section">Главная</a></li>
+        <li><a href="#section1">Новости</a></li>
+        <li><a href="#section2">Заявка</a></li>
+        <li><a href="#section5">Партнеры</a></li>
+        <li><a href="#section4">Организаторы</a></li>
+        <li><a href="#section6">Контакты</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container-->
 </nav>
+</div>
+  <div id="fullpage">
+      <div class="section" id="section">
+      <div class="z_index_1">
 <div class="row">
   <div class="container">
       <h1 class="text-center header_text hidden-xs">Самый масштабный футбольный ивент для всей <span class="special">Start-UP</span> экосистемы Украины </h1>
@@ -74,7 +77,7 @@
 </div>
 </div>
       </div>
-      <div class="section" data-anchor="secondPage" id="section1">
+      <div class="section" id="section1">
         <div class="row">
           <div class="container">
             <div class="col-md-4 col-lg-4">
@@ -139,7 +142,7 @@
           </div>
         </div>
       </div>
-      <div class="section" data-anchor="3Page" id="section2">
+      <div class="section" id="section2">
         <div class="row margin_top_25">
           <div class="container">
             <p>На рынок спортивных событий Украины выходит качественно новый продукт, своего рода стартап футбольных событий - чемпионат по футболу 3х3 среди всей Startup экосистемы.</p>
@@ -220,15 +223,15 @@
           </div>
         </div>
       </div>
-      <div class="section" data-anchor="4Page" id="section3">
+      <div class="section" id="section3">
         <div class="row about_footbal">
           <div class="container text-center">
             <h1>ЧТО ТАКОЕ ФУТБОЛЛ 3х3?</h1>
-            <p> Этот вид футбола активно развивается в ведущих футбольных странах Европы. Чемпионаты проводятся регулярно, каждый год с большими международными финалами в конце года. Мы захотели вывести на рынок Украины этот новый и качественно интересный футбольный продукт для всей IT индустрии, потому что понимаем, что этого сейчас очень не хватает. <span><a href="">&nbsp;&nbsp;&nbsp;далее...</a></span></p>
+            <p> Этот вид футбола активно развивается в ведущих футбольных странах Европы. Чемпионаты проводятся регулярно, каждый год с большими международными финалами в конце года. Мы захотели вывести на рынок Украины этот новый и качественно интересный футбольный продукт для всей IT индустрии, потому что понимаем, что этого сейчас очень не хватает. <!-- <span><a href="">&nbsp;&nbsp;&nbsp;далее...</a></span> --></p>
           </div>
         </div>
       </div>
-      <div class="section" data-anchor="fifthPage" id="section5">
+      <div class="section" id="section4">
 <div class="row">
           <div class="container team">
             <h1 class="text-center">организаторы</h1>
@@ -292,6 +295,7 @@
             </div>
           </div>
         </div>
+        <div class="section" id="section5">
         <div class="row">
           <div class="container sponsors">
             <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12 text-center">
@@ -320,9 +324,10 @@
               <a href="#"><img src="./resources/images/sponsor8.png" alt=""></a>
             </div>            
           </div>
-        </div>          
+        </div> 
+        </div>         
       </div>        
-      <div class="section" data-anchor="sixPage" id="section6">
+      <div class="section" id="section6">
         <div class="row contact">
           <div class="container">
             <h1 class="text-center">Contact us</h1>
@@ -404,10 +409,6 @@
     <div class="modal-content">
       <div class="modal-header text-center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<!--           <span class="fa-stack fa-lg" aria-hidden="true">
-            <i class="fa fa-circle-thin fa-stack-2x fa-inverse"></i>
-            <i class="fa fa-times fa-stack-1x fa-inverse"></i>
-          </span> -->
           X
         </button>
         Start-UP League
@@ -423,16 +424,25 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="./resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./resources/js/bootstrap.min.js"></script>
-    <script src="./resources/js/jquery.easings.min.js"></script>
-    <script src="./resources/js/jquery.fullPage.min.js"></script>
-    <script src="./resources/js/fullPage.js"></script>
-    <script src="./resources/js/jquery.slimscroll.min.js"></script>
+    <!-- // <script src="./resources/js/jquery.easings.min.js"></script> -->
+    // <script src="./resources/js/jquery.fullPage.min.js"></script>
+    <!-- // <script src="./resources/js/fullPage.js"></script> -->
+    <!-- // <script src="./resources/js/jquery.slimscroll.min.js"></script> -->
     <script src="./resources/js/vivus.min.js"></script>
     <script src="./resources/js/svg.js"></script>
+    <script src="./resources/js/jquery.scrollTo.min.js"></script>
+    <script src="./resources/js/jquery.nav.min.js"></script>
+    <!-- // <script src="./resources/js/nav.js"></script> -->
+    <!-- // <script src="./resources/js/isotope.pkgd.min.js"></script> -->
+    <!-- // <script src="./resources/js/imagesloaded.min.js"></script> -->
+    <!-- // <script src="./resources/js/jquery.appear.min.js"></script> -->
+    <!-- // <script src="./resources/js/twitterFetcher.min.js"></script> -->
+    <script src="./resources/js/script.js"></script>
+    <!-- // <script src="./resources/js/holder.js"></script> -->
     
-
   </body>
 </html>

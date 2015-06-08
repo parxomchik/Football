@@ -45,6 +45,7 @@
 	margin: 0 auto;
 	padding: 5px 10px;
 	font-size: 16px;
+	vertical-align: inherit;
   	text-transform: uppercase;
 	color: #16262d!important;
 }
