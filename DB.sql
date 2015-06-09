@@ -43,6 +43,10 @@ DROP TABLE IF EXISTS `players`;
 DROP TABLE IF EXISTS `news`;
   create table news(
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `author` VARCHAR(45),
+  `titleTags` VARCHAR(200),
+  `descriptionTags` VARCHAR(200),
+  `keywords` VARCHAR(200),
   `header` VARCHAR(100) not null,
   `shortDescription` VARCHAR(150),
   `text` TEXT,
@@ -57,4 +61,5 @@ DROP TABLE IF EXISTS `feedbacks`;
   `email` VARCHAR(45) NOT NULL,
   `subject` VARCHAR(45),
   `message` TEXT,
+  `date` TIMESTAMP,
   PRIMARY KEY(id));

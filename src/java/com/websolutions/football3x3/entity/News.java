@@ -13,6 +13,10 @@ public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String author;
+    private String titleTags;
+    private String descriptionTags;
+    private String keywords;
     private String header;
     private String shortDescription;
     private String text;
@@ -26,6 +30,38 @@ public class News {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitleTags() {
+        return titleTags;
+    }
+
+    public void setTitleTags(String titleTags) {
+        this.titleTags = titleTags;
+    }
+
+    public String getDescriptionTags() {
+        return descriptionTags;
+    }
+
+    public void setDescriptionTags(String descriptionTags) {
+        this.descriptionTags = descriptionTags;
+    }
+
+    public String getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
     }
 
     public String getHeader() {
@@ -76,12 +112,17 @@ public class News {
         News news = (News) o;
 
         if (id != news.id) return false;
-        if (!date.equals(news.date)) return false;
-        if (!header.equals(news.header)) return false;
+        if (author != null ? !author.equals(news.author) : news.author != null) return false;
+        if (date != null ? !date.equals(news.date) : news.date != null) return false;
+        if (descriptionTags != null ? !descriptionTags.equals(news.descriptionTags) : news.descriptionTags != null)
+            return false;
+        if (header != null ? !header.equals(news.header) : news.header != null) return false;
+        if (keywords != null ? !keywords.equals(news.keywords) : news.keywords != null) return false;
         if (!Arrays.equals(picture, news.picture)) return false;
         if (shortDescription != null ? !shortDescription.equals(news.shortDescription) : news.shortDescription != null)
             return false;
-        if (!text.equals(news.text)) return false;
+        if (text != null ? !text.equals(news.text) : news.text != null) return false;
+        if (titleTags != null ? !titleTags.equals(news.titleTags) : news.titleTags != null) return false;
 
         return true;
     }
@@ -89,11 +130,15 @@ public class News {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + header.hashCode();
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (titleTags != null ? titleTags.hashCode() : 0);
+        result = 31 * result + (descriptionTags != null ? descriptionTags.hashCode() : 0);
+        result = 31 * result + (keywords != null ? keywords.hashCode() : 0);
+        result = 31 * result + (header != null ? header.hashCode() : 0);
         result = 31 * result + (shortDescription != null ? shortDescription.hashCode() : 0);
-        result = 31 * result + text.hashCode();
-        result = 31 * result + date.hashCode();
-        result = 31 * result + Arrays.hashCode(picture);
+        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (picture != null ? Arrays.hashCode(picture) : 0);
         return result;
     }
 }
