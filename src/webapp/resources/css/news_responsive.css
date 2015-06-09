@@ -8,6 +8,9 @@
 }
 /*end nav*/
 /*last_news*/
+@media(min-width: 1600px) {
+	
+}
 @media (max-width: 768px) {
 	.last_news h1 {
 		text-align: center;

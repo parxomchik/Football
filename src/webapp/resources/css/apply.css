@@ -1,0 +1,91 @@
+/*navbar*/
+nav {
+	background-color: #13181c!important; 
+}
+nav > .container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+ul.nav {
+	margin-top: 15px;
+  	box-shadow: none;
+}
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+   max-height: inherit!important; 
+}
+/*end navbar*/
+/*apply page*/
+#apply_page {
+	color:#000;
+	padding-top: 72px;
+}
+#apply_page h1 {
+	margin-top: 50px;
+	font-size: 44px;
+}
+#apply_page h3 {
+	margin-top: 30px;
+	font-size: 26px;
+	font-family: 'MyriadProSemiBold', sans-serif;
+
+}
+#apply_page p {
+	font-size: 18px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-family: 'MyriadProRegular', sans-serif;
+}
+#apply_page ol {
+	padding-left: 20px;
+}
+#apply_page ol li {
+	font-size: 18px;
+	font-family: 'MyriadProRegular', sans-serif;
+}
+.add_logo_block {
+	margin-top: 35px;
+}
+.add_logo_block span{
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #f00;
+	font-family: 'MyriadProSemiBold', sans-serif;
+}
+.add_logo_block .add_logo {
+	width: 90%;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 5px;
+	/*background-color: #ccc;*/
+	border: 2px solid #000;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+.inputs_block {
+	margin-top: 40px;	
+}
+.inputs_block p {
+	margin-top: 0!important;
+	margin-bottom: 15px;
+}
+.inputs_block p label {
+	display: block;
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 14px;
+	font-family: 'MyriadProRegular', sans-serif;
+}
+.inputs_block p input {
+	font-size: 16px;
+	width: 100%;
+	padding: 10px 15px;
+	border: 2px solid #000;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+.inputs_block p.mutted {
+	opacity: .5;
+}
+/*end apply page*/

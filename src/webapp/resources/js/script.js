@@ -1,3 +1,13 @@
+// function setheight(){
+//   var clientHeight = document.body.clientHeight;
+//   $('#SECTION').height(clientHeight);
+// }
+// $(document).ready(function() {
+//    function setheight();
+// });
+// $(window).resize(function(){
+//    function setheight();
+// });
 function initNavbar() {
 
     var scrollSpeed = 250;
