@@ -365,7 +365,7 @@
 
                 <p class="text-center">Lorem ipsum dolor sit amet</p>
 
-                <form class="margin_top_30" ng-submit="feedback_submit()">
+                <form class="margin_top_30">
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
                         <div class="row padding_fix">
                             <label for="name"><input type="text" ng-model="feedback_name" name="name" id="name"
@@ -376,7 +376,7 @@
                                                       placeholder="YOUR E-MAIL *"></label>
                         </div>
                         <div class="row padding_fix">
-                            <label for="subject"><input ng-model="feedback_subject" type="text" name="subject"
+                            <label for="subject"><input  type="text" name="subject"
                                                         id="subject" placeholder="SUBJECT"></label>
                         </div>
                     </div>
@@ -386,11 +386,11 @@
                                       placeholder="YOUR MESSAGE *"></textarea>
                         </label>
                     </div>
+
                 </form>
                 <div class="text-center margin_top_20">
                     <div class="btn-box_contact">
-<!--
-                        <btn ng-click="feedback_submit()" class="btn btn-request" data-text="send message">
+                        <button ng-click="feedback_submit()" class="btn btn-request" data-text="send message">
                             <span>s</span>
                             <span>e</span>
                             <span>n</span>
@@ -403,24 +403,8 @@
                             <span>a</span>
                             <span>g</span>
                             <span>e</span>
-                        </btn>                       
--->
-                            <button  ng-click="feedback_submit()" class="btn btn-success">Отправить
-<!--
-                            <span>s</span>
-                            <span>e</span>
-                            <span>n</span>
-                            <span>d</span>
-                            <span>&nbsp;</span>
-                            <span>m</span>
-                            <span>e</span>
-                            <span>s</span>
-                            <span>s</span>
-                            <span>a</span>
-                            <span>g</span>
-                            <span>e</span>
--->
-                        </button>
+                        </button>                       
+
                     </div>
                 </div>
             </div>
@@ -496,15 +480,13 @@
     <script src="./resources/js/svg.js"></script>
     <script src="./resources/js/jquery.scrollTo.min.js"></script>
     <script src="./resources/js/jquery.nav.min.js"></script>
-    <script src="./resources/js/script.js"></script>
     <script src="./resources/admin/js/angular.js"></script>
-    <script src="../resources/admin/js/angular-animate.js"></script>
-    <script src="../resources/admin/js/angular-sanitize.min.js"></script>
-    <script src="../resources/admin/js/angular-strap.min.js"></script>
-    <script src="../resources/admin/js/angular-strap.tpl.min.js"></script>
-    <script src="../resources/admin/js/angular-route.min.js"></script>
-    <script src="../resources/admin/js/app.js"></script>
-
-
+    <script src="./resources/admin/js/angular-animate.js"></script>
+    <script src="./resources/admin/js/angular-sanitize.min.js"></script>
+    <script src="./resources/admin/js/angular-strap.min.js"></script>
+    <script src="./resources/admin/js/angular-strap.tpl.min.js"></script>
+    <script src="./resources/admin/js/angular-route.min.js"></script>
+    <script src="./resources/admin/js/app.js"></script>
+    <script src="./resources/js/script.js"></script>
 </body>
 </html>
