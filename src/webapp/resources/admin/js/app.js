@@ -33,12 +33,12 @@ app.controller("mainCtrl", function($scope,$http, $alert) {
 //                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
             console.log(data)
                 }
-                else{
-//                    parol.show();
-                     alert("error");
-                }
+//                else{
+////                    parol.show();
+//                     alert("error");
+//                }
 
-            })
+            )
             .error(function (data){
                 console.log(data)
             });
