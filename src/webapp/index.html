@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" ng-app="mgcrea.ngStrapDocs">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -327,32 +327,32 @@
           </div>
         </div> 
         </div>               
-      <div class="section" id="section6">
+      <div class="section" id="section6" ng-controller="mainCtrl">
         <div class="row contact">
           <div class="container">
             <h1 class="text-center">Contact us</h1>
             <p class="text-center">Lorem ipsum dolor sit amet</p>
-            <form action="" class="margin_top_30">
+            <form class="margin_top_30" ng-submit="feedback_submit()">
               <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
                 <div class="row padding_fix">
-                  <label for="name"><input type="text" name="name" id="name" placeholder="YOUR NAME *"></label>
+                  <label for="name"><input type="text" ng-model="feedback_name" name="name" id="name" placeholder="YOUR NAME *"></label>
                 </div>
                 <div class="row padding_fix">
-                  <label for="email"><input type="text" name="email" id="email" placeholder="YOUR E-MAIL *"></label>
+                  <label for="email"><input ng-model="feedback_email" type="text" name="email" id="email" placeholder="YOUR E-MAIL *"></label>
                 </div>
                 <div class="row padding_fix">
-                  <label for="subject"><input type="text" name="subject" id="subject" placeholder="SUBJECT"></label>
+                  <label for="subject"><input ng-model="feedback_subject" type="text" name="subject" id="subject" placeholder="SUBJECT"></label>
                 </div>
               </div>
               <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix">
                 <label for="message">
-                <textarea name="message" id="message" placeholder="YOUR MESSAGE *"></textarea>
+                <textarea name="message" ng-model="feedback_message" id="message" placeholder="YOUR MESSAGE *"></textarea>
                 </label>
               </div>
             </form>
             <div class="text-center margin_top_20">
               <div class="btn-box_contact">
-                <a href="#" class="btn btn-request" data-text="send message">
+                <btn ng-click="feedback_submit()" class="btn btn-request" data-text="send message">
                   <span>s</span>
                   <span>e</span>
                   <span>n</span>
@@ -365,7 +365,7 @@
                   <span>a</span>
                   <span>g</span>
                   <span>e</span>
-                </a>
+                </btn>
               </div>
             </div>
           </div>
@@ -429,7 +429,10 @@
     <script src="./resources/js/svg.js"></script>
     <script src="./resources/js/jquery.scrollTo.min.js"></script>
     <script src="./resources/js/jquery.nav.min.js"></script>
-    <script src="./resources/js/script.js"></script> 
+    <script src="./resources/js/script.js"></script>
+    <script src="../resources/admin/js/app.js"></script>
+    <script src="./resources/js/script.js"></script>
+     
     
   </body>
 </html>
