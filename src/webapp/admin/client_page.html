@@ -1,0 +1,141 @@
+<div class="row bg_img margin_fix" ng-controller="clientpageCtrl">
+    <div class="col-xs-12">
+        <nav class="navbar navbar-default border_radius_0 margin_fix">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+            <a class="navbar-brand" href="#">Football 3x3</a>              
+                 </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                        <a href="#">Новости<span class="sr-only">(current)</span></a>
+                        </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Команды <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Startup</a></li>
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">IT-Industry</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#">Обратная связь</a></li>   
+                   </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="panel panel-default border_radius_0" >
+            <form class=" col-md-4 padding_top_10 col-xs-12" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <div id="tab" class="btn-group col-xs-8 col-md-2 col-md-offset-2 col-xs-offset-4 " data-toggle="buttons-radio">
+                <a href="#prices" class="btn btn-primary active text-center" data-toggle="tab"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></a>
+                <a href="#features" class="btn btn-primary text-center" data-toggle="tab"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="prices" >
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3" ng-repeat="slugebki in slugebkis">
+                                <div class="thumbnail">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading col-xs-12">
+                                            <div class="col-xs-6 text-center">
+                                                <label class="col-xs-12">Номер</label>
+                                                {{slugebki.reg_n}}
+                                            </div>
+                                            <div class="col-xs-6 text-center">
+                                                <label class="col-xs-12">Час</label>
+                                                {{slugebki.date}}
+                                            </div>
+                                        </div>
+                                        <div class="panel-heading col-xs-12">
+                                            <div class="col-xs-6 text-center">
+                                                <label class="col-xs-12">Відділ</label>
+                                                {{slugebki.viddil}}
+                                            </div>
+                                            <div class="col-xs-6 text-center">
+                                                <label class="col-xs-12" >Автор</label>
+                                                {{slugebki.avtor}}
+                                            </div>
+                                        </div>
+                                        <div class="theme col-xs-12 padding_fix text-center">
+                                            <strong class="">
+                                                {{slugebki.Name}}
+                                            </strong>
+                                            <hr class="col-xs-12 margin_fix padding_fix"/>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>{{slugebki.description}}</p>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button type="button" class="btn btn-default btn-block">Просмотреть</button>
+                                            <button ng-click="slugebka_submit(slugebki.kod)" type="button" class="btn btn-success btn-block">Согласовать</button>
+                                            <button ng-click="slugebka_decline(slugebki.kod)" type="button" class="btn btn-danger btn-block">Отклонить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="features"><table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Дата</th>
+                        <th>Відділ</th>
+                        <th>Автор</th>
+                        <th>Тип</th>
+                        <th class="hidden-xs">Опис</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="slugebki in slugebkis">
+                        <td>{{slugebki.reg_n}}</td>
+                        <td>{{slugebki.date}}</td>
+                        <td>{{slugebki.viddil}}</td>
+                        <td>{{slugebki.avtor}}</td>
+                        <td>{{slugebki.Name}}</td>
+                        <td class="hidden-xs">{{slugebki.description}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+<!--<script src="js/angular.js"></script>-->
+<!--<script src="js/angular-animate.js"></script>-->
+<!--<script src="js/angular-sanitize.min.js"></script>-->
+<!--<script src="js/angular-strap.min.js"></script>-->
+<!--<script src="js/angular-strap.tpl.min.js"></script>-->
+<!--<script src="js/angular-route.min.js"></script>-->
+<!--<script src="js/angular-strap.min.js.map"></script>-->
+<!--<script src="js/app.js"></script>-->
+<!--&lt;!&ndash;<script src="js/main.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash; Include all compiled plugins (below), or include individual files as needed &ndash;&gt;-->
+<!--<script src="js/bootstrap.min.js"></script>-->

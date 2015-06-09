@@ -1,0 +1,18 @@
+<div class="row bg_img margin_fix" ng-controller="loginCtrl">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4 ">
+        <div class="account-wall">
+            <div id="error_msg"></div>
+            <div id="my-tab-content" class="tab-content">
+                <div class="tab-pane active" id="login">
+                    <img class="profile-img" src="../resources/admin/img/step1.png" alt="">
+                    <h2 class="text-center">FOOTBALL</h2>
+                    <form name="loginForm" class="form-signin" ng-submit="login_submit()">
+                        <input ng-model="user_name" id="login" type="text" class="form-control" placeholder="Login" required>
+                        <input ng-model="user_pass" id="password" type="password" class="form-control" placeholder="Password" required>
+                        <btn ng-click="login_submit()" class="btn btn-lg btn-default btn-block" >Login</btn>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
