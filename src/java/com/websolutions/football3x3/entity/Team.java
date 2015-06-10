@@ -24,6 +24,7 @@ public class Team {
     private String name;
     private String telephone;
     private String email;
+    private boolean payed;
     @Lob
     private byte[] logo;
 
@@ -87,6 +88,14 @@ public class Team {
         this.email = email;
     }
 
+    public boolean isPayed() {
+        return payed;
+    }
+
+    public void setPayed(boolean payed) {
+        this.payed = payed;
+    }
+
     public byte[] getLogo() {
         return logo;
     }
@@ -111,9 +120,10 @@ public class Team {
         Team team = (Team) o;
 
         if (id != team.id) return false;
+        if (payed != team.payed) return false;
         if (company != null ? !company.equals(team.company) : team.company != null) return false;
         if (email != null ? !email.equals(team.email) : team.email != null) return false;
-        if (league != null ? !league.equals(team.league) : team.league != null) return false;
+        if (league != team.league) return false;
         if (!Arrays.equals(logo, team.logo)) return false;
         if (name != null ? !name.equals(team.name) : team.name != null) return false;
         if (players != null ? !players.equals(team.players) : team.players != null) return false;
@@ -132,6 +142,7 @@ public class Team {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (payed ? 1 : 0);
         result = 31 * result + (logo != null ? Arrays.hashCode(logo) : 0);
         result = 31 * result + (players != null ? players.hashCode() : 0);
         return result;

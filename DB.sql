@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS `teams`;
   `name` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(20) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
+    `payed` TINYINT,
   `logo` LONGBLOB,
   PRIMARY KEY (id));
 
