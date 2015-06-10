@@ -13,6 +13,7 @@
 @media (max-width: 768px) {
 	.add_logo_block .add_logo {
 		width: 40%;
+		background-size: 40%;
 	}
 }
 @media (max-width: 500px) {

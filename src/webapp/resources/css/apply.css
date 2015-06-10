@@ -52,6 +52,10 @@ ul.nav {
 	font-family: 'MyriadProSemiBold', sans-serif;
 }
 .add_logo_block .add_logo {
+	background: url('../images/apply_plus.png') no-repeat;
+	background-size: 60%;
+	background-position: center;
+	position: relative;
 	width: 90%;
 	height: 100px;
 	margin: 0 auto;
