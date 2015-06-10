@@ -1,5 +1,5 @@
 .idea
 out
-target
+target/
 football3x3.iml
 dataSource.xml

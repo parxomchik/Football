@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Владислав on 06.06.2015.
  */
 @Entity
-@Table(name = "TEAMS")
+@Table(name = "teams")
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

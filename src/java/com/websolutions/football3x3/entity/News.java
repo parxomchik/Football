@@ -8,7 +8,7 @@ import java.util.Arrays;
  * Created by Владислав on 05.06.2015.
  */
 @Entity
-@Table(name="NEWS")
+@Table(name="news")
 public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

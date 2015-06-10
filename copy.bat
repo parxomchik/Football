@@ -1,6 +1,6 @@
 cd ./target/football3x3-1.0-SNAPSHOT/
-tar -czf upload.tar * 
-#tar -czf upload.tar * --exclude=WEB-INF/dataSource.xml
+#tar -czf upload.tar *
+tar -czf upload.tar * --exclude=WEB-INF/dataSource.xml
 #tar -czf upload.tar * --exclude=resources
 
 scp -rp upload.tar 556755035004463013000143@football3x3-kws.rhcloud.com:app-root/dependencies/jbossews/webapps/ROOT/

@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by Владислав on 06.06.2015.
  */
 @Entity
-@Table(name = "FEEDBACKS")
+@Table(name = "feedbacks")
 public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
