@@ -20,6 +20,7 @@ public class News {
     private String header;
     private String shortDescription;
     private String text;
+    private boolean active;
     private Timestamp date;
     @Lob
     private byte[] picture;
@@ -96,6 +97,14 @@ public class News {
         this.date = date;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public byte[] getPicture() {
         return picture;
     }
@@ -111,6 +120,7 @@ public class News {
 
         News news = (News) o;
 
+        if (active != news.active) return false;
         if (id != news.id) return false;
         if (author != null ? !author.equals(news.author) : news.author != null) return false;
         if (date != null ? !date.equals(news.date) : news.date != null) return false;
@@ -137,6 +147,7 @@ public class News {
         result = 31 * result + (header != null ? header.hashCode() : 0);
         result = 31 * result + (shortDescription != null ? shortDescription.hashCode() : 0);
         result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (active ? 1 : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (picture != null ? Arrays.hashCode(picture) : 0);
         return result;
