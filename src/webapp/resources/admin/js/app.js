@@ -25,7 +25,7 @@ app.controller("mainCtrl", function($scope,$http, $alert) {
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
         console.log(feedback_info);
 //        window.location.replace("#/clientpage");
-        $http.post("http://127.0.0.1:8080/rest/feedbacks",feedback_info)
+        $http.post("http://localhost:8080/rest/feedbacks",feedback_info)
             .success(function (data) {
 //                if (data !== ""){
 //                    window.location.replace("#/clientpage");
