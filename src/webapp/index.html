@@ -128,7 +128,7 @@
           <div class="container">
           <h2 class="upper text-center">Для участия вам нужно выполнить всего 3 шага:</h2>
            <div class="col-md-4 col-lg-4">
-             <div class="circle"><img src="./resources/images/step1.svg" alt=""></div>
+             <div class="circle"><img src="./resources/images/step1.svg" alt="" class="big"></div>
              <p class="text-center">1.Выбрать лигу</p>
            </div>
            <div class="col-md-4 col-lg-4">
@@ -330,45 +330,42 @@
       <div class="section" id="section6" ng-controller="mainCtrl">
         <div class="row contact">
           <div class="container">
-            <h1 class="text-center">Contact us</h1>
-            <p class="text-center">Lorem ipsum dolor sit amet</p>
+            <h1 class="text-center">Свяжитесь с нами</h1>
+            <!-- <p class="text-center">Lorem ipsum dolor sit amet</p> -->
             <form action="" class="margin_top_30">
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
                         <div class="row padding_fix">
                             <label for="name"><input type="text" ng-model="feedback_name" name="name" id="name"
-                                                     placeholder="YOUR NAME *"></label>
+                                                     placeholder="ВШЕ ИМЯ *"></label>
                         </div>
                         <div class="row padding_fix">
                             <label for="email"><input ng-model="feedback_email" type="text" name="email" id="email"
-                                                      placeholder="YOUR E-MAIL *"></label>
+                                                      placeholder="ВАШ E-MAIL *"></label>
                         </div>
                         <div class="row padding_fix">
-                            <label for="subject"><input  type="text" name="subject"
-                                                        id="subject" placeholder="SUBJECT"></label>
+                            <label for="subject"><input  type="text" name="subject" ng-model="feedback_subject"
+                                                        id="subject" placeholder="ТЕМА"></label>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix">
                         <label for="message">
                             <textarea name="message" ng-model="feedback_message" id="message"
-                                      placeholder="YOUR MESSAGE *"></textarea>
+                                      placeholder="ВАШЕ СООБЩЕНИЕ *"></textarea>
                         </label>
                     </div>
             </form>
             <div class="text-center margin_top_20">
               <div class="btn-box_contact">
-                <a ng-click="feedback_submit()" class="btn btn-request" data-text="send message">
-                  <span>s</span>
-                  <span>e</span>
-                  <span>n</span>
-                  <span>d</span>
-                  <span>&nbsp;</span>
-                  <span>m</span>
-                  <span>e</span>
-                  <span>s</span>
-                  <span>s</span>
-                  <span>a</span>
-                  <span>g</span>
-                  <span>e</span>
+                <a ng-click="feedback_submit()" class="btn btn-request" data-text="отправить">
+                  <span>о</span>
+                  <span>т</span>
+                  <span>п</span>
+                  <span>р</span>
+                  <span>а</span>
+                  <span>в</span>
+                  <span>и</span>
+                  <span>т</span>
+                  <span>ь</span>
                 </a>
               </div>
             </div>
@@ -425,7 +422,6 @@
     </div>
   </div>
 </div>
-
     <script src="./resources/js/jquery.min.js"></script>
     <script src="./resources/js/bootstrap.min.js"></script>
     <script src="./resources/js/jquery.fullPage.min.js"></script>

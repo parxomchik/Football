@@ -1,0 +1,23 @@
+/*apply page*/
+@media (max-width: 992px) {
+	#apply_page h1 {
+	font-size: 36px;
+	}
+	#apply_page h3 {
+		font-size: 22px;
+	}
+	.add_logo_block .add_logo {
+		height: 150px;
+	}
+}
+@media (max-width: 768px) {
+	.add_logo_block .add_logo {
+		width: 40%;
+	}
+}
+@media (max-width: 500px) {
+	.add_logo_block .add_logo {
+		height: 100px;
+	}	
+}
+/*end apply page*/

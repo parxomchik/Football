@@ -104,12 +104,19 @@ footer {
 .margin_fix {
     margin: 0px;
 }
+.margin_bottom_10 {
+    margin-bottom: 10px;
+}
 .padding_fix {
     padding: 0px;
 }
 hr {
     background-color: #000;
-    height: 2px;
+/*    height: 2px;*/
+    border: solid;
+    border-top: .01px black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .theme {
     /*background-color: #337ab7;*/
@@ -127,8 +134,8 @@ hr {
     margin-bottom: 0;
 }
 .thumbnail {
-    padding: 0;
-    border: none;
+/*    padding: 0;*/
+/*    border: none;*/
 }
 #logo {
     color: #1d4f8e;
@@ -143,4 +150,21 @@ hr {
 }
 .panel-body {
     min-height:300px;
+}
+.dl-horizontal dt{
+    text-align: left;
+    padding-left: 10px;
+    width: 80px
+}
+.dl-horizontal dd {
+    margin-left: 10px;
+}
+.border_right {
+    border-right: 1px solid black;
+}
+.feedback_btn {
+    height: 100%;
+}
+.margin_top_10 {
+    margin-top: 10px;
 }

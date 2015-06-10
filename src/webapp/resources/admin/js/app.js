@@ -10,10 +10,26 @@ app.config(function($routeProvider) {
             templateUrl: 'login_page.html',
             controller: 'loginCtrl'
         })
+        .when('/home', {
+            templateUrl: 'login_page.html',
+            controller: 'loginCtrl'
+        })
         .when('/clientpage', {
             templateUrl: 'client_page.html',
             controller: 'clientpageCtrl'
-        })
+        })  
+        .when('/clientpage/news', {
+            templateUrl: 'news.html',
+            controller: 'newsCtrl'
+        }) 
+        .when('/clientpage/teams', {
+            templateUrl: 'teams.html',
+            controller: 'teamsCtrl'
+        })   
+        .when('/clientpage/feedback', {
+            templateUrl: 'feedback.html',
+            controller: 'feedbackCtrl'
+        })   
         .otherwise({
             redirectTo: '/404'
         });
@@ -25,7 +41,7 @@ app.controller("mainCtrl", function($scope,$http, $alert) {
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
         console.log(feedback_info);
 //        window.location.replace("#/clientpage");
-        $http.post("http://127.0.0.1:8080/rest/feedbacks",feedback_info)
+        $http.post("http://localhost:8080/rest/feedbacks",feedback_info)
             .success(function (data) {
 //                if (data !== ""){
 //                    window.location.replace("#/clientpage");
