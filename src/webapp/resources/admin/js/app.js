@@ -10,10 +10,26 @@ app.config(function($routeProvider) {
             templateUrl: 'login_page.html',
             controller: 'loginCtrl'
         })
+        .when('/home', {
+            templateUrl: 'login_page.html',
+            controller: 'loginCtrl'
+        })
         .when('/clientpage', {
             templateUrl: 'client_page.html',
             controller: 'clientpageCtrl'
-        })
+        })  
+        .when('/clientpage/news', {
+            templateUrl: 'news.html',
+            controller: 'newsCtrl'
+        }) 
+        .when('/clientpage/teams', {
+            templateUrl: 'teams.html',
+            controller: 'teamsCtrl'
+        })   
+        .when('/clientpage/feedback', {
+            templateUrl: 'feedback.html',
+            controller: 'feedbackCtrl'
+        })   
         .otherwise({
             redirectTo: '/404'
         });

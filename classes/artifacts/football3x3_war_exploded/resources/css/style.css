@@ -1,0 +1,523 @@
+/*Footbal 3x3*/
+/*Style by Nazar Kokhan*/
+/**/
+body {
+	font-family: 'MyriadProBold', sans-serif;
+}
+hr {
+	margin: 0;
+}
+/*STYLE FOR NAV*/
+nav {
+	background: transparent!important;
+	border: none!important;
+}
+nav > .container{
+	padding-left:30px;
+	padding-right: 45px;
+}
+ul.nav {
+	box-shadow: inset 0 0 150px 100px rgba(0,0,0,.2), 0 0 26px 5px rgba(0,0,0,.3);
+}
+.nav {
+	margin-top: 22px;
+}
+.nav > li > a {
+	padding: 10px 4px!important;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: 'MyriadProSemiBold', sans-serif;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover
+/*.navbar-default .navbar-nav > li > a:focus*/ {
+	background-color: transparent!important;
+	color:#f00;
+}
+.navbar-brand {
+	width: 200px;
+	height: 60px;
+	margin-top: 12px;
+	background: url('../images/logo.png') no-repeat;
+	background-size: 100%;
+
+}
+/*END NAV*/
+/*SECTION-1*/
+/*#fullpage .section:not(:nth-child(5)) {
+	padding-top: 72px;
+}*/
+#fullpage .section:not(:nth-child(2)) {height: 100%!important; }
+#fullpage .section:first-child {
+	position: relative;
+	padding-top: 90px;
+	height: 100vh!important;
+	background: url('../images/section1.jpg') no-repeat;
+	background-size: 100%;
+	color:#fff;
+	text-transform: uppercase;
+	z-index: 0!important;
+	overflow: hidden;
+}
+/*#fullpage .section:first-child{
+		height: 635px!important;
+}*/
+#fullpage .section:first-child:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	/*background: rg(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .1));*/
+    background: -moz-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -webkit-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -o-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -ms-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    z-index: -1;
+}
+.fp-tableCell {
+	vertical-align: inherit!important;
+}
+.header_text, .header_text_mob {
+ 	font-size: 43px;
+	margin-top: 165px;
+	word-spacing: 5px;
+  	line-height: 60px;
+}
+.header_text .special, .header_text_mob .special {
+	background: rgba(255,255,255, .7);
+	color: #ff0c3a;
+	padding: 5px;
+  	margin: -5px;
+}
+/*end section1*/
+/*section 2*/
+#section1{
+	margin-top: 0px;
+	background-color: #fff;
+	padding-top: 45px;
+}
+.news {
+	border:none;
+}
+.news .caption {
+	padding:9px 0;
+}
+.news h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.news hr {
+	margin-bottom: 5px;	
+}
+.news p {
+	font-family: 'MyriadProRegular', sans-serif;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+.news .caption p>a {
+	color:#f00;
+	text-decoration: none;
+}
+
+.steps {
+	background: url('../images/section2.jpg') no-repeat;
+	background-size: cover;
+	height: auto;
+	color:#fff;
+}
+.steps .col-md-4:not(:last-child):before {
+  	position: absolute;
+  	content: '';
+  	width: 110%;
+  	height: 100%;
+  	background: url('../images/step_arrow.png') no-repeat;
+  	background-size: 20%;
+  	background-position: 260px 85px;
+
+}
+.steps h2 {
+	font-size: 22px;
+	margin-bottom: 35px;
+}
+.circle {
+	position: relative;
+	height: 160px;
+	width: 160px;
+	margin: 0 auto;
+	margin-top: 15px;
+	border:2px solid  #fff; 
+	border-radius: 50%;
+}
+.circle img {
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 65%;
+	height: 65%;
+	margin: auto;
+}
+.circle + p{
+	font-size: 19px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+/*end section 2*/
+/*section 3*/
+#section2 .row:first-child {
+	height: 680px;
+	overflow: hidden;
+}
+#section2 p {
+	font-family: 'MyriadProRegular', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: #3b3b3b;
+	font-weight: normal;
+}
+#section2 h3 {
+	font-size: 22px;
+	margin-top: 35px;
+}
+.leagues .league img{
+  	position: relative;
+	height: 580px;
+  	top: -80px;
+  	left: -143px;
+  	pointer-events: none;
+  	-webkit-user-select: none;
+  	-moz-user-select: none;
+}
+.leagues .league img:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 1;
+}
+.leagues .col-md-4:nth-child(2) img{
+  	height: 582px;
+  	top: -55px;
+  	left: -109px;
+}
+.leagues .col-md-4:nth-child(3) img{ 
+  	left: -95px;
+}
+
+/*end section 3*/
+/*section 4*/
+.about_footbal {
+	width: 100%;
+	height: 100%;
+	background: url('../images/section4.jpg') no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.about_footbal h1 {
+	margin-top: 100px;
+  	font-size: 44px;
+}
+.about_footbal p {
+	font-family: 'MyriadProRegular', sans-serif;
+  	margin-top: 45px;
+  	margin-bottom: 150px;
+  	font-size: 22px;
+  	text-shadow: 0 0 10px rgba(0,0,0,.9);
+}	
+.about_footbal p span a{
+	font-family: 'MyriadProItalic', sans-serif;
+	color:#f00;
+	text-decoration: none;
+}
+/*end section 4*/
+/*section 5*/
+#section5 .row:first-child{
+	background-color: #f1f1f1;
+	padding-bottom: 10px;
+}
+.team {}
+.team h1 {
+	text-transform: uppercase;
+	font-size: 44px;
+  	margin-top: 50px;
+  	margin-bottom: 70px;
+}
+.team .teammate {
+	display: inline-block;
+  	height: 260px;
+  	width: 260px;
+  	border: 5px solid #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	overflow: hidden;
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+.team .teammate img{
+  position: relative;
+  display: block;
+  right: 110px;
+  height: 200%;
+}
+.team .col-md-6:last-child .teammate img {
+	right: 45px;
+}
+.about_teammate {
+	margin-top: 10px;
+	margin-bottom: 70px;
+}
+.about_teammate span {
+	font-family: 'MyriadProSemiBold', sans-serif;
+	display: block;
+	clear: both;
+	margin-bottom: 5px;
+}
+.about_teammate .name {
+	font-size: 18px;
+	font-weight: bold;
+}
+.about_teammate .post {
+	color:#777;
+}
+.about_teammate .social, .about_teammate .social .fa-stack  {
+	display: inline-block;
+}
+.about_teammate a {
+	text-decoration: none;
+	color:inherit;
+}
+/*sposors*/
+.sponsors {
+  	margin-top: 70px;
+  	margin-bottom: 70px;
+}
+.sponsors>div>a>img {
+	display: inline-block;
+	max-width: 100%;
+}
+.sponsors>div:nth-child(2)>a>img {
+	margin-top: 20px;
+}
+.sponsors>div:nth-child(8)>a>img {
+	max-height: 130px!important;
+}
+.sponsors>div:nth-child(5){
+	margin-top: 22px;
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(6){
+	margin-top: 40px;
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(7){
+	margin-top: 77px;
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(8){
+	margin-right: 25px;
+}
+.sponsors>div:nth-child(9){
+	margin-top: 70px;
+	margin-right: 25px;
+}
+/*end section 5*/
+/*section 6*/
+.contact {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background: url('../images/section6.png') no-repeat;
+	background-size: cover;
+	color:#fff;
+}
+.contact h1 {
+	font-size: 36px;
+  	margin-top: 70px;
+	text-transform: uppercase;
+}
+.contact h1 + p {
+  	color: #555;
+	font-family: 'MyriadProItalic', sans-serif;
+}
+.contact form label{
+	width: 100%;	
+}
+.contact form input, .contact form textarea {
+	margin-bottom: 20px;
+	padding: 15px;
+	width: 100%;
+	border-radius: 3px;
+	border: none;
+	color: #3b3b3b;
+	font-family: 'MyriadProRegular', sans-serif;
+}
+.contact form .col-md-6:last-child textarea {
+	height: 200px; 
+	max-height: 300px;
+	max-width: 120%;
+}
+.footer {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	line-height: 70px; 
+	vertical-align: middle;
+	color:#3b3b3b;
+}
+.footer p {
+	display: inline-block;
+	color: #555;
+	margin: 0;
+}
+.footer .social {
+	margin-left: 110px;
+}
+.footer .social, .footer .social .fa-stack  {
+	display: inline-block;
+}
+.footer a {
+	text-decoration: none;
+	color:inherit;
+}
+/*end section 6*/
+/*modal*/
+.modal-open .modal {
+  	overflow-x: hidden;
+  	overflow-y: hidden;
+  	color: red;
+  	background-color: #000;
+  	opacity: .8;
+}
+/*.modal-open {
+  	padding: 0!important;
+
+}*/
+.modal-backdrop.in {
+  	opacity: 0.8;
+}
+.modal-header {
+	border: none;
+	font-family: 'MyriadProBold', sans-serif;
+}
+.modal-header button{
+	padding: 5px 10px;
+	border: 2px solid #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	text-align: center;
+	color:#fff!important;
+	opacity: .7;
+	font-family: 'MyriadProRegular', sans-serif;
+	outline: none;
+}
+.modal-header button:hover {
+	opacity: 1;
+}
+.modal-content {
+  	box-shadow: none!important;
+   	background-color: transparent; 
+   	border: none!important; 
+   	border-radius: 0;  
+  	color: #fff;
+  	font-size: 26px;
+  	font-weight: normal;
+  	font-family: 'MyriadProRegular', sans-serif;
+}
+.modal-content .modal-body p {
+	margin-bottom: 20px;
+}
+.modal_icon {
+  position: absolute;
+  top: 53px;
+  width: 27px;
+  height: 30px;
+  background: url('../images/league_icon.png') no-repeat;
+  background-size: 100%;
+  background-position-y: -1px;
+  z-index: 1;
+  border: none;
+  outline: 0;
+}
+.modal_icon.first {
+  	right: 84px;
+}
+.modal_icon.first:hover {
+	background: url('../images/league_icon1.png') no-repeat;
+	background-size: 100%;
+}
+.modal_icon.second {
+  	right: 60px;
+}
+.modal_icon.second:hover {
+	background: url('../images/league_icon2.png') no-repeat;
+	background-size: 100%;
+}
+.modal_icon.third {
+  	right: 36px;
+}
+.modal_icon.third:hover {
+	background: url('../images/league_icon3.png') no-repeat;
+	background-size: 100%;
+}
+/*end modal*/
+/*my classes*/
+.row {
+	/*max-width: 100%;*/
+	margin-left: 0;
+	margin-right: 0;
+}
+.z_index_1 {
+	z-index: 1!important;
+}
+.margin_fix {
+	margin: 0;
+}
+.margin_top_10 {
+	margin-top: 10px;
+}
+.margin_top_15 {
+	margin-top: 15px;
+}
+.margin_top_20 {
+	margin-top: 20px;
+}
+.margin_top_25 {
+	margin-top: 25px;
+}
+.margin_top_30 {
+	margin-top: 30px;
+}
+.padding_fix {
+	padding: 0;
+}
+.padding_left_fix {
+	padding-left: 0;
+}
+.padding_right_15 {
+	padding-right: 15px;
+}
+.upper {
+	text-transform: uppercase;
+}
+.clearfix {
+	clear: both;
+}
+/*.font_size_46 {
+	font-size: 46px;
+}
+.margin_top_150 {
+	margin-top: 150px;
+}
