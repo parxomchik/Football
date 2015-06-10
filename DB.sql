@@ -1,21 +1,24 @@
+DROP SCHEMA `football`;
 CREATE SCHEMA if not exists `football` ;
+USE `football`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE users (
   `username` VARCHAR(45) NOT NULL ,
   `password` VARCHAR(45) NOT NULL ,
   `enabled` TINYINT NOT NULL DEFAULT 1 ,
+  `role` ENUM('ADMIN'),
   PRIMARY KEY (username));
 
-DROP TABLE IF EXISTS `user_roles`;
-  CREATE TABLE user_roles (
-  `user_role_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NOT NULL,
-  `role` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (user_role_id),
-  UNIQUE KEY uni_username_role (role,username),
-  KEY fk_username_idx (username),
-  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
+# DROP TABLE IF EXISTS `user_roles`;
+#   CREATE TABLE user_roles (
+#   `user_role_id` INT(11) NOT NULL AUTO_INCREMENT,
+#   `username` VARCHAR(45) NOT NULL,
+#   `role` VARCHAR(45) NOT NULL,
+#   PRIMARY KEY (user_role_id),
+#   UNIQUE KEY uni_username_role (role,username),
+#   KEY fk_username_idx (username),
+#   CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
 
 DROP TABLE IF EXISTS `teams`;
   create table teams (
@@ -43,6 +46,7 @@ DROP TABLE IF EXISTS `players`;
 DROP TABLE IF EXISTS `news`;
   create table news(
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `active` TINYINT,
   `author` VARCHAR(45),
   `titleTags` VARCHAR(200),
   `descriptionTags` VARCHAR(200),
@@ -55,7 +59,7 @@ DROP TABLE IF EXISTS `news`;
   PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS `feedbacks`;
-  create table feedbakcs (
+  create table feedbacks (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,	
   `email` VARCHAR(45) NOT NULL,
