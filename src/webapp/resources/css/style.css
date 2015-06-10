@@ -11,12 +11,34 @@ hr {
 nav {
 	background: transparent!important;
 	border: none!important;
+	-webkit-transition: all linear .4s;
+	-moz-transition: all linear .4s;
+	-ms-transition: all linear .4s;
+	-o-transition: all linear .4s;
+	transition: all linear .4s; 
+}
+nav.active {
+	background-color: rgba(0,0,0,.6)!important;
+	-webkit-transition: all linear .4s;
+	-moz-transition: all linear .4s;
+	-ms-transition: all linear .4s;
+	-o-transition: all linear .4s;
+	transition: all linear .4s;
+	-webkit-box-shadow: 0 0px 5px 3px rgba(0,0,0,.7) ;
+	-moz-box-shadow: 0 0px 5px 3px rgba(0,0,0,.7) ;
+	box-shadow: 0 0px 5px 3px rgba(0,0,0,.7) ;
+}
+nav.active .nav {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 nav > .container{
 	padding-left:30px;
-	padding-right: 45px;
+	padding-right: 30px;
 }
 ul.nav {
+	margin-top: 15px;
 	box-shadow: inset 0 0 150px 100px rgba(0,0,0,.2), 0 0 26px 5px rgba(0,0,0,.3);
 }
 .nav {
@@ -45,7 +67,7 @@ ul.nav {
 .navbar-brand {
 	width: 200px;
 	height: 60px;
-	margin-top: 12px;
+	margin-top: 10px;
 	background: url('../images/logo.png') no-repeat;
 	background-size: 100%;
 
