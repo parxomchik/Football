@@ -28,7 +28,7 @@ public class Team {
     @Lob
     private byte[] logo;
 
-    @OneToMany(mappedBy = "team",fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "team",fetch = FetchType.EAGER)
     //@JsonBackReference
     private List<Player> players;
 
