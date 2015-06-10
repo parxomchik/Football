@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
             controller: 'loginCtrl'
         })
         .when('/clientpage', {
-            templateUrl: 'client_page.html',
+            templateUrl: 'news.html',
             controller: 'clientpageCtrl'
         })  
         .when('/clientpage/news', {
@@ -29,6 +29,10 @@ app.config(function($routeProvider) {
         .when('/clientpage/feedback', {
             templateUrl: 'feedback.html',
             controller: 'feedbackCtrl'
+        })  
+        .when('/clientpage/news/news_edit', {
+            templateUrl: 'news_edit.html',
+            controller: 'news_editCtrl'
         })   
         .otherwise({
             redirectTo: '/404'
