@@ -1,4 +1,11 @@
 /*apply page*/
+@media(min-width: 1600px) {
+	.add_logo_block .add_logo {
+		width: 80%;
+		height: 120px;
+		background-size: 50%;
+	}
+}
 @media (max-width: 992px) {
 	#apply_page h1 {
 	font-size: 36px;
