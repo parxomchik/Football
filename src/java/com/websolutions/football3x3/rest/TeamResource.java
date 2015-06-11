@@ -5,6 +5,7 @@ import com.websolutions.football3x3.dao.team.TeamDao;
 import com.websolutions.football3x3.entity.Player;
 import com.websolutions.football3x3.entity.Team;
 import com.websolutions.football3x3.entity.enums.League;
+import com.websolutions.football3x3.util.EmailService;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
@@ -24,6 +25,9 @@ public class TeamResource {
 
     @Inject
     private PlayerDao playerDao;
+
+    @Inject
+    private EmailService emailService;
 
 
     @GET
@@ -71,6 +75,7 @@ public class TeamResource {
             p.setTeam(t);
             playerDao.save(p);
         }
+        emailService.sendNotificationAboutNewTeam("vladik.kopilash@gmail.com");
 
         return teamDao.find(t.getId());
     }
