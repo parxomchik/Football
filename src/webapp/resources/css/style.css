@@ -24,9 +24,9 @@ nav.active {
 	-ms-transition: all linear .4s;
 	-o-transition: all linear .4s;
 	transition: all linear .4s;
-	-webkit-box-shadow: 0 0px 5px 3px rgba(0,0,0,.7) ;
-	-moz-box-shadow: 0 0px 5px 3px rgba(0,0,0,.7) ;
-	box-shadow: 0 0px 5px 3px rgba(0,0,0,.7) ;
+	-webkit-box-shadow: 0 0px 5px 1px rgba(0,0,0,.7) ;
+	-moz-box-shadow: 0 0px 5px 1px rgba(0,0,0,.7) ;
+	box-shadow: 0 0px 5px 1px rgba(0,0,0,.7) ;
 }
 nav.active .nav {
 	-webkit-box-shadow: none;
@@ -83,12 +83,14 @@ ul.nav {
 	padding-top: 90px;
 	height: 100vh!important;
 	max-height: 1600px;
-	background: url('../images/section1.jpg') no-repeat;
-	background-size: cover;
 	color:#fff;
 	text-transform: uppercase;
 	z-index: 0!important;
 	overflow: hidden;
+}
+.bg {
+	background: url('../images/section1.jpg') no-repeat;
+	background-size: cover;
 }
 /*#fullpage .section:first-child{
 		height: 635px!important;

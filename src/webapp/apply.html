@@ -33,7 +33,6 @@
   </div> -->
   <!--END LOADER--> 
   <!--NAV-->  
-      <div id="navbar-top">
           <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,23 +43,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand nav-external" href="#"></a>
+      <a class="navbar-brand nav-external" href="./index.html"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul id="menu" class="nav navbar-nav navbar-right">
-        <li><a href="#section">Главная</a></li>
-        <li><a href="#section1">Новости</a></li>
-        <li class="active"><a href="#section2">Заявка</a></li>
-        <li><a href="#section4">Организаторы</a></li>
-        <li><a href="#section5">Партнеры</a></li>
-        <li><a href="#section6">Контакты</a></li>
+        <li><a href="./index.html">Главная</a></li>
+        <li><a href="./index.html#section1">Новости</a></li>
+        <li class="active"><a href="#">Заявка</a></li>
+        <li><a href="./index.html#section4">Организаторы</a></li>
+        <li><a href="./index.html#section5">Партнеры</a></li>
+        <li><a href="./index.html#section6">Контакты</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-->
 </nav>
-</div>
 <!--apply page-->
 <div id="apply_page">
 <div class="row">
@@ -86,6 +84,10 @@
      </div>
      <div class="col-md-6 col-lg-6 col-sm-6 col-xs- col-md-offset-1 col-sm-offset-1 inputs_block">
        <p>
+         <label for="company_site">имя вашей компании</label>
+         <input type="text" id="company_name" name="company_name" placeholder="Bionic">
+        </p>     
+       <p>
          <label for="company_site">сайт вашей компании</label>
          <input type="text" id="company_site" name="company_site" placeholder="www.globallogic.com">
         </p>
@@ -94,27 +96,82 @@
          <input type="text" id="team_name" name="team_name" placeholder="Champions">
         </p>
         <p> 
-         <label for="player1">игрок 1</label>
+         <label for="player1">капитан <i class="fa fa-star"></i></label>
          <input type="text" id="player1" name="player1">
         </p>
-        <p class="mutted"> 
+        <p> 
+         <label for="phone">телефон</label>
+         <input type="tel" id="phone" name="phone">
+        </p>   
+        <p> 
+         <label for="email">e-mail</label>
+         <input type="email" id="email" name="email">
+        </p>
+        <p> 
+         <label for="post_cap">должность</label>
+         <input type="text" id="post_cap" name="post_cap">
+        </p>                      
+        <p class=""> 
          <label for="player2">игрок 2</label>
          <input type="text" id="player2" name="player2">
         </p>
-        <p class="mutted">
+        <p> 
+         <label for="post_1">должность</label>
+         <input type="text" id="post_1" name="post_1">
+        </p>        
+        <p class="">
          <label for="player3">игрок 3</label>
          <input type="text" id="player3" name="player3">
         </p>
-        <p class="mutted"> 
+        <p> 
+         <label for="post_2">должность</label>
+         <input type="text" id="post_2" name="post_2">
+        </p>           
+        <p class=""> 
          <label for="player4">игрок 4</label>
          <input type="text" id="player4" name="player4">
         </p>
+        <p> 
+         <label for="post_3">должность</label>
+         <input type="text" id="post_3" name="post_3">
+        </p>           
       <div class="continue_bth_block text-center">
         <a href="#" class="btn continue_bth">продолжить</a>
       </div>
      </div>
   </div>
 </div>
+            <div class="footer">
+              <div class="container">
+                <p class="text-left">© Copyright 2015 tarasmykhalevych.com</p>
+                <div class="social">
+                  <a href="https://vk.com/football3x3">   
+                    <span class="fa-stack fa-2x">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                  <a href="https://www.facebook.com/groups/footbal3x3/?fref=ts">                                
+                    <span class="fa-stack fa-2x">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>  
+                  <a href="https://twitter.com/football3x3">                              
+                    <span class="fa-stack fa-2x">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>                    
+                  <a href="https://instagram.com/football3x3">                              
+                    <span class="fa-stack fa-2x">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>                                   
+                </div>                
+              </div>
+            </div>
 </div> 
 
       <!--MODAL-->
@@ -127,7 +184,7 @@
     <script src="./resources/js/svg.js"></script>
     <script src="./resources/js/jquery.scrollTo.min.js"></script>
     <script src="./resources/js/jquery.nav.min.js"></script>
-    <script src="./resources/js/script.js"></script> 
+    <!-- // <script src="./resources/js/script.js"></script>  -->
     
   </body>
 </html>
