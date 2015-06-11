@@ -5,4 +5,4 @@ insert into players(name,surname,role,captain,team_id) values ('Max', 'Mad', 'fo
 insert into players(name,surname,role,captain,team_id) values ('Max', 'Awesome', 'defender',false,1);
 insert into players(name,surname,role,captain,team_id) values ('Max', 'Lazy', 'goalkeeper',false,1);
 
-insert into feedbacks(name,email,subject,message,date) values ('Max', 'madmax@gmail.com','Champ','I wanna take part in Investor league...',NOW());
+insert into feedbacks(name,email,subject,message,date,processed) values ('Max', 'madmax@gmail.com','Champ','I wanna take part in Investor league...',NOW(),false);

@@ -67,4 +67,5 @@ DROP TABLE IF EXISTS `feedbacks`;
   `subject` VARCHAR(45),
   `message` TEXT,
   `date` TIMESTAMP,
+    `processed` TINYINT,
   PRIMARY KEY(id));

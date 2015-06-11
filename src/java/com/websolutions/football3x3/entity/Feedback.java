@@ -17,6 +17,7 @@ public class Feedback {
     private String subject;
     private String message;
     private Timestamp date;
+    private boolean processed;
 
     public int getId() {
         return id;
@@ -66,6 +67,14 @@ public class Feedback {
         this.date = date;
     }
 
+    public boolean isProcessed() {
+        return processed;
+    }
+
+    public void setProcessed(boolean processed) {
+        this.processed = processed;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,6 +83,7 @@ public class Feedback {
         Feedback feedback = (Feedback) o;
 
         if (id != feedback.id) return false;
+        if (processed != feedback.processed) return false;
         if (date != null ? !date.equals(feedback.date) : feedback.date != null) return false;
         if (email != null ? !email.equals(feedback.email) : feedback.email != null) return false;
         if (message != null ? !message.equals(feedback.message) : feedback.message != null) return false;
@@ -91,6 +101,7 @@ public class Feedback {
         result = 31 * result + (subject != null ? subject.hashCode() : 0);
         result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (processed ? 1 : 0);
         return result;
     }
 }
