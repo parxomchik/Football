@@ -26,6 +26,13 @@ public class NewsResource {
     }
 
     @GET
+    @Path("active")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<News> getActiveNews() {
+        return newsDao.findActive();
+    }
+
+    @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public News getNewsById(@PathParam("id") Integer id) {

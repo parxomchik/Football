@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
             controller: 'loginCtrl'
         })
         .when('/clientpage', {
-            templateUrl: 'client_page.html',
+            templateUrl: 'news.html',
             controller: 'clientpageCtrl'
         })  
         .when('/clientpage/news', {
@@ -29,6 +29,10 @@ app.config(function($routeProvider) {
         .when('/clientpage/feedback', {
             templateUrl: 'feedback.html',
             controller: 'feedbackCtrl'
+        })  
+        .when('/clientpage/news/news_edit', {
+            templateUrl: 'news_edit.html',
+            controller: 'news_editCtrl'
         })   
         .otherwise({
             redirectTo: '/404'
@@ -41,7 +45,7 @@ app.controller("mainCtrl", function($scope,$http, $alert) {
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
         console.log(feedback_info);
 //        window.location.replace("#/clientpage");
-        $http.post("http://localhost:8080/rest/feedbacks",feedback_info)
+        $http.post("/rest/feedbacks",feedback_info)
             .success(function (data) {
 //                if (data !== ""){
 //                    window.location.replace("#/clientpage");

@@ -40,7 +40,15 @@ public class FeedbackResource {
     public Feedback createFeedback(Feedback feedback) {
         feedback.setDate(new Timestamp(new java.util.Date().getTime()));
         return feedbackDao.save(feedback);
-
     }
+
+    @PUT
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Feedback updateFeedback(@PathParam("id") Integer id,Feedback feedback) {
+        return feedbackDao.save(feedback);
+    }
+
 
 }
