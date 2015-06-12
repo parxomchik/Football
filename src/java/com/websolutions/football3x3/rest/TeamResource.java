@@ -46,8 +46,7 @@ public class TeamResource {
 
     @GET
     @Path("{id}")
-    //@Produces(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @Produces(MediaType.APPLICATION_JSON)
     public Team getTeamById(@PathParam("id") Integer id) {
         Team team = teamDao.find(id);
         if (team == null) {
