@@ -31,7 +31,8 @@ DROP TABLE IF EXISTS `teams`;
   `email` VARCHAR(45) NOT NULL,
     `payed` TINYINT,
   `logo` LONGBLOB,
-  PRIMARY KEY (id));
+  PRIMARY KEY (id),
+  UNIQUE KEY(name));
 
 DROP TABLE IF EXISTS `players`;
   create table players (
