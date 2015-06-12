@@ -46,7 +46,8 @@ public class TeamResource {
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+    //@Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     public Team getTeamById(@PathParam("id") Integer id) {
         Team team = teamDao.find(id);
         if (team == null) {
@@ -75,9 +76,9 @@ public class TeamResource {
             p.setTeam(t);
             playerDao.save(p);
         }
-        emailService.sendNotificationAboutNewTeam("vladik.kopilash@gmail.com");
-
-        return teamDao.find(t.getId());
+        Team resultTeam = teamDao.find(t.getId());
+        emailService.sendNotificationAboutNewTeam(resultTeam, "vladik.kopilash@gmail.com");
+        return resultTeam;
     }
 
     @PUT
