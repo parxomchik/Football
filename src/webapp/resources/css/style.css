@@ -155,6 +155,8 @@ ul.nav {
 .news h4 {
 	margin-top: 0;
 	margin-bottom: 5px;
+	font-family: 'MyriadProSemiBold', sans-serif;
+
 }
 .news hr {
 	margin-bottom: 5px;	
@@ -406,11 +408,29 @@ ul.nav {
 	border: none;
 	color: #3b3b3b;
 	font-family: 'MyriadProRegular', sans-serif;
+	font-weight: 500;
 }
 .contact form .col-md-6:last-child textarea {
 	height: 200px; 
 	max-height: 300px;
 	max-width: 120%;
+}
+.contact form input::-webkit-input-placeholder { 
+	font-family: 'MyriadProRegular', sans-serif;
+	font-weight: 500;
+}
+.contact form input:-moz-placeholder { 
+	font-family: 'MyriadProRegular', sans-serif;
+	font-weight: 500;
+}
+
+.contact form textarea:-moz-placeholder { 
+	font-family: 'MyriadProRegular', sans-serif;
+	font-weight: 500;
+}
+.contact form textarea::-webkit-input-placeholder {
+	font-family: 'MyriadProRegular', sans-serif;
+	font-weight: 500;	
 }
 .footer {
 	position: relative;
@@ -428,6 +448,8 @@ ul.nav {
 	display: inline-block;
 	color: #555;
 	margin: 0;
+	font-family: 'MyriadProRegular', sans-serif;
+
 }
 .footer .social {
 	margin-left: 110px;
@@ -468,8 +490,9 @@ ul.nav {
 	text-align: center;
 	color:#fff!important;
 	opacity: .7;
-	font-family: 'MyriadProRegular', sans-serif;
+	font-family: 'MyriadProRegular', sans-serif!important;
 	outline: none;
+	font-weight: 500;
 }
 .modal-header button:hover {
 	opacity: 1;
