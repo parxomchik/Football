@@ -24,7 +24,7 @@ function bg() {
 	$('#bg').vide('./resources/video/background.mp4');
 	bg_show();
 }
-bg();
+// bg();
 
 
 
