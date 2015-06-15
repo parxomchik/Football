@@ -102,6 +102,18 @@ public class TeamResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Team updateTeam(@PathParam("id") Integer id, Team team) {
+        Team fromDb = teamDao.find(id);
+        if (team.isPayed()==true && team.isPayed()!=fromDb.isPayed()) {
+            emailService.sendManagerPaymentNotification(team,"vladik.kopilash@gmail.com");
+        }
+//        fromDb.setId(team.getId());
+//        fromDb.setCompany(team.getCompany());
+//        fromDb.setLeague(team.getLeague());
+//        fromDb.setLogo(team.getLogo());
+//        fromDb.setName(team.getName());
+//        fromDb.set
+
+
         return teamDao.save(team);
     }
 

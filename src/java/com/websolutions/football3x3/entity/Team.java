@@ -21,6 +21,7 @@ public class Team {
     private League league;
     private String company;
     private String website;
+    @Column(unique = true)
     private String name;
     private String telephone;
     private String email;
@@ -121,14 +122,12 @@ public class Team {
 
         if (id != team.id) return false;
         if (payed != team.payed) return false;
-        if (company != null ? !company.equals(team.company) : team.company != null) return false;
-        if (email != null ? !email.equals(team.email) : team.email != null) return false;
+        if (!company.equals(team.company)) return false;
+        if (!email.equals(team.email)) return false;
         if (league != team.league) return false;
-        if (!Arrays.equals(logo, team.logo)) return false;
-        if (name != null ? !name.equals(team.name) : team.name != null) return false;
-        if (players != null ? !players.equals(team.players) : team.players != null) return false;
-        if (telephone != null ? !telephone.equals(team.telephone) : team.telephone != null) return false;
-        if (website != null ? !website.equals(team.website) : team.website != null) return false;
+        if (!name.equals(team.name)) return false;
+        if (!telephone.equals(team.telephone)) return false;
+        if (!website.equals(team.website)) return false;
 
         return true;
     }
@@ -136,15 +135,13 @@ public class Team {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (league != null ? league.hashCode() : 0);
-        result = 31 * result + (company != null ? company.hashCode() : 0);
-        result = 31 * result + (website != null ? website.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + league.hashCode();
+        result = 31 * result + company.hashCode();
+        result = 31 * result + website.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + telephone.hashCode();
+        result = 31 * result + email.hashCode();
         result = 31 * result + (payed ? 1 : 0);
-        result = 31 * result + (logo != null ? Arrays.hashCode(logo) : 0);
-        result = 31 * result + (players != null ? players.hashCode() : 0);
         return result;
     }
 }
