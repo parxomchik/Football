@@ -6,6 +6,7 @@ import com.websolutions.football3x3.entity.Player;
 import com.websolutions.football3x3.entity.Team;
 import com.websolutions.football3x3.entity.enums.League;
 import com.websolutions.football3x3.util.EmailService;
+import org.hibernate.Hibernate;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
@@ -102,19 +103,26 @@ public class TeamResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Team updateTeam(@PathParam("id") Integer id, Team team) {
-        Team fromDb = teamDao.find(id);
-        if (team.isPayed()==true && team.isPayed()!=fromDb.isPayed()) {
-            emailService.sendManagerPaymentNotification(team,"vladik.kopilash@gmail.com");
-        }
-//        fromDb.setId(team.getId());
+       Team fromDb = teamDao.find(id);
+//        if (team.isPayed()==true && team.isPayed()!=fromDb.isPayed()) {
+//            emailService.sendManagerPaymentNotification(team,"vladik.kopilash@gmail.com");
+//        }
+
 //        fromDb.setCompany(team.getCompany());
 //        fromDb.setLeague(team.getLeague());
 //        fromDb.setLogo(team.getLogo());
 //        fromDb.setName(team.getName());
-//        fromDb.set
+//        fromDb.setEmail(team.getEmail());
+//        fromDb.setTelephone(team.getTelephone());
+//        fromDb.setWebsite(team.getWebsite());
+//        fromDb.setPayed(team.isPayed());
+//        for (Player p: team.getPlayers()) {
+//            p.setTeam(fromDb);
+//            playerDao.save(p);
+//        }
 
 
-        return teamDao.save(team);
+        return teamDao.save(fromDb);
     }
 
     @DELETE
