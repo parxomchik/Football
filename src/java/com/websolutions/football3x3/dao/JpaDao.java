@@ -11,7 +11,7 @@ import java.util.List;
 
 public class JpaDao<T, I> implements Dao<T, I>
 {
-
+    @PersistenceContext
     private EntityManager entityManager;
 
     protected Class<T> entityClass;
@@ -25,14 +25,11 @@ public class JpaDao<T, I> implements Dao<T, I>
         this.entityClass = entityClass;
     }
 
-
     public EntityManager getEntityManager()
     {
         return this.entityManager;
     }
 
-
-    @PersistenceContext
     public void setEntityManager(final EntityManager entityManager)
     {
         this.entityManager = entityManager;
@@ -65,7 +62,9 @@ public class JpaDao<T, I> implements Dao<T, I>
     @Transactional
     public T save(T entity)
     {
-        return this.getEntityManager().merge(entity);
+        T merge = entityManager.merge(entity);
+        entityManager.flush();
+        return merge;
     }
 
 

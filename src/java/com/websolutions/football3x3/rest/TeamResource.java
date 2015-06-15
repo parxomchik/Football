@@ -6,6 +6,7 @@ import com.websolutions.football3x3.entity.Player;
 import com.websolutions.football3x3.entity.Team;
 import com.websolutions.football3x3.entity.enums.League;
 import com.websolutions.football3x3.util.EmailService;
+import org.hibernate.Hibernate;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
@@ -70,10 +71,10 @@ public class TeamResource {
 
     /**
      * Creates new Team and persists it to DB.
-     *@throws WebApplicationException with status code 403 - Forbidden
+     *
      * @param team new entry
      * @return merged Team entity
-     *
+     * @throws WebApplicationException with status code 403 - Forbidden
      */
 
     @POST
@@ -88,7 +89,7 @@ public class TeamResource {
                 playerDao.save(p);
             }
         } catch (PersistenceException e) {
-            throw new WebApplicationException(e,403);
+            throw new WebApplicationException(e, 403);
         }
 
 
@@ -103,18 +104,17 @@ public class TeamResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Team updateTeam(@PathParam("id") Integer id, Team team) {
         Team fromDb = teamDao.find(id);
-        if (team.isPayed()==true && team.isPayed()!=fromDb.isPayed()) {
-            emailService.sendManagerPaymentNotification(team,"vladik.kopilash@gmail.com");
+        if (team.isPayed() == true && team.isPayed() != fromDb.isPayed()) {
+            emailService.sendManagerPaymentNotification(team, "vladik.kopilash@gmail.com");
         }
-//        fromDb.setId(team.getId());
-//        fromDb.setCompany(team.getCompany());
-//        fromDb.setLeague(team.getLeague());
-//        fromDb.setLogo(team.getLogo());
-//        fromDb.setName(team.getName());
-//        fromDb.set
+        for (Player p: team.getPlayers()) {
+            p.setTeam(team);
+            playerDao.save(p);
+        }
+        teamDao.save(team);
 
 
-        return teamDao.save(team);
+        return teamDao.find(id);
     }
 
     @DELETE
@@ -122,7 +122,6 @@ public class TeamResource {
     public void deleteTeam(@PathParam("id") Integer id) {
         teamDao.delete(id);
     }
-
 
 
 }
