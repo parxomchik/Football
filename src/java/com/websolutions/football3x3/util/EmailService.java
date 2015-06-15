@@ -45,11 +45,18 @@ public class EmailService {
                 }
                 text.append("</ul></body></html>");
 
-
         sendEmail(text.toString(), "New team", Collections.singletonList(managerEmail));
+    }
 
+    public void sendManagerPaymentNotification(Team team, String managerEmail) {
+        StringBuilder text = new StringBuilder("<html lang=\"en\">\n").append(
+                "  <head>\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n")
+                .append("<body>Господин! У нас пополнение в казне.<br/>")
+                .append("Команда ").append(team.getName()).append(" из лиги ").append(team.getLeague().toString()).append(" оплатила участие в чемпионате.<br/>")
+                .append("Да благословит их дух Футбольного Короля!")
+                .append("</body></html>");
 
-
+        sendEmail(text.toString(), "New payment", Collections.singletonList(managerEmail));
     }
 
     private void sendEmail(String content, String subject, List<String> sendTos) {
