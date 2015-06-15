@@ -12,7 +12,7 @@
 
         // Scroll Variables (tweakable)
         var framerate = 150; // [Hz]    150
-        var animtime  = 600; // [px]    400
+        var animtime  = 400; // [px]    400
         var stepsize  = 30; // [px]    120
 
         // Pulse (less tweakable)

@@ -1,11 +1,11 @@
 $(window).stellar();
-section = $('#section').innerHeight();
-section1 = $('#section1').innerHeight() + section;
-section2 = $('#section2').innerHeight() + section + section1;
-section3 = $('#section3').innerHeight() + section + section2;
-section4 = $('#section4').innerHeight() + section + section3;
-section5 = $('#section5').innerHeight() + section + section4;
-section6 = $('#section6').innerHeight() + section + section5;
+// section = $('#section').innerHeight();
+// section1 = $('#section1').innerHeight() + section;
+// section2 = $('#section2').innerHeight() + section + section1;
+// section3 = $('#section3').innerHeight() + section + section2;
+// section4 = $('#section4').innerHeight() + section + section3;
+// section5 = $('#section5').innerHeight() + section + section4;
+// section6 = $('#section6').innerHeight() + section + section5;
 // $('#section1').css('margin-bottom', section);
 // $('#section2').css('margin-bottom', section1);
 // $('#section3').css('margin-bottom', section2);
@@ -36,8 +36,6 @@ function parallaxScroll(){
 
 
 $(window).load(function(){
-    $(".loader .circles").fadeOut("slow");
-    $(".loader").fadeOut("slow");
   for (var i = 0; i < 25; i++) {
       var names = ['x','y'],
           name = names[Math.floor(Math.random() * names.length)],
@@ -50,5 +48,7 @@ $(window).load(function(){
       $('.i' + i).css({
           'animation': name + ' ' + i + 's linear infinite '+ direction +''
       });
+   // $(".loader1 .circles").fadeOut(4000);
+   $(".loader1").delay(3000).fadeOut(500);
   }
 });

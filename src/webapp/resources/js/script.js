@@ -10,7 +10,7 @@
 // });
 function initNavbar() {
 
-    var scrollSpeed = 250;
+    var scrollSpeed = 350;
     var scrollOffset = 72;
     var easing = 'swing';
 
