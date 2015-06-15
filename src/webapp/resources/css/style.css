@@ -20,7 +20,7 @@ nav {
 	transition: all linear .4s; 
 }
 nav.active {
-	background-color: rgba(0,0,0,.31)!important;
+	background-color: rgba(0,0,0,.9)!important;
 	-webkit-transition: all linear .4s;
 	-moz-transition: all linear .4s;
 	-ms-transition: all linear .4s;
@@ -606,55 +606,20 @@ ul.nav {
 	margin-top: 150px;
 }
 /*LOADER*/
-.container.loader1 {
+.loader1 {
   position: fixed;
   width: 100%;
   min-height: 100%;
-  background: #f7f7f7;
+  background: #fff;
   overflow: hidden;
   z-index: 1999;
 }
-.container.loader1 .circles,
-.container.loader1 .circles * {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  z-index: 2000;
-}
-.container.loader1 .circles {
-  width: 300px;
-  height: 300px;
-}
-.container.loader1 .circle {
-  width: 290px;
-  height: 290px;
-  border: 5px solid #000;
-  border-radius: 100%;
-}
-@keyframes x {
-  0% {
-      transform: rotateX(0deg);
-  }
-  100% {
-      transform: rotateX(360deg);
-  }
-}
-@keyframes y {
-  0% {
-      transform: rotateY(0deg);
-  }
-  100% {
-      transform: rotateY(360deg);
-  }
-}
-@keyframes z {
-  0% {
-      transform: rotateZ(0deg);
-  }
-  100% {
-      transform: rotateZ(360deg);
-  }
+.loader1 .loader2 #loaderImage{
+	display: inline-block!important;
+	position: absolute!important;
+	top: 0!important;
+	left: 0!important;
+	right: 0!important;
+	bottom: 0!important;
+	margin: auto!important;
 }
