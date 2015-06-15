@@ -22,33 +22,29 @@ $(window).stellar();
 //     });
 // });
 
-$(window).bind('scroll',function(e){
-    parallaxScroll();
-});
+// $(window).bind('scroll',function(e){
+//     parallaxScroll();
+// });
  
-function parallaxScroll(){
-    var scrolled = $(window).scrollTop();
-    $('#section').css('bottom',(0-(scrolled*.5))+'px');
-    // $('#section1').css('bottom',(0-(scrolled*.1))+'px');
-    // $('#section').css('top',(0-(scrolled*.75))+'px');
-}
+// function parallaxScroll(){
+//     var scrolled = $(window).scrollTop();
+//     $('#section').css('bottom',(0-(scrolled*.5))+'px');
+// }
 
-
-
-$(window).load(function(){
-  for (var i = 0; i < 25; i++) {
-      var names = ['x','y'],
-          name = names[Math.floor(Math.random() * names.length)],
-          directions = ['normal','reverse'],
-          direction = directions[Math.floor(Math.random() * directions.length)];
-      $('.circles').append('<div class="circle-container c' + i + '"><div class="circle i'+ i +'"></div></div>');
-      $('.c' + i).css({
-          'animation': 'z ' + i + 's linear infinite ' + direction
-      });
-      $('.i' + i).css({
-          'animation': name + ' ' + i + 's linear infinite '+ direction +''
-      });
-   // $(".loader1 .circles").fadeOut(4000);
-   $(".loader1").delay(3000).fadeOut(500);
-  }
-});
+// $(window).load(function(){
+//   for (var i = 0; i < 25; i++) {
+//       var names = ['x','y'],
+//           name = names[Math.floor(Math.random() * names.length)],
+//           directions = ['normal','reverse'],
+//           direction = directions[Math.floor(Math.random() * directions.length)];
+//       $('.circles').append('<div class="circle-container c' + i + '"><div class="circle i'+ i +'"></div></div>');
+//       $('.c' + i).css({
+//           'animation': 'z ' + i + 's linear infinite ' + direction
+//       });
+//       $('.i' + i).css({
+//           'animation': name + ' ' + i + 's linear infinite '+ direction +''
+//       });
+//    // $(".loader1 .circles").fadeOut(4000);
+//    $(".loader1").delay(3000).fadeOut(500);
+//   }
+// });
