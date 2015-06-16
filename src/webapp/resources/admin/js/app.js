@@ -51,6 +51,11 @@ app.controller("mainCtrl", function($scope,$http, $alert) {
 //                    window.location.replace("#/clientpage");
 //                    $rootScope.slugebkis = JSON.parse(data)
 //                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
+            $scope.feedback_name = undefined;
+                $scope.feedback_email = undefined;
+                $scope.feedback_subject = undefined;
+                $scope.feedback_message = undefined;
+
             console.log(data)
                 }
 //                else{
