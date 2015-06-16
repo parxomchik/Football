@@ -1,10 +1,26 @@
 /*apply page*/
 @media(min-width: 1600px) {
+	#apply_page h1 {
+		font-size: 60px;
+	}
+	#apply_page h3 {
+		margin-top: 30px;
+	}
+	#apply_page p {
+		font-size: 24px;
+	}
+	#apply_page ol li {
+		font-size: 24px;
+	}
+	.add_logo_block span{
+		font-size: 16px;
+	}
 	.add_logo_block .add_logo {
 		width: 80%;
 		height: 120px;
 		background-size: 50%;
 	}
+
 }
 @media (max-width: 992px) {
 	#apply_page h1 {

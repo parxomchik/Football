@@ -58,3 +58,17 @@
     font-style: normal;
     font-weight: normal;
 }
+/* font-family: "MyriadProCondenced"; */
+@font-face {
+    font-family: "MyriadProCondenced";
+    src: url("../fonts/MyriadPro-Cond.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "MyriadProBoldCondenced"; */
+@font-face {
+    font-family: "MyriadProBoldCondenced";
+    src: url("../fonts/MyriadPro-BoldCond.otf");
+    font-style: normal;
+    font-weight: normal;
+}

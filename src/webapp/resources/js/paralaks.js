@@ -1,4 +1,22 @@
-$(window).stellar();
+window_w = document.body.clientWidth;
+
+if(window_w >= '992'){
+	$(window).stellar();
+ 	section = $('#section').innerHeight();
+	 	$(window).on("scroll", function() {
+	 		parallaxScroll();
+		 if ($(window).scrollTop() > section - 75) {
+		 	$('#section').css('bottom','0');
+		 }
+		 else {
+		 	parallaxScroll();
+		 }
+		 function parallaxScroll(){
+	    	var scrolled = $(window).scrollTop();
+	    	$('#section').css('bottom',(0-(scrolled*.5))+'px');
+		}
+	});
+}
 // section = $('#section').innerHeight();
 // section1 = $('#section1').innerHeight() + section;
 // section2 = $('#section2').innerHeight() + section + section1;

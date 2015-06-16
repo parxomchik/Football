@@ -13,6 +13,9 @@ ul.nav {
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
    max-height: inherit!important; 
 }
+nav #bs-example-navbar-collapse-1 {
+   background: transparent!important; 
+}
 /*end navbar*/
 /*apply page*/
 #apply_page {
@@ -22,6 +25,7 @@ ul.nav {
 #apply_page h1 {
 	margin-top: 50px;
 	font-size: 44px;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
 }
 #apply_page h3 {
 	margin-top: 30px;
@@ -43,7 +47,7 @@ ul.nav {
 	font-family: 'MyriadProRegular', sans-serif;
 }
 .add_logo_block {
-	margin-top: 35px;
+	margin-top: 40px;
 }
 .add_logo_block span{
 	text-transform: uppercase;

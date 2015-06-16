@@ -49,9 +49,9 @@ ul.nav {
 }
 .nav > li > a {
 	padding: 10px 4px!important;
-	font-size: 16px;
+	font-size: 19px;
 	text-transform: uppercase;
-	font-family: 'MyriadProSemiBold', sans-serif;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
 }
 .navbar-default .navbar-nav > li > a {
 	color: #fff;
@@ -138,10 +138,11 @@ ul.nav {
 	vertical-align: inherit!important;
 }
 .header_text, .header_text_mob {
- 	font-size: 43px;
+ 	font-size: 57px;
 	margin-top: 165px;
 	word-spacing: 5px;
-  	line-height: 60px;
+  	line-height: 70px;
+  	font-family: 'MyriadProBoldCondenced', sans-serif;
 }
 .header_text .special, .header_text_mob .special {
 	background: rgba(255,255,255, .7);
@@ -163,16 +164,21 @@ ul.nav {
 	padding:9px 0;
 }
 .news h4 {
+	font-size: 19px;
 	margin-top: 0;
 	margin-bottom: 5px;
-	font-family: 'MyriadProSemiBold', sans-serif;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
 
 }
 .news hr {
 	margin-bottom: 5px;	
 }
+.news p:first-child {
+	font-size: 14px;	
+}
 .news p {
-	font-family: 'MyriadProRegular', sans-serif;
+	font-size: 12px;
+	font-family: 'MyriadProCondenced', sans-serif;
 	font-size: 12px;
 	margin-bottom: 5px;
 }
@@ -185,7 +191,7 @@ ul.nav {
 	background: url('../images/section2.jpg') no-repeat;
 	background-position: 0px -50px;
 	background-color: rgb(43, 43, 45);
-	background-size: 150%;
+	background-size: 100% 120%;
 	height: auto;
 	color:#fff;
 }
@@ -202,6 +208,7 @@ ul.nav {
 .steps h2 {
 	font-size: 22px;
 	margin-bottom: 35px;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
 }
 .circle {
 	position: relative;
@@ -227,9 +234,11 @@ ul.nav {
 	height: 100%;
 }
 .circle + p{
-	font-size: 19px;
+	font-size: 20px;
 	margin-bottom: 25px;
 	margin-top: 25px;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
+
 }
 /*end section 2*/
 /*section 3*/
@@ -238,15 +247,17 @@ ul.nav {
 	overflow: hidden;
 }
 #section2 p {
-	font-family: 'MyriadProRegular', sans-serif;
-	font-size: 20px;
+	font-family: 'MyriadProCondenced', sans-serif;
+	font-size: 24px;
 	text-align: center;
 	color: #3b3b3b;
 	font-weight: normal;
 }
 #section2 h3 {
-	font-size: 22px;
+	font-size: 24px;
 	margin-top: 35px;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
+
 }
 .leagues .league img{
   	position: relative;
@@ -288,6 +299,8 @@ ul.nav {
 .about_footbal h1 {
 	margin-top: 100px;
   	font-size: 44px;
+  	font-family: 'MyriadProBoldCondenced', sans-serif;
+
 }
 .about_footbal p {
 	font-family: 'MyriadProRegular', sans-serif;
@@ -313,6 +326,7 @@ ul.nav {
 	font-size: 44px;
   	margin-top: 50px;
   	margin-bottom: 70px;
+  	font-family: 'MyriadProBoldCondenced', sans-serif;
 }
 .team .teammate {
 	display: inline-block;
@@ -339,13 +353,13 @@ ul.nav {
 	margin-bottom: 70px;
 }
 .about_teammate span {
-	font-family: 'MyriadProSemiBold', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	display: block;
 	clear: both;
 	margin-bottom: 5px;
 }
 .about_teammate .name {
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: bold;
 }
 .about_teammate .post {
@@ -401,6 +415,8 @@ ul.nav {
 	background: url('../images/section6.png') no-repeat;
 	background-size: cover;
 	color:#fff;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
+
 }
 .contact h1 {
 	font-size: 36px;

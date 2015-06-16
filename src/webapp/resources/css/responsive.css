@@ -26,17 +26,21 @@ nav*/
 /*FOR SAFARI*/
 @media(max-width: 992px) {
 	.nav > li > a {
-		font-size: 13px
+		font-size: 16px
 	}	
 }
 /*end nav*/
 /*section1*/
 @media(min-width: 1600px) {
+	.nav > li > a {
+		font-size: 22px;
+	}
 	.container {
 		width: 1170px;
 	}
 	.header_text {
-		font-size: 49px;
+		font-size: 70px;
+		line-height: 90px;
 		margin-top: 350px;
 	}
 	.btn-box {
@@ -49,14 +53,24 @@ nav*/
 }
 @media(max-width: 992px) {
 	.header_text {
-		font-size: 32px;
-		margin-top: 50px;
+  		font-size: 44px;
+  		margin-top: 100px;
+  		line-height: 60px;
 	}
 	.btn-request {
 		margin-top: 50px;
 	}
 }
 @media(max-width: 768px) {
+	.nav > li > a {
+		font-size: 19px;
+	}
+	nav #bs-example-navbar-collapse-1 {
+		background: rgba(0,0,0, .9);
+	}
+	nav.active #bs-example-navbar-collapse-1 {
+		background: transparent;
+	}
 	#fullpage .section:first-child {
 	  	background-size: cover!important;
 	  	height: auto!important;
@@ -79,9 +93,9 @@ nav*/
 /*section2*/
 @media(min-width: 1600px) {
 	#section1{
-	  margin-top: -15px;
-	  background-color: #fff;
-	  padding-top: 50px;
+	  	margin-top: -15px;
+	  	background-color: #fff;
+	  	padding-top: 50px;
 	}
 	.news .caption h4 {
 		font-size: 27px;
@@ -90,7 +104,11 @@ nav*/
   		font-size: 18px;
 	}
 	.steps {
-	   height: auto; 
+	   height: auto;
+	   background-size: 100% 150%; 
+	}
+	.steps h2 {
+		font-size: 31px;
 	}
 	.steps .col-md-4:not(:last-child):before {
 	  	background-size: 18%;
@@ -111,17 +129,20 @@ nav*/
 	}
 }
 @media(max-width: 992px) {
-/*	.steps {
-	background: #fff;
-	color:#3b3b3b;
-	}*/
+	.steps {
+		background-size: cover;
+		background-position: 0;
+	}
 	.steps .col-md-4:not(:last-child):before {
-		display: none;
+		background-position: 200px 85px;
 	}
 }
 @media(max-width: 768px) {
 	.steps h2 {
   		font-size: 26px;
+	}
+	.steps .col-md-4:not(:last-child):before {
+		display: none;
 	}
 }
 /*end section2*/
@@ -131,23 +152,23 @@ nav*/
 		height: inherit;
 	}
 	#section2 p {
-	  	font-size: 24px;
+	  	font-size: 31px;
 	}	
-	#secton2 p+h3 {
-		font-size: 24px;
-  		font-weight: bold;
+	#section2 h3 {
+		font-size: 31px;
+  		/*font-weight: bold;*/
 	}
 	.leagues .league img {
 	  	height: 700px;
 	  	top: -100px;
-	  	left: -190px;
+	  	left: -165px;
 	  	margin-bottom: -50px;
 	}
 	.btn-box_order {
 		top: -145px;
 	}
 	.btn-box_order.first {
-	  	left: 50px;
+	  	left: 80px;
 	}	
 	.order_button {
 	  	padding: 10px 20px;
@@ -156,16 +177,16 @@ nav*/
 	.leagues .col-md-4:nth-child(2) img {
   		height: 702px;
   		top: -70px;
-  		left: -116px;
+  		left: -121px;
 	}
 	.btn-box_order.second {
   		left: 112px;
 	}
 	.leagues .col-md-4:nth-child(3) img {
-  		left: -70px;
+  		left: -105px;
 	}
 	.btn-box_order.third {
-  		left: 170px;
+  		left: 140px;
 	}
 }
 	.league_mob div:not(.btn){
@@ -248,6 +269,33 @@ nav*/
 		background: url('../images/league_mob3_body2.png') no-repeat;
 	}
 	@media(max-width: 992px) {
+		.leagues .league img {
+			left: -158px;
+		}
+		.btn-box_order.first {
+  			left: 50px;
+		}
+		.modal_icon.first {
+  			right: 14px;
+		}
+		.leagues .col-md-4:nth-child(2) img {
+  			left: -109px;
+		}
+		.btn-box_order.second {
+  			left: 91px;
+		}
+		.modal_icon.second {
+  			right: -25px;
+		}
+		.leagues .col-md-4:nth-child(3) img {
+  			left: -80px;
+		}
+		.btn-box_order.third {
+  			left: 130px;
+		}
+		.modal_icon.third {
+  			right: -62px;
+		}
 		#section2 .row:first-child {
 			height: inherit;
 			margin-bottom: -50px;
@@ -292,7 +340,7 @@ nav*/
 /*section 4*/
 @media(min-width: 1600px) {
 	.about_footbal h1{
-	  font-size: 61px;
+	  font-size: 62px;
 	  margin-top: 150px;
 	}	
 	.about_footbal p {
@@ -306,15 +354,20 @@ nav*/
 	}
 }
 @media(max-width: 992px) {
+	.about_footbal {
+		background-position: 0 0; 
+  		/*background-size: 100%;*/
+	}
 	.about_footbal p {
 		margin-top: 100px;
 	}
 }
 @media(max-width: 768px) {
 	.about_footbal {
-		padding-left: 15px;
-		background: #fff;
-		color: #3b3b3b;
+	  	padding-left: 15px;
+	  	background: #2b2b2d;
+	  	color: #fff;
+	  	margin-top: 80px;
 	}
 	.about_footbal p {
 	margin-bottom: 50px;
@@ -344,7 +397,7 @@ nav*/
 	}	
 	.about_teammate .name {
   		font-size: 19px;
-  		font-weight: bold;
+  		/*font-weight: bold;*/
   		margin: 0;
   		margin-top: 10px;
 	}
@@ -422,7 +475,7 @@ nav*/
 @media(min-width: 1600px) {
 	.contact h1 {
 	  	margin-top: 120px;
-	  	font-size: 49px;
+	  	font-size: 60px;
 	}
 	.contact h1 + p {
 		font-size: 19px;
@@ -505,13 +558,13 @@ nav*/
   		height: 35px;
 	}
 	.modal_icon.first {
-	  	right: 130px;
+	  	right: 105px;
 	}
 	.modal_icon.second {
-	  	right: 67px;
+	  	right: 72px;
 	}
 	.modal_icon.third {
-  		right: 10px;
+  		right: 45px;
 	}		
 } 
 @media(min-width: 992px) {
