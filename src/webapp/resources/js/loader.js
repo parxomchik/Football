@@ -1,8 +1,8 @@
 var cSpeed=9;
-	var cWidth=128;
-	var cHeight=128;
+	var cWidth=64;
+	var cHeight=64;
 	var cTotalFrames=20;
-	var cFrameWidth=128;
+	var cFrameWidth=64;
 	var cImageSrc='./resources/images/sprites.gif';
 	
 	var cImageTimeout=false;

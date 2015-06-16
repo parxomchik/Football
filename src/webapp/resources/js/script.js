@@ -11,7 +11,7 @@
 function initNavbar() {
 
     var scrollSpeed = 250;
-    var scrollOffset = 72;
+    var scrollOffset = 70;
     var easing = 'swing';
 
     $('#navbar-top .navbar-default ul.nav').onePageNav({

@@ -21,7 +21,16 @@ function bg_show() {
 	bg_hide();
 }
 function bg() {
-	$('#bg').vide('./resources/video/background.mp4');
+	$('#bg').vide({
+		volume: 1,
+	    playbackRate: 1,
+	    muted: true,
+	    loop: true,
+	    autoplay: true,
+	    position: '50% 50%',
+	    posterType: 'detect',
+	    resizing: true
+   	});
 	bg_show();
 }
 // $( document ).ready(function() {

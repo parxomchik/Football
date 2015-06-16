@@ -105,7 +105,8 @@ nav*/
 	}
 	.steps {
 	   height: auto;
-	   background-size: 100% 150%; 
+	   background-position: 0px -110px;
+	   background-size: 100% 121%; 
 	}
 	.steps h2 {
 		font-size: 31px;
