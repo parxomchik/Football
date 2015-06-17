@@ -33,7 +33,11 @@ app.config(function($routeProvider) {
         .when('/clientpage/news/news_edit', {
             templateUrl: 'news_edit.html',
             controller: 'news_editCtrl'
-        })   
+        })
+        //.when('/apply', {
+        //    templateUrl: 'apply.html',
+        //    controller: 'applyController'
+        //})
         .otherwise({
             redirectTo: '/404'
         });
@@ -141,5 +145,49 @@ app.controller("clientpageCtrl", function($scope,$http, $alert, $rootScope){
 //            .error(function (data) {
 //                console.log(data)
 //            });
+    }
+});
+
+app.controller("applyController", function($scope,$http) {
+    $scope.applicationSubmit = function(){
+
+        var team_info = {league:"STARTUP", company:$scope.company, website:$scope.website,
+        name:$scope.name,telephone:$scope.telephone,email:$scope.email,payed:false,logo:"blob",
+        players:[
+            {name:$scope.captain.split(' ')[0],surname:$scope.captain.split(' ')[1],role:$scope.captainPost,captain:true},
+            {name:$scope.player2.split(' ')[0],surname:$scope.player2.split(' ')[1],role:$scope.player2Post,captain:false},
+            {name:$scope.player3.split(' ')[0],surname:$scope.player3.split(' ')[1],role:$scope.player3Post,captain:false},
+            {name:$scope.player4.split(' ')[0],surname:$scope.player4.split(' ')[1],role:$scope.player4Post,captain:false}
+        ]};
+        console.log(team_info);
+
+        $http.post("/rest/teams",team_info)
+            .success(function (data) {
+//                if (data !== ""){
+//                    window.location.replace("#/clientpage");
+//                    $rootScope.slugebkis = JSON.parse(data)
+//                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
+
+
+                console.log(data);
+                alert("Спасибо за заявку!");
+
+                //$scope.company=undefined;
+                //$scope.website=undefined;
+                //$scope.name=undefined;
+                //$scope.telephone=undefined;
+                //$scope.email=undefined;
+                //$scope.captain=undefined;
+                //$scope.captainPost=undefined;
+                //$scope.player2=undefined;
+                //$scope.player2Post=undefined;
+                //$scope.player3=undefined;
+                //$scope.player3Post=undefined;
+                //$scope.player4=undefined;
+                //$scope.player4Post=undefined;
+            })
+            .error(function (data){
+                console.log("WRONG")
+            });
     }
 });
