@@ -120,7 +120,7 @@
 
                     <p>
                         <label for="player1">капитан <i class="fa fa-star"></i></label>
-                        <input required ng-pattern="/([\u0410-\u044f]+)\s([\u0410-\u044f]+)$/" type="text" id="player1" name="player1" ng-model="captain"
+                        <input required ng-pattern="/([\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" type="text" id="player1" name="player1" ng-model="captain"
                                placeholder="Николай Боднар">
                         <span style="color: #ff0000; font-size: 12px;"
                               ng-show="apply.player1.$error.required && apply.player1.$dirty">Введите игрока.</span>
@@ -156,7 +156,7 @@
                     <p class="">
                         <label for="player2">игрок 2</label>
                         <input ng-disabled="apply.player1.$invalid || apply.post_cap.$invalid || apply.phone.$invalid || apply.email.$invalid"
-                               ng-pattern="/([\u0410-\u044f]+)\s([\u0410-\u044f]+)$/" required type="text" id="player2" name="player2" ng-model="player2"
+                               ng-pattern="/([\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" required type="text" id="player2" name="player2" ng-model="player2"
                                placeholder="Николай Боднар">
                         <span style="color: #ff0000; font-size: 12px;"
                               ng-show="apply.player2.$error.required && apply.player2.$dirty">Введите игрока.</span>
@@ -176,7 +176,7 @@
                     <p class="">
                         <label for="player3">игрок 3</label>
                         <input ng-disabled="apply.player1.$invalid || apply.post_cap.$invalid || apply.phone.$invalid || apply.email.$invalid"
-                               ng-pattern="/([\u0410-\u044f]+)\s([\u0410-\u044f]+)$/" required type="text" id="player3" name="player3" ng-model="player3"
+                               ng-pattern="/([\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" required type="text" id="player3" name="player3" ng-model="player3"
                                placeholder="Николай Боднар">
                         <span style="color: #ff0000; font-size: 12px;"
                               ng-show="apply.player3.$error.required && apply.player3.$dirty">Введите игрока.</span>
@@ -195,7 +195,7 @@
                     <p class="">
                         <label for="player4">игрок 4</label>
                         <input ng-disabled="apply.player1.$invalid || apply.post_cap.$invalid || apply.phone.$invalid || apply.email.$invalid"
-                               ng-pattern="/([\u0410-\u044f]+)\s([\u0410-\u044f]+)$/" required type="text" id="player4" name="player4" ng-model="player4"
+                               ng-pattern="/([\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" required type="text" id="player4" name="player4" ng-model="player4"
                                placeholder="Николай Боднар">
                         <span style="color: #ff0000; font-size: 12px;"
                               ng-show="apply.player4.$error.required && apply.player4.$dirty">Введите игрока.</span>
