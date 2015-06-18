@@ -76,6 +76,7 @@ ul.nav {
 }
 .navbar-default .navbar-nav > .active > a:hover {
 	color: #f00;
+	border: none;
 }
 .navbar-default .navbar-nav > li > a:focus {
 	color:#fff;

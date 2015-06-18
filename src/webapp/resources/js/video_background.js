@@ -17,23 +17,14 @@ function bg_hide() {
 	// bg_show();
 }
 function bg_show() {
-	$('#bg').fadeIn("slow").delay(20000);
+	$('#bg').fadeIn("slow").delay(11000);
 	bg_hide();
 }
 function bg() {
-	$('#bg').vide({
-		volume: 1,
-	    playbackRate: 1,
-	    muted: true,
-	    loop: true,
-	    autoplay: true,
-	    position: '50% 50%',
-	    posterType: 'detect',
-	    resizing: true
-   	});
+	$('#bg').vide('./resources/video/background.mp4');
 	bg_show();
 }
 // $( document ).ready(function() {
-bg();
+setTimeout("bg()", 2800);
 
 // });

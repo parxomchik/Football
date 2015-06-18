@@ -169,11 +169,11 @@ nav*/
 		top: -145px;
 	}
 	.btn-box_order.first {
-	  	left: 80px;
+	  	left: 78px!important;
 	}	
 	.order_button {
-	  	padding: 10px 20px;
-	  	font-size: 19px;
+	  	padding: 8px 15px!important;
+	  	font-size: 28px!important;
 	}
 	.leagues .col-md-4:nth-child(2) img {
   		height: 702px;
@@ -181,13 +181,13 @@ nav*/
   		left: -121px;
 	}
 	.btn-box_order.second {
-  		left: 112px;
+  		left: 112px!important;
 	}
 	.leagues .col-md-4:nth-child(3) img {
-  		left: -105px;
+  		left: -100px;
 	}
 	.btn-box_order.third {
-  		left: 140px;
+  		left: 145px!important;
 	}
 }
 	.league_mob div:not(.btn){
@@ -268,6 +268,9 @@ nav*/
 	}
 	.leagues .col-xs-12:nth-child(3) .league_mob div .body2 {
 		background: url('../images/league_mob3_body2.png') no-repeat;
+	}
+	.order_button {
+		font-size: 28px;
 	}
 	@media(max-width: 992px) {
 		.leagues .league img {
@@ -565,7 +568,7 @@ nav*/
 	  	right: 72px;
 	}
 	.modal_icon.third {
-  		right: 45px;
+  		right: 40px;
 	}		
 } 
 @media(min-width: 992px) {

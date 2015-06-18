@@ -12,7 +12,7 @@
 	display: inline-block;
 	width: auto;
 	margin: 0 auto;
-	top:-149px;
+	top:-160px;
 }
 .btn-box_contact {
 	position: relative;
@@ -43,17 +43,18 @@
 	width: auto;
 	margin: 0 auto;
 	padding: 5px 10px;
-	font-size: 16px;
+	font-size: 22px;
 	vertical-align: inherit;
   	text-transform: uppercase;
 	color: #16262d!important;
+	font-family: 'MyriadProBoldCondenced', sans-serif;
 }
 .order_button.first {background-color: #ceff0c;}
 .order_button.second {background-color: #ffba00;}
 .order_button.third {background-color: #ff0c3a;}
 .btn-box_order.first {left: 65px;}
-.btn-box_order.second {left: 91px;}
-.btn-box_order.third {left: 115px;}
+.btn-box_order.second {left: 88px;}
+.btn-box_order.third {left: 112px;}
 .btn-request > span, .order_button > span {
 	display: inline-block;
 	opacity: 0;

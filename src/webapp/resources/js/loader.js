@@ -60,7 +60,7 @@ var cSpeed=9;
 	
 	//The following code starts the animation
 	new imageLoader(cImageSrc, 'startAnimation()');
-$(window).load(function(){
+$(window).on('load', function(){
 	// $(".loader1 .circles").fadeOut(4000);
-	$(".loader1").delay(3000).fadeOut(500);
+	$(".loader1").fadeOut();
 });

@@ -64,17 +64,17 @@
 </nav>
 </div>
   <div id="fullpage">
-      <div class="section" id="section">
-      <div id="bg" class="hidden-xs hidden-sm" data-vide-bg="mp4: ./resources/video/background" data-vide-options="loop: false, muted: false, position: 0% 0%"></div>
+      <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section">
+      <div id="bg" class="hidden-xs hidden-sm" data-vide-bg="./resources/video/background" data-vide-options="loop: true, muted: false, position: 0% 0%"></div>
       <!-- mp4: path/to/video1, webm: path/to/video2, ogv: path/to/video3, poster: path/to/poster" -->
       <div class="z_index_1">
 <div class="row">
   <div class="container">
-      <h1 class="text-center header_text hidden-xs">Самый масштабный футбольный ивент для всей <span class="special">Start-UP</span> экосистемы Украины </h1>
+      <h1 class="text-center header_text hidden-xs animated hiding" data-animation="fadeIn" data-delay="300">Самый масштабный футбольный ивент для всей <span class="special">Start-UP</span> экосистемы Украины </h1>
       <h1 class="text-center header_text_mob visible-xs">Самый масштабный футбольный ивент для всей <span class="special">Start-UP</span> экосистемы Украины </h1>
       <div class="container-fluid text-center">
         <div class="btn-box">
-          <a id="btn-request" href="#section2" class="btn btn-request" data-text="подать заявку">
+          <a id="btn-request" href="#section2" class="btn btn-request animated hiding" data-animation="fadeInUp" data-delay="300" data-text="подать заявку">
               <span>п</span><span>о</span><span>д</span><span>а</span><span>т</span><span>ь</span><span>&nbsp;</span><span>з</span><span>а</span><span>я</span><span>в</span><span>к</span><span>у</span>
           </a>
         </div>
@@ -83,10 +83,10 @@
 </div>
 </div>
       </div>
-      <div class="section" id="section1" >
+      <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section1" >
         <div class="row">
           <div class="container">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-4" data-delay="100">
                  <div class="thumbnail news">
       <img src="./resources/images/section2_img.jpg" alt="...">
       <div class="caption">
@@ -100,7 +100,7 @@
       </div>
     </div>
             </div>
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-4" data-delay="300">
                  <div class="thumbnail news">
       <img src="./resources/images/section2_img.jpg" alt="...">
       <div class="caption">
@@ -114,7 +114,7 @@
       </div>
     </div>
             </div>
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-4" data-delay="700">
                  <div class="thumbnail news">
       <img src="./resources/images/section2_img.jpg" alt="...">
       <div class="caption">
@@ -133,22 +133,22 @@
         <div class="row steps margin_top_15" data-stellar-background-ratio="0.8">
           <div class="container">
           <h2 class="upper text-center">Для участия вам нужно выполнить всего 3 шага:</h2>
-           <div class="col-md-4 col-lg-4 col-sm-4">
+           <div class="col-md-4 col-lg-4 col-sm-4 animated hiding" data-animation="fadeInLeft" data-delay="100">
              <div class="circle"><img src="./resources/images/step1.svg" alt="" class="big"></div>
              <p class="text-center">1.Выбрать лигу</p>
            </div>
-           <div class="col-md-4 col-lg-4 col-sm-4">
+           <div class="col-md-4 col-lg-4 col-sm-4 animated hiding" data-animation="fadeInLeft" data-delay="300">
              <div class="circle"><img id="svg" src="./resources/images/step2.svg" alt=""></div>
              <p class="text-center">2.Подать заявку</p>
            </div>
-           <div class="col-md-4 col-lg-4 col-sm-4">
+           <div class="col-md-4 col-lg-4 col-sm-4 animated hiding" data-animation="fadeInLeft" data-delay="700">
              <div class="circle"><img src="./resources/images/step3.svg" alt=""></div>
              <p class="text-center">3.Оплатить</p>
            </div>
           </div>
         </div>
       </div>
-      <div class="section" id="section2" >
+      <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section2" >
         <div class="row margin_top_25">
           <div class="container">
             <p>На рынок спортивных событий Украины выходит качественно новый продукт, своего рода стартап футбольных событий - чемпионат по футболу 3х3 среди всей Startup экосистемы.</p>
@@ -156,7 +156,7 @@
           </div>
           <div class="row">
             <div class="container leagues">
-              <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
+              <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 animated hiding" data-animation="fadeInRight" data-delay="300">
                 <div class="league  hidden-xs">
                   <button type="button" class="modal_icon first" data-toggle="modal" data-target="#myModal"></button>
                   <img src="./resources/images/league1.png" alt="">
@@ -179,7 +179,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
+              <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 animated hiding" data-animation="fadeIn" data-delay="200">
                 <div class="league  hidden-xs">
                   <button type="button" class="modal_icon second" data-toggle="modal" data-target="#myModal"></button>
                   <img src="./resources/images/league2.png" alt="">
@@ -202,7 +202,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
+              <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 animated hiding" data-animation="fadeInLeft" data-delay="300">
                 <div class="league  hidden-xs">
                   <button type="button" class="modal_icon third" data-toggle="modal" data-target="#myModal"></button>
                   <img src="./resources/images/league3.png" alt="">
@@ -232,16 +232,16 @@
       <div class="section" id="section3" >
         <div class="row about_footbal" data-stellar-background-ratio="0.8">
           <div class="container text-center">
-            <h1>ЧТО ТАКОЕ ФУТБОЛЛ 3х3?</h1>
-            <p> Этот вид футбола активно развивается в ведущих футбольных странах Европы. Чемпионаты проводятся регулярно, каждый год с большими международными финалами в конце года. Мы захотели вывести на рынок Украины этот новый и качественно интересный футбольный продукт для всей IT индустрии, потому что понимаем, что этого сейчас очень не хватает.</p>
+            <h1 class="animated hiding" data-animation="fadeInDown" data-delay="100">ЧТО ТАКОЕ ФУТБОЛЛ 3х3?</h1>
+            <p class="animated hiding" data-animation="fadeInUp" data-delay="100"> Этот вид футбола активно развивается в ведущих футбольных странах Европы. Чемпионаты проводятся регулярно, каждый год с большими международными финалами в конце года. Мы захотели вывести на рынок Украины этот новый и качественно интересный футбольный продукт для всей IT индустрии, потому что понимаем, что этого сейчас очень не хватает.</p>
           </div>
         </div>
       </div>
       <div class="section" id="section4" >
 <div class="row">
           <div class="container team">
-            <h1 class="text-center">организаторы</h1>
-            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 text-center">
+            <h1 class="text-center animated hiding" data-animation="fadeIn" data-delay="100">организаторы</h1>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 text-center animated hiding" data-animation="fadeInLeft" data-delay="100">
               <div class="teammate">
                 <img src="./resources/images/team1.jpg" alt="">
               </div>
@@ -270,7 +270,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 text-center">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 text-center animated hiding" data-animation="fadeInRight" data-delay="100">
               <div class="teammate">
                 <img src="./resources/images/team2.jpg" alt="">
               </div>
@@ -302,7 +302,7 @@
           </div>
         </div>
         </div>
-        <div class="section" id="section5" >
+        <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section5" >
         <div class="row">
           <div class="container sponsors">
             <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12 text-center">
@@ -333,12 +333,12 @@
           </div>
         </div> 
         </div>               
-      <div class="section" id="section6" ng-controller="mainCtrl" >
+      <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section6" ng-controller="mainCtrl" >
         <div class="row contact">
           <div class="container">
-            <h1 class="text-center">Свяжитесь с нами</h1>
+            <h1 class="text-center animated hiding" data-animation="fadeIn" data-delay="200">Свяжитесь с нами</h1>
             <form action="" class="margin_top_30">
-                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 animated hiding" data-animation="fadeInLeft" data-delay="100">
                         <div class="row padding_fix">
                             <label for="name"><input type="text" ng-model="feedback_name" name="name" id="name"
                                                      placeholder="ВАШЕ ИМЯ *"></label>
@@ -352,7 +352,7 @@
                                                         id="subject" placeholder="ТЕМА"></label>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix">
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix animated hiding" data-animation="fadeInRight" data-delay="100">
                         <label for="message">
                             <textarea name="message" ng-model="feedback_message" id="message"
                                       placeholder="ВАШЕ СООБЩЕНИЕ *"></textarea>
@@ -360,7 +360,7 @@
                     </div>
             </form>
             <div class="text-center margin_top_20">
-              <div class="btn-box_contact">
+              <div class="btn-box_contact animated hiding" data-animation="fadeInUp" data-delay="100">
                 <a ng-click="feedback_submit()" class="btn btn-request" data-text="отправить">
                   <span>о</span>
                   <span>т</span>
@@ -413,7 +413,7 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content animated hiding" data-animation="bounceIn" data-delay="300">
       <div class="modal-header text-center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           X
@@ -429,15 +429,16 @@
   </div>
 </div>
     <script src="./resources/js/jquery.min.js"></script>
+    <script src="./resources/js/bootstrap.min.js"></script>
+    <script src="./resources/js/jquery.appear.min.js"></script> 
+    <script src="./resources/js/animate.js"></script> 
     <script src="./resources/js/jquery.vide.js"></script> 
     <script src="./resources/js/video_background.js"></script> 
     <script src="./resources/js/contact_validation.js"></script> 
     <script src="./resources/js/scroll.js"></script>
-    <script src="./resources/js/bootstrap.min.js"></script>
     <!-- // <script src="./resources/js/jquery.fullPage.min.js"></script> -->
     <!-- // <script src="./resources/js/vivus.min.js"></script> -->
     <!-- // <script src="./resources/js/svg.js"></script> -->
-    <script src="./resources/js/script.js"></script> 
     <script src="./resources/admin/js/angular.js"></script>
     <script src="./resources/admin/js/angular-animate.js"></script>
     <script src="./resources/admin/js/angular-sanitize.min.js"></script>
@@ -451,5 +452,6 @@
     <script src="./resources/js/nav.js"></script> 
     <script src="./resources/js/paralaks.js"></script> 
     <script src="./resources/js/loader.js"></script> 
+    <script src="./resources/js/script.js"></script> 
   </body>
 </html>

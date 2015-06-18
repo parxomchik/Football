@@ -1,13 +1,3 @@
-// function setheight(){
-//   var clientHeight = document.body.clientHeight;
-//   $('#SECTION').height(clientHeight);
-// }
-// $(document).ready(function() {
-//    function setheight();
-// });
-// $(window).resize(function(){
-//    function setheight();
-// });
 function initNavbar() {
 
     var scrollSpeed = 250;
@@ -81,11 +71,11 @@ function initAnimations() {
     });
 
     // Service hover animation
-	$('.service').hover(function(){
-		$('i', this).addClass('animated tada');
-	},function(){	
-        $('i', this).removeClass('animated tada');
-	});
+	// $('.service').hover(function(){
+	// 	$('i', this).addClass('animated tada');
+	// },function(){	
+ //        $('i', this).removeClass('animated tada');
+	// });
 }
 
 function initTwitterFeed() {
