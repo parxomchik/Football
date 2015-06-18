@@ -52,6 +52,9 @@ nav*/
 	}
 }
 @media(max-width: 992px) {
+	/*animation*/
+	.hiding{opacity: 1}
+	/*end animation*/
 	.header_text {
   		font-size: 44px;
   		margin-top: 100px;
@@ -62,8 +65,13 @@ nav*/
 	}
 }
 @media(max-width: 768px) {
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a:hover {
+		border-bottom: 0px;
+		color: #f00;
+	}
 	.nav > li > a {
 		font-size: 19px;
+		padding: 10px 15px!important;
 	}
 	nav #bs-example-navbar-collapse-1 {
 		background: rgba(0,0,0, .9);
@@ -172,7 +180,7 @@ nav*/
 	  	left: 78px!important;
 	}	
 	.order_button {
-	  	padding: 8px 15px!important;
+	  	padding: 8px 25px!important;
 	  	font-size: 28px!important;
 	}
 	.leagues .col-md-4:nth-child(2) img {
@@ -272,12 +280,13 @@ nav*/
 	.order_button {
 		font-size: 28px;
 	}
+
 	@media(max-width: 992px) {
 		.leagues .league img {
 			left: -158px;
 		}
 		.btn-box_order.first {
-  			left: 50px;
+  			left: 46px!important;
 		}
 		.modal_icon.first {
   			right: 14px;
@@ -286,7 +295,7 @@ nav*/
   			left: -109px;
 		}
 		.btn-box_order.second {
-  			left: 91px;
+  			left: 86px!important;
 		}
 		.modal_icon.second {
   			right: -25px;
@@ -295,7 +304,7 @@ nav*/
   			left: -80px;
 		}
 		.btn-box_order.third {
-  			left: 130px;
+  			left: 126px!important;
 		}
 		.modal_icon.third {
   			right: -62px;
@@ -311,9 +320,42 @@ nav*/
 	}
 	@media(max-width: 768px) {
 		.leagues {
-			padding-left: inherit;
-  			padding-right: inherit;
-		}			
+			width: 320px;
+		}	
+		.leagues .league img {
+			left: -110px!important;
+		}
+		.leagues .col-md-4:nth-child(2) img {
+			top: -190px;
+			left: -102px!important;
+		}
+		.leagues .col-md-4:nth-child(3) img {
+			left: -95px;
+			top: -350px;
+		}
+		.btn-box_order.first {
+			left: 95px!important;
+		}
+		.btn-box_order.second {
+  			top: -295px;
+  			left: 92px!important;
+		}
+		.btn-box_order.third {
+  			top: -430px;
+  			left: 95px!important;
+		}
+		.modal_icon.first {
+  			right: -18px;
+		}
+		.modal_icon.second {
+  			top: -80px;
+  			right: -18px;
+		}
+		.modal_icon.third {
+  			right: -18px;
+  			top: -215px;
+		}
+
 	}
 
 	/*buttons*/
@@ -371,7 +413,7 @@ nav*/
 	  	padding-left: 15px;
 	  	background: #2b2b2d;
 	  	color: #fff;
-	  	margin-top: 80px;
+	  	margin-top: -290px;
 	}
 	.about_footbal p {
 	margin-bottom: 50px;
@@ -565,7 +607,7 @@ nav*/
 	  	right: 105px;
 	}
 	.modal_icon.second {
-	  	right: 72px;
+	  	right: 70px;
 	}
 	.modal_icon.third {
   		right: 40px;

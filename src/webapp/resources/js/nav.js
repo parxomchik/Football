@@ -12,6 +12,6 @@ $('.nav > .index').on('click', function(){
 $('#btn-request').click(function(){
         var el = $('#section2');
         $('body').animate({
-            scrollTop: $(el).offset().top}, 250);
+            scrollTop: $(el).offset().top}, 400);
         return false; 
 });

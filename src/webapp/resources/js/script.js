@@ -1,6 +1,6 @@
 function initNavbar() {
 
-    var scrollSpeed = 250;
+    var scrollSpeed = 400;
     var scrollOffset = 70;
     var easing = 'swing';
 

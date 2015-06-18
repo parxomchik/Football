@@ -17,11 +17,11 @@ function bg_hide() {
 	// bg_show();
 }
 function bg_show() {
-	$('#bg').fadeIn("slow").delay(11000);
+	$('#bg').fadeIn("slow").delay(8500);
 	bg_hide();
 }
 function bg() {
-	$('#bg').vide('./resources/video/background.mp4');
+	// $('#bg').vide('./resources/video/background.mp4');
 	bg_show();
 }
 // $( document ).ready(function() {

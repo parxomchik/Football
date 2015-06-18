@@ -1,3 +1,4 @@
+window_w = document.body.clientWidth;
 function initAnimations() {
     $('.animated').appear(function () {
         var el = $(this);
@@ -15,7 +16,11 @@ function initAnimations() {
             el.removeClass('hiding');
         }
     }, {
-        accY: -60
+        accY:  -150
     });
 }
-initAnimations();
+
+
+if(window_w >= '992'){
+    initAnimations();
+}
