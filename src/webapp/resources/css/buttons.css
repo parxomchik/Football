@@ -9,7 +9,7 @@
 }
 .btn-box_order {
 	position: relative;
-	display: inline-block;
+	display: block;
 	width: auto;
 	margin: 0 auto;
 	top:-160px;
@@ -44,7 +44,8 @@
 	margin: 0 auto;
 	padding: 6px 20px;
 	font-size: 22px;
-	vertical-align: inherit;
+	vertical-align: middle;
+  	line-height: 100%;
   	text-transform: uppercase;
 	color: #16262d!important;
 	font-family: 'MyriadProBoldCondenced', sans-serif;

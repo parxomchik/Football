@@ -174,7 +174,7 @@ nav*/
 	  	margin-bottom: -50px;
 	}
 	.btn-box_order {
-		top: -145px;
+		top: -145px!important;
 	}
 	.btn-box_order.first {
 	  	left: 78px!important;
