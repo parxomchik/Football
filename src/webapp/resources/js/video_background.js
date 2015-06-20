@@ -12,6 +12,7 @@ if(window_w >= '992'){
 else {
 	$('#section').delay(300).css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'});
 }
+
 function bg_hide() {
 	$('#bg').fadeOut("slow");
 	// bg_show();
@@ -28,3 +29,6 @@ function bg() {
 setTimeout("bg()", 2800);
 
 // });
+$('#bg').vide({
+  mp4: './resources/video/background.mp4',
+});

@@ -27,6 +27,9 @@ nav*/
 @media(max-width: 992px) {
 	.nav > li > a {
 		font-size: 16px
+	}
+	ul.nav {
+	margin-top: 29px;
 	}	
 }
 /*end nav*/
@@ -387,11 +390,11 @@ nav*/
 @media(min-width: 1600px) {
 	.about_footbal h1{
 	  font-size: 62px;
-	  margin-top: 150px;
+	  margin-top: 200px;
 	}	
 	.about_footbal p {
   		margin-top: 60px;
-  		margin-bottom: 220px;
+  		margin-bottom: 200px;
   		font-size: 30px;
   		font-style: normal; 
 	}
