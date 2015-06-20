@@ -97,7 +97,7 @@
                         <label for="company_site">имя вашей компании</label>
                         <input required type="text" id="company_name" name="company_name" placeholder="Bionic"
                                ng-model="company">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.company_name.$error.required && applyForm.company_name.$dirty">Необходимо ввести имя компании.</span>
                     </p>
 
@@ -106,7 +106,7 @@
                         <input required type="text" id="company_site" name="company_site"
                                placeholder="www.globallogic.com"
                                ng-model="website">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.company_site.$error.required && applyForm.company_site.$dirty">Необходимо ввести сайт.</span>
                     </p>
 
@@ -114,7 +114,7 @@
                         <label for="team_name">название команды</label>
                         <input required type="text" id="team_name" name="team_name" placeholder="Champions"
                                ng-model="name">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.team_name.$error.required && applyForm.team_name.$dirty">Необходимо ввести имя команды.</span>
                     </p>
 
@@ -122,9 +122,9 @@
                         <label for="player1">капитан <i class="fa fa-star"></i></label>
                         <input required ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" type="text" id="player1" name="player1" ng-model="captain"
                                placeholder="Николай Боднар">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player1.$error.required && applyForm.player1.$dirty">Введите игрока.</span>
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player1.$error.pattern && applyForm.player1.$dirty">Имя должно соответствовать шаблону.</span>
                     </p>
 
@@ -132,7 +132,7 @@
                         <label for="post_cap">должность</label>
                         <input required type="text" id="post_cap" name="post_cap" ng-model="captainPost"
                                placeholder="Senior QA">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.post_cap.$error.required && applyForm.post_cap.$dirty">Необходимо ввести должность.</span>
                     </p>
 
@@ -140,7 +140,7 @@
                         <label for="phone">телефон</label>
                         <input required type="tel" id="phone" name="phone" ng-model="telephone"
                                placeholder="093 468 21 20">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.phone.$error.required && applyForm.phone.$dirty">Необходимо ввести телефон.</span>
                     </p>
 
@@ -148,9 +148,9 @@
                         <label for="email">e-mail</label>
                         <input required type="email" id="email" name="email" ng-model="email"
                                placeholder="user@mail.com">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.email.$error.required && applyForm.email.$dirty">Необходимо ввести email.</span>
-                        <span style="color: #ff0000; font-size: 12px;" ng-show="applyForm.email.$error.email">Неверный формат.</span>
+                        <span class="validate-msg" ng-show="applyForm.email.$error.email">Неверный формат.</span>
                     </p>
 
                     <p class="">
@@ -158,9 +158,9 @@
                         <input ng-disabled="applyForm.player1.$invalid || applyForm.post_cap.$invalid || applyForm.phone.$invalid || applyForm.email.$invalid"
                                ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" required type="text" id="player2" name="player2" ng-model="player2"
                                placeholder="Николай Боднар">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player2.$error.required && applyForm.player2.$dirty">Введите игрока.</span>
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player2.$error.pattern && applyForm.player2.$dirty">Имя должно соответствовать шаблону.</span>
                     </p>
 
@@ -169,7 +169,7 @@
                         <input ng-disabled="applyForm.player1.$invalid || applyForm.post_cap.$invalid || applyForm.phone.$invalid || applyForm.email.$invalid"
                                required type="text" id="post_1" name="post_1" ng-model="player2Post"
                                placeholder="Front-end developer">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.post_1.$error.required && applyForm.post_1.$dirty">Необходимо ввести должность.</span>
                     </p>
 
@@ -178,9 +178,9 @@
                         <input ng-disabled="applyForm.player1.$invalid || applyForm.post_cap.$invalid || applyForm.phone.$invalid || applyForm.email.$invalid"
                                ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" required type="text" id="player3" name="player3" ng-model="player3"
                                placeholder="Николай Боднар">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player3.$error.required && applyForm.player3.$dirty">Введите игрока.</span>
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player3.$error.pattern && applyForm.player3.$dirty">Имя должно соответствовать шаблону.</span>
                     </p>
 
@@ -188,7 +188,7 @@
                         <label for="post_2">должность</label>
                         <input ng-disabled="applyForm.player1.$invalid || applyForm.post_cap.$invalid || applyForm.phone.$invalid || applyForm.email.$invalid"
                                required type="text" id="post_2" name="post_2" ng-model="player3Post" placeholder="CEO">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.post_2.$error.required && applyForm.post_2.$dirty">Необходимо ввести должность.</span>
                     </p>
 
@@ -197,9 +197,9 @@
                         <input ng-disabled="applyForm.player1.$invalid || applyForm.post_cap.$invalid || applyForm.phone.$invalid || applyForm.email.$invalid"
                                ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+\s[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$){1}/" required type="text" id="player4" name="player4" ng-model="player4"
                                placeholder="Николай Боднар">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player4.$error.required && applyForm.player4.$dirty">Введите игрока.</span>
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.player4.$error.pattern && applyForm.player4.$dirty">Имя должно соответствовать шаблону.</span>
                     </p>
 
@@ -208,12 +208,12 @@
                         <input ng-disabled="applyForm.player1.$invalid || applyForm.post_cap.$invalid || applyForm.phone.$invalid || applyForm.email.$invalid"
                                required type="text" id="post_3" name="post_3" ng-model="player4Post"
                                placeholder="Copyrighter">
-                        <span style="color: #ff0000; font-size: 12px;"
+                        <span class="validate-msg"
                               ng-show="applyForm.post_3.$error.required && applyForm.post_3.$dirty">Необходимо ввести должность.</span>
                     </p>
 
                     <div class="continue_bth_block text-center">
-                        <div style="color: #ff0000; font-size: 12px;"
+                        <div class="validate-msg"
                              ng-show="applyForm.$invalid && applyForm.$dirty">Нужно заполнить все поля.</div>
                         <a ng-disabled="applyForm.$invalid" ng-click="applicationSubmit()" class="btn continue_bth">продолжить</a>
 

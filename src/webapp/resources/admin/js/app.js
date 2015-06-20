@@ -43,7 +43,7 @@ app.config(function($routeProvider) {
         });
     //$locationProvider.html5Mode(true);
 });
-app.controller("mainCtrl", function($scope,$http, $alert) {
+app.controller("mainCtrl", function($scope,$http) {
         $scope.feedback_submit = function(){
 
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
@@ -55,11 +55,11 @@ app.controller("mainCtrl", function($scope,$http, $alert) {
 //                    window.location.replace("#/clientpage");
 //                    $rootScope.slugebkis = JSON.parse(data)
 //                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
-            $scope.feedback_name = undefined;
+                $scope.feedback_name = undefined;
                 $scope.feedback_email = undefined;
                 $scope.feedback_subject = undefined;
                 $scope.feedback_message = undefined;
-
+                alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.")
             console.log(data)
                 }
 //                else{

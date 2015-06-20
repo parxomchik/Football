@@ -648,3 +648,7 @@ ul.nav {
 	bottom: 0!important;
 	margin: auto!important;
 }
+
+.validate-msg {
+    color: #ff0000; font-size: 12px;
+}
