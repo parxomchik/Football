@@ -307,17 +307,17 @@
             <form class="margin_top_30" novalidate name="feedbackForm">
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 animated hiding" data-animation="fadeInLeft" data-delay="100">
                         <div class="row padding_fix">
-                            <span class="validate-msg"
+                            <span class="validate-msg feedback-validate-msg"
                                   ng-show="feedbackForm.name.$error.required && feedbackForm.name.$dirty">Необходимо ввести имя.</span>
-                            <span class="validate-msg"
+                            <span class="validate-msg feedback-validate-msg"
                                   ng-show="feedbackForm.name.$error.pattern && feedbackForm.name.$dirty">Имя должно состоять из русских букв.</span>
                             <label for="name"><input type="text" required ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$)/" ng-model="feedback_name" name="name" id="name"
                                                      placeholder="ВАШЕ ИМЯ *"></label>
                         </div>
                         <div class="row padding_fix">
-                            <span class="validate-msg"
+                            <span class="validate-msg feedback-validate-msg"
                                   ng-show="feedbackForm.email.$error.required && feedbackForm.email.$dirty">Необходимо ввести email.</span>
-                            <span class="validate-msg" ng-show="feedbackForm.email.$error.email">Неверный формат.</span>
+                            <span class="validate-msg feedback-validate-msg" ng-show="feedbackForm.email.$error.email">Неверный формат.</span>
                             <label for="email"><input required="true" ng-model="feedback_email" type="email" name="email" id="email"
                                                       placeholder="ВАШ E-MAIL *"></label>
                         </div>
@@ -327,7 +327,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix animated hiding" data-animation="fadeInRight" data-delay="100">
-                        <span class="validate-msg"
+                        <span class="validate-msg feedback-validate-msg"
                               ng-show="feedbackForm.message.$error.required && feedbackForm.message.$dirty">Введите сообщение.</span>
                         <label for="message">
                             <textarea required="true" maxlength="500" name="message" ng-model="feedback_message" id="message"
