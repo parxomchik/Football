@@ -306,14 +306,21 @@
         <div class="row contact">
           <div class="container">
             <h1 class="text-center animated hiding" data-animation="fadeIn" data-delay="200">Свяжитесь с нами</h1>
-            <form action="" class="margin_top_30">
+            <form class="margin_top_30" novalidate name="feedbackForm">
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 animated hiding" data-animation="fadeInLeft" data-delay="100">
                         <div class="row padding_fix">
-                            <label for="name"><input type="text" ng-model="feedback_name" name="name" id="name"
+                            <span class="validate-msg feedback-validate-msg"
+                                  ng-show="feedbackForm.name.$error.required && feedbackForm.name.$dirty">Необходимо ввести имя.</span>
+                            <span class="validate-msg feedback-validate-msg"
+                                  ng-show="feedbackForm.name.$error.pattern && feedbackForm.name.$dirty">Имя должно состоять из русских букв.</span>
+                            <label for="name"><input type="text" required ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$)/" ng-model="feedback_name" name="name" id="name"
                                                      placeholder="ВАШЕ ИМЯ *"></label>
                         </div>
                         <div class="row padding_fix">
-                            <label for="email"><input ng-model="feedback_email" type="text" name="email" id="email"
+                            <span class="validate-msg feedback-validate-msg"
+                                  ng-show="feedbackForm.email.$error.required && feedbackForm.email.$dirty">Необходимо ввести email.</span>
+                            <span class="validate-msg feedback-validate-msg" ng-show="feedbackForm.email.$error.email">Неверный формат.</span>
+                            <label for="email"><input required="true" ng-model="feedback_email" type="email" name="email" id="email"
                                                       placeholder="ВАШ E-MAIL *"></label>
                         </div>
                         <div class="row padding_fix">
@@ -322,15 +329,17 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix animated hiding" data-animation="fadeInRight" data-delay="100">
+                        <span class="validate-msg feedback-validate-msg"
+                              ng-show="feedbackForm.message.$error.required && feedbackForm.message.$dirty">Введите сообщение.</span>
                         <label for="message">
-                            <textarea name="message" ng-model="feedback_message" id="message"
+                            <textarea required="true" maxlength="500" name="message" ng-model="feedback_message" id="message"
                                       placeholder="ВАШЕ СООБЩЕНИЕ *"></textarea>
                         </label>
                     </div>
             </form>
             <div id="section-contact" class="text-center margin_top_20">
               <div class="btn-box_contact animated hiding" data-animation="fadeInUp" data-delay="100">
-                <a ng-click="feedback_submit()" class="btn btn-request" data-text="отправить">
+                <a ng-disabled="feedbackForm.$invalid" ng-click="feedback_submit()" class="btn btn-request" data-text="отправить">
                   <span>о</span>
                   <span>т</span>
                   <span>п</span>
@@ -403,7 +412,7 @@
     <script src="./resources/js/animate.js"></script> 
     <script src="./resources/js/jquery.vide.js"></script> 
     <script src="./resources/js/video_background.js"></script> 
-    <script src="./resources/js/contact_validation.js"></script> 
+    <!--<script src="./resources/js/contact_validation.js"></script> -->
     <script src="./resources/js/scroll.js"></script>
     <!-- // <script src="./resources/js/jquery.fullPage.min.js"></script> -->
     <!-- // <script src="./resources/js/vivus.min.js"></script> -->
