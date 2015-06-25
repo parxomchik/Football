@@ -85,7 +85,7 @@ app.controller("mainCtrl", function($scope,$http) {
 $scope.news_readMore = function(new_id){
 //console.log(new_id);
 //        var news_info = {"id":new_id};
-        console.log(news_info);
+//        console.log(new_id);
         $http.get("/rest/news/"+new_id)
             .success(function (data) {
             console.log(data);
