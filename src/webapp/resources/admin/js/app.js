@@ -44,7 +44,7 @@ app.config(function($routeProvider) {
     //$locationProvider.html5Mode(true);
 });
 app.controller("mainCtrl", function($scope,$http) {
-    $http.get("/rest/feedbacks")
+    $http.get("/rest/news")
         .success(function (data) {
         $scope.news = data;
 
