@@ -44,6 +44,18 @@ app.config(function($routeProvider) {
     //$locationProvider.html5Mode(true);
 });
 app.controller("mainCtrl", function($scope,$http) {
+    $http.get("/rest/feedbacks")
+        .success(function (data) {
+        $scope.news = data;
+
+        }
+    )
+        .error(function (data){
+            console.log(data)
+        });
+
+
+
         $scope.feedback_submit = function(){
 
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
