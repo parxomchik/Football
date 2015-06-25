@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" ng-app="mgcrea.ngStrapDocs">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,19 +62,17 @@
 </nav>
 </div>
   <div id="news_page">           
-    <div class="row news_page">
+    <div class="row news_page" ng-controller="mainCtrl">
       <div class="container">
         <div class="carousel_fluide padding_fix">
           <img src="./resources/images/news_banner.jpg" alt="">
         </div>
         <div class="clearfix"></div>
-          <p id="" class="news_header">lorem ipsum item lorem ipsum item</p>
+          <p id="" class="news_header">{{currentNews.header}}</p>
           <hr/>
-          <p id="" class="author">by John Doe &nbsp;/&nbsp; in Category&nbsp; /&nbsp; tags: lorem, ipsum, dolor, sit amet</p>
+          <p id="" class="author">{{currentNews.author}}</p>
           <hr/>
-          <p class="news_text">Ut suscipit quis mauris ut hendrerit. Proin pulvinar velit porta, porta leo bibendum, ac sodales risus aliquam erat volutpat morbi facilisis   justo vitae sem pretium, nec imperdiet lacus tempus. Sed vulputate molestie massa, lobortis sagittis quam commodo in duis luctus tellus sollicitudin non. Aenean  velit elit, ornare at ante sit amet, gravida porttitor ipsum. Sed pharetra magna ac quam a hendrerit. 
-          Donec placerat elit est, in lacinia magna hendrerit non. Suspendisse potenti. Proin vitae risus ac tellus gravida pretium phasellus sagittis laoreet sapien eget tincidunt. Nullam rhoncus, velit vel dictum fringilla, magna nulla consequat mauris, sit amet scelerisque dolor neque et sapien. Fusce aliquet condimentum sapien, sit amet sagittis ipsum accumsan viverra. Morbi rhoncus vulputate est, vel mentum felis sollicitudin non. Aenean velit elit, ornare at ante sit amet, gravida porttitor ipsum. Sed pharetra magna ac quam a hendrerit ultrices liquam condimentum arcu a condimentum tincidunt donec vitae sem velit. Donec nisl felis, suscipit faucibus lorem nec, consequat porttitor sem cras dapibus posuere velit, ac tempor orci gravida eget. Nam pretium facilisis laoreet. Integer sem enim, malesuada non risus. eu lorem.
-          , lobortis. ullamcorper nisi. Morbi quis metus mollis tortor vestibulum eleifend.
+          <p class="news_text">{{currentNews.text}}
           </p>
           <hr/>
           <div class="social col-xs-12 col-md-6 col-sm-6 text_center_mob">
