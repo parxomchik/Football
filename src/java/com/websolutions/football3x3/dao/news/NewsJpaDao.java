@@ -17,6 +17,6 @@ public class NewsJpaDao extends JpaDao<News,Integer> implements NewsDao {
 
     @Override
     public List<News> findActive() {
-        return getEntityManager().createQuery("SELECT n from News n where n.active=true").getResultList();
+        return getEntityManager().createQuery("SELECT n from News n where n.active=true order by n.date desc").getResultList();
     }
 }

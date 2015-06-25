@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `news`;
   `descriptionTags` VARCHAR(200),
   `keywords` VARCHAR(200),
   `header` VARCHAR(100) not null,
-  `shortDescription` VARCHAR(150),
+  `shortDescription` VARCHAR(200),
   `text` TEXT,
   `picture` LONGBLOB,
   `date` TIMESTAMP,
