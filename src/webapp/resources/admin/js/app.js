@@ -45,7 +45,7 @@ app.config(function($routeProvider) {
 });
 app.controller("mainCtrl", function($scope,$http) {
     $scope.news = [{
-        //"id":1,
+        "id":1,
         //"author":"Тарас Михалевич",
         "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”",
         "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
@@ -53,7 +53,7 @@ app.controller("mainCtrl", function($scope,$http) {
         "date":1435145358001
         //"picture":null
         },{
-        //"id":1,
+        "id":2,
         //"author":"Тарас Михалевич",
         "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup1”",
         "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
@@ -62,7 +62,7 @@ app.controller("mainCtrl", function($scope,$http) {
         //"picture":null
         },
         {
-            //"id":1,
+            "id":3,
         "author":"Тарас Михалевич",
         "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup2”",
         "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
@@ -82,8 +82,19 @@ app.controller("mainCtrl", function($scope,$http) {
     //        console.log(data)
     //    });
 
+$scope.news_readMore = function(new_id){
+//console.log(new_id);
+        var news_info = {"id":new_id};
+        console.log(news_info);
+        $http.post("/rest/news",news_info)
+            .success(function (data) {
 
-
+            }
+        )
+            .error(function (data){
+                console.log(data)
+            });
+        }
         $scope.feedback_submit = function(){
 
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
