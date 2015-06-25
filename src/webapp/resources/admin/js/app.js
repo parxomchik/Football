@@ -93,7 +93,7 @@ $scope.news_readMore = function(new_id){
         $http.get("/rest/news/"+new_id)
             .success(function (data) {
             console.log(data);
-                //window.location.replace(/news.html)
+                window.location.replace(#/news.html)
                 $scope.currentNews = data;
 
             }
