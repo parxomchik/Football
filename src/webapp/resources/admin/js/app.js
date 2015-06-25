@@ -42,6 +42,10 @@ app.config(function($routeProvider) {
             templateUrl: 'news.html',
             controller: 'mainCtrl'
         })
+        .when('/', {
+            templateUrl: 'index.html',
+            controller: 'mainCtrl'
+        })
         .otherwise({
             redirectTo: '/404'
         });
@@ -93,7 +97,7 @@ $scope.news_readMore = function(new_id){
         $http.get("/rest/news/"+new_id)
             .success(function (data) {
             console.log(data);
-                window.location.replace(#/news.html)
+                window.location.replace('#/news.html')
                 $scope.currentNews = data;
 
             }
