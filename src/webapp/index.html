@@ -17,6 +17,8 @@
     <link href="./resources/css/buttons.css" rel="stylesheet">
     <link href="./resources/css/fonts.css" rel="stylesheet">
     <link href="./resources/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="../resources/admin/css/angular-motion.css"/>
+      <link rel="stylesheet" href="../resources/admin/css/librares.min.css"/>
     <!--GOOGLE FONTS-->
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
@@ -28,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
   <!--LOADER-->
   <div class="loader1">
     <div class="loader2">
@@ -88,48 +90,48 @@
       <div class="section" id="section1" >
         <div class="row">
           <div class="container animated hiding" data-animation="fadeIn" data-delay="100" >
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-4" ng-repeat="new in news">
                  <div class="thumbnail news">
       <img src="./resources/images/section2_img.jpg" alt="...">
       <div class="caption">
-        <h4>Самый масштабный футбольный ивент для всей StartUP&IT индустрии Украины.</h4>
+        <h4>{{new.header}}</h4>
         <hr/>
-        <p>April 25, 2015</p>
+        <p>{{new.date}}</p>
         <hr/>
-        <p>lorem lorem lorem lorem lorem</p>
-        <p><a href="">Read more...</a></p>
+        <p>{{new.shortDescription}}</p>
+        <p><a href="" ng-click="news_readMore(new.id)">Read more...</a></p>
         <hr/>
       </div>
     </div>
             </div>
-            <div class="col-md-4 col-lg-4">
-                 <div class="thumbnail news">
-      <img src="./resources/images/section2_img.jpg" alt="...">
-      <div class="caption">
-        <h4>Формат проведения  “StartUpFootball3x3Cup”</h4>
-        <hr/>
-        <p>April 25, 2015</p>
-        <hr/>
-        <p>lorem lorem lorem lorem lorem</p>
-        <p><a href="">Read more...</a></p>
-        <hr/>
-      </div>
-    </div>
-            </div>
-            <div class="col-md-4 col-lg-4">
-                 <div class="thumbnail news">
-      <img src="./resources/images/section2_img.jpg" alt="...">
-      <div class="caption">
-        <h4>Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”</h4>
-        <hr/>
-        <p>April 25, 2015</p>
-        <hr/>
-        <p>lorem lorem lorem lorem lorem</p>
-        <p><a href="">Read more...</a></p>
-        <hr/>
-      </div>
-    </div>
-            </div>
+            <!--<div class="col-md-4 col-lg-4">-->
+                 <!--<div class="thumbnail news">-->
+      <!--<img src="./resources/images/section2_img.jpg" alt="...">-->
+      <!--<div class="caption">-->
+        <!--<h4>Формат проведения  “StartUpFootball3x3Cup”</h4>-->
+        <!--<hr/>-->
+        <!--<p>April 25, 2015</p>-->
+        <!--<hr/>-->
+        <!--<p>{{news.shortDescription}}</p>-->
+        <!--<p><a href="">Read more...</a></p>-->
+        <!--<hr/>-->
+      <!--</div>-->
+    <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-4 col-lg-4">-->
+                 <!--<div class="thumbnail news">-->
+      <!--<img src="./resources/images/section2_img.jpg" alt="...">-->
+      <!--<div class="caption">-->
+        <!--<h4>Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”</h4>-->
+        <!--<hr/>-->
+        <!--<p>April 25, 2015</p>-->
+        <!--<hr/>-->
+        <!--<p>lorem lorem lorem lorem lorem</p>-->
+        <!--<p><a href="">Read more...</a></p>-->
+        <!--<hr/>-->
+      <!--</div>-->
+    <!--</div>-->
+            <!--</div>-->
           </div>
         </div>
         <div class="row steps margin_top_15" data-stellar-background-ratio="0.8">
@@ -302,7 +304,7 @@
           </div>
         </div> 
         </div>               
-      <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section6" ng-controller="mainCtrl" >
+      <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section6"  >
         <div class="row contact">
           <div class="container">
             <h1 class="text-center animated hiding" data-animation="fadeIn" data-delay="200">Свяжитесь с нами</h1>

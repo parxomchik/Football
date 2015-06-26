@@ -28,8 +28,17 @@ public class NewsResource {
     @GET
     @Path("active")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<News> getActiveNews() {
+    public List<News> getActiveNews(@QueryParam("count") final Integer count) {
+        List<News> resultList = newsDao.findActive();
+        try {
+            if (count != null && !count.equals(Integer.valueOf(0))) {
+                return resultList.subList(0, count);
+            }
+        } catch (IndexOutOfBoundsException e) {
+            return newsDao.findActive();
+        }
         return newsDao.findActive();
+
     }
 
     @GET
