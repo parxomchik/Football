@@ -13,6 +13,9 @@ hr {
 /*animation*/
 .hiding { opacity: 0 }
 .showing { opacity: 1 }
+@media(max-width: 768px) {
+	.hiding { opacity: 1!important; }
+}
 /*STYLE FOR NAV*/
 nav {
 	background: transparent!important;

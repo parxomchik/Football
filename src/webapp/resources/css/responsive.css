@@ -68,6 +68,9 @@ nav*/
 	}
 }
 @media(max-width: 768px) {
+	#menu {
+		margin-top: 15px;
+	}
 	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a:hover {
 		border-bottom: 0px;
 		color: #f00;
