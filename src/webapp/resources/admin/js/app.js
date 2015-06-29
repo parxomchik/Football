@@ -7,8 +7,8 @@ angular.module('mgcrea.ngStrapDocs');
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'login_page.html',
-            controller: 'loginCtrl'
+            templateUrl: 'main.html',
+            controller: 'mainCtrl'
         })
         .when('/home', {
             templateUrl: 'login_page.html',
@@ -42,48 +42,16 @@ app.config(function($routeProvider) {
             templateUrl: 'news.html',
             controller: 'mainCtrl'
         })
-        .when('/', {
-            templateUrl: 'index.html',
-            controller: 'mainCtrl'
-        })
         .otherwise({
             redirectTo: '/404'
         });
     //$locationProvider.html5Mode(true);
 });
 app.controller("mainCtrl", function($scope,$http) {
-    //$scope.news = [{
-    //    "id":1,
-    //    //"author":"Тарас Михалевич",
-    //    "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”",
-    //    "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
-    //    //"active":true,
-    //    "date":1435145358001
-    //    //"picture":null
-    //    },{
-    //    "id":2,
-    //    //"author":"Тарас Михалевич",
-    //    "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup1”",
-    //    "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
-    //    //"active":true,
-    //    "date":1435145358002
-    //    //"picture":null
-    //    },
-    //    {
-    //        "id":3,
-    //    "author":"Тарас Михалевич",
-    //    "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup2”",
-    //    "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
-    //    //"active":true,
-    //    "date":1435145358003
-    //    //"picture":null
-    //    }];
-
 
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
         $scope.news = data;
-        //$scope.news = {"id":3,"author":"Тарас Михалевич","titleTags":null,"descriptionTags":null,"keywords":null,"header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”","shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...","text":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги – «Startups League» , «Investor League», «IT-Industry League».\n\n«Startups League»  - собиарет 32 команды исключительно от украинских стартапов.\n«Investor League» - собирает 16 команд от украинских и международных венчурных фондов, бизнес-ангелов, инвест банков, Private Equity фондов и бизнес инкубаторов.\n«IT-Industry League» - собирает 64 команды от украинских девелоперов, веб-масетеров, студий веб-дизайна, платежных систем, информационных порталов и других представителей IT индустрии Украины.\n\nДля того, что бы стать участниками чемпионата, обязательно нужно пройти тщательную процедуру регистрации команд. Мы подходим к регистрации команд очень аккуратно и предусмотрительно, так как хотим что бы все игры проходили по принципу Fair-Play и в равных условиях. К чемпионату не допускаются игроки, не являющиеся официальными представителями компании, в которой работают или стартапа, который только выходит или уже вышел на рынок. Правда для Startup League организаторы предоставляют опцию привлечь сразу двух игроков со стороны, в случае, если в команде стартапа только один человек играет в футбол.\nСхема розыгрыша состоит из двух этапов - групповой и play-off.\nНа групповом этапе все команды делятся на группы по 4 команды и играют один круг каждая с каждой. По результату набранных очей на групповом этапе первые два места в группе выходят в Play-off Gold, а третье и четвертое места - в Play-off Silver. \nТаким образом, каждая команда сыграет четыре гарантированных игры - три на групповом этапе и одну на этапе Play-off. Дальше игры  идут на вылет до определения первого, второго и третьего мест.\nКак думаете, до какого этапа дойдет ваша команда?","active":true,"date":1435145358000,"picture":null}
         }
     )
         .error(function (data){
@@ -91,9 +59,6 @@ app.controller("mainCtrl", function($scope,$http) {
         });
 
 $scope.news_readMore = function(new_id){
-//console.log(new_id);
-//        var news_info = {"id":new_id};
-//        console.log(new_id);
         $http.get("/rest/news/"+new_id)
             .success(function (data) {
             console.log(data);
@@ -110,13 +75,8 @@ $scope.news_readMore = function(new_id){
 
         var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
         console.log(feedback_info);
-//        window.location.replace("#/clientpage");
         $http.post("/rest/feedbacks",feedback_info)
             .success(function (data) {
-//                if (data !== ""){
-//                    window.location.replace("#/clientpage");
-//                    $rootScope.slugebkis = JSON.parse(data)
-//                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
                 $scope.feedback_name = undefined;
                 $scope.feedback_email = undefined;
                 $scope.feedback_subject = undefined;
@@ -124,10 +84,6 @@ $scope.news_readMore = function(new_id){
                 alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.")
             console.log(data)
                 }
-//                else{
-////                    parol.show();
-//                     alert("error");
-//                }
 
             )
             .error(function (data){
