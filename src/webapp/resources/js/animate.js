@@ -21,6 +21,12 @@ function initAnimations() {
 }
 
 
-if(window_w >= '992'){
-    initAnimations();
-}
+// if(window_w >= '992'){
+//     initAnimations();
+// }
+initAnimations();
+// $( window ).resize(function() {
+//   if(window_w >= '992'){
+//     initAnimations();
+// }
+// });

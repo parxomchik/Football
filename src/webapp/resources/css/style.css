@@ -13,6 +13,9 @@ hr {
 /*animation*/
 .hiding { opacity: 0 }
 .showing { opacity: 1 }
+@media(max-width: 768px) {
+	.hiding { opacity: 1!important; }
+}
 /*STYLE FOR NAV*/
 nav {
 	background: transparent!important;
@@ -664,4 +667,39 @@ ul.nav {
 
 .contact form>div>.row:nth-child(2) span {
     top: 55px;
+}
+/*for alertify*/
+.alertify .ajs-dialog {
+	top: 180px!important;
+	max-width:none!important;
+	width: 100%!important;
+	background-color: rgb(35,35,35)!important;
+  	text-align: center!important;
+}
+.alertify .ajs-commands {
+  display: none!important;
+}
+.alertify .ajs-header {
+  background-color: rgb(35,35,35)!important;
+  color: #fff!important;
+}
+.alertify .ajs-body {
+  display: inline-block!important;
+  margin: 0 auto!important;
+  color: #fff!important;
+}
+.alertify .ajs-footer {
+  background-color: rgb(35,35,35)!important;
+}
+.alertify .ajs-footer .ajs-buttons.ajs-primary {
+  text-align: center!important;
+}
+.alertify-notifier {
+	display: none;
+}
+.alertify .ajs-footer .ajs-buttons .ajs-button {
+  background-color: transparent!important;
+  color: #fff!important;
+  outline: none!important;
+  border: 1px solid #fff!important;
 }
