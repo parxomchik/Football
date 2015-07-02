@@ -59,6 +59,7 @@ app.controller("mainCtrl", function ($scope, $http) {
             for (var i = 0; i < data.length; i++) {
                 var tempDate = new Date(data[i].date);
                 data[i].date = tempDate.getDate() + "/" + tempDate.getMonth() + "/" + tempDate.getFullYear();
+                data[i].picture = "data:image/jpeg;base64," + data[i].picture;
             }
         }
     )
@@ -127,6 +128,7 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
         .success(function (data) {
             console.log(data);
             //window.location.replace('/news.html'+'?id='+new_id)
+            data.picture = "data:image/jpeg;base64," + data.picture;
             $scope.currentNews = data;
         }
     )
@@ -241,8 +243,14 @@ app.controller("applyController", function ($scope, $http) {
     $scope.applicationSubmit = function () {
 
         var team_info = {
-            league: "STARTUP", company: $scope.company, website: $scope.website,
-            name: $scope.name, telephone: $scope.telephone, email: $scope.email, payed: false, logo: imgData.split(',')[1],
+            league: "STARTUP",
+            company: $scope.company,
+            website: $scope.website,
+            name: $scope.name,
+            telephone: $scope.telephone,
+            email: $scope.email,
+            payed: false,
+            logo: imgData.split(',')[1],
             players: [
                 {
                     name: $scope.captain.split(' ')[0],
