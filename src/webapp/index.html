@@ -17,6 +17,7 @@
     <link href="./resources/css/buttons.css" rel="stylesheet">
     <link href="./resources/css/fonts.css" rel="stylesheet">
     <link href="./resources/css/font-awesome.css" rel="stylesheet">
+    <link href="./resources/css/alertify.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../resources/admin/css/angular-motion.css"/>
       <link rel="stylesheet" href="../resources/admin/css/librares.min.css"/>
     <!--GOOGLE FONTS-->
@@ -341,7 +342,7 @@
             </form>
             <div id="section-contact" class="text-center margin_top_20">
               <div class="btn-box_contact animated hiding" data-animation="fadeInUp" data-delay="100">
-                <a ng-disabled="feedbackForm.$invalid" ng-click="feedback_submit()" class="btn btn-request" data-text="отправить">
+                <a id="contact_submit_button" ng-disabled="feedbackForm.$invalid" ng-click="feedback_submit()" class="btn btn-request" data-text="отправить">
                   <span>о</span>
                   <span>т</span>
                   <span>п</span>
@@ -433,5 +434,7 @@
     <script src="./resources/js/paralaks.js"></script> 
     <script src="./resources/js/loader.js"></script> 
     <script src="./resources/js/script.js"></script> 
+    <script src="./resources/js/alertify.min.js"></script> 
+    <script src="./resources/js/alertify.js"></script> 
   </body>
 </html>
