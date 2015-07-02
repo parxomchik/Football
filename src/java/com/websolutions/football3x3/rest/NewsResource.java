@@ -19,12 +19,21 @@ public class NewsResource {
     @Inject
     private NewsDao newsDao;
 
+    /**
+     * Method to get all news, both active and inactive.
+     * @return list of news in JSON format
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<News> getAllNews() {
         return newsDao.findAll();
     }
 
+    /**
+     * Method to get all active news, list is ordered by date desc.
+     * @param count number of news from list
+     * @return list of news in JSON format
+     */
     @GET
     @Path("active")
     @Produces(MediaType.APPLICATION_JSON)
@@ -41,6 +50,12 @@ public class NewsResource {
 
     }
 
+    /**
+     * Get News entity by id.
+     * @param id news identifier
+     * @return single News in JSON format
+     * @throws javax.ws.rs.WebApplicationException 404
+     */
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -52,6 +67,12 @@ public class NewsResource {
         return news;
     }
 
+    /**
+     * Saves new entity to database.
+     * @param newsEntry new News object
+     * @return merged entity
+     */
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -59,6 +80,12 @@ public class NewsResource {
         return newsDao.save(newsEntry);
     }
 
+    /**
+     * Updates News entity with certain id.
+     * @param id id of entity to update
+     * @param newsEntry changed entity
+     * @return merged entity
+     */
     @PUT
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -67,6 +94,10 @@ public class NewsResource {
         return newsDao.save(newsEntry);
     }
 
+    /**
+     * Deletes News entity with certain id.
+     * @param id id of entity to delete
+     */
     @DELETE
     @Path("{id}")
     public void deleteNews(@PathParam("id") Integer id) {
