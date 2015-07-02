@@ -165,6 +165,8 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
 //    console.log($scope.token)
 });
 
+
+
 app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
     $rootScope.name = {};
     var parol = $alert({
