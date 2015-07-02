@@ -62,13 +62,13 @@
 </nav>
 </div>
   <div id="news_page">           
-    <div class="row news_page" ng-controller="mainCtrl">
+    <div class="row news_page" ng-controller="newsPageCtrl">
       <div class="container">
         <div class="carousel_fluide padding_fix">
           <img src="./resources/images/news_banner.jpg" alt="">
         </div>
         <div class="clearfix"></div>
-          <p class="news_header">{{currentNews.header}}</p>
+        <p class="news_header">{{currentNews.header}}</p>
           <hr/>
           <p class="author">{{currentNews.author}}</p>
           <hr/>
@@ -185,7 +185,13 @@
   </div>
       <!--MODAL-->
 
-
+  <script src="./resources/admin/js/angular.js"></script>
+  <script src="./resources/admin/js/angular-animate.js"></script>
+  <script src="./resources/admin/js/angular-sanitize.min.js"></script>
+  <script src="./resources/admin/js/angular-strap.min.js"></script>
+  <script src="./resources/admin/js/angular-strap.tpl.min.js"></script>
+  <script src="./resources/admin/js/angular-route.min.js"></script>
+  <script src="./resources/admin/js/app.js"></script>
     <script src="./resources/js/jquery.min.js"></script>
     <script src="./resources/js/bootstrap.min.js"></script>
     <!-- // <script src="./resources/js/jquery.fullPage.min.js"></script> -->
@@ -193,7 +199,15 @@
     <script src="./resources/js/svg.js"></script>
     <!-- // <script src="./resources/js/jquery.scrollTo.min.js"></script> -->
     <!-- // <script src="./resources/js/jquery.nav.min.js"></script> -->
-    <script src="./resources/js/script.js"></script> 
-    
+    <script src="./resources/js/script.js"></script>
+  <!--<script>-->
+    <!--var url = window.location;-->
+    <!--console.log(url);-->
+    <!--var urlAux = window.location.href.split("=")[1]-->
+    <!--console.log(urlAux);-->
+    <!--var img_id = urlAux;-->
+    <!--console.log(img_id);-->
+
+  <!--</script>-->
   </body>
 </html>

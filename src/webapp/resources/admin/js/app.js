@@ -6,10 +6,10 @@ angular.module('mgcrea.ngStrapDocs');
 
 app.config(function($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'login_page.html',
-            controller: 'loginCtrl'
-        })
+        //.when('/', {
+        //    templateUrl: 'login_page.html',
+        //    controller: 'loginCtrl'
+        //})
         .when('/home', {
             templateUrl: 'login_page.html',
             controller: 'loginCtrl'
@@ -38,14 +38,14 @@ app.config(function($routeProvider) {
         //    templateUrl: 'apply.html',
         //    controller: 'applyController'
         //})
-        .when('/news', {
-            templateUrl: 'news.html',
-            controller: 'mainCtrl'
-        })
-        .when('/', {
-            templateUrl: 'index.html',
-            controller: 'mainCtrl'
-        })
+        //.when('/news', {
+        //    templateUrl: 'news.html',
+        //    controller: 'mainCtrl'
+        //})
+        //.when('/', {
+        //    templateUrl: 'index.html',
+        //    controller: 'mainCtrl'
+        //})
         .otherwise({
             redirectTo: '/404'
         });
@@ -111,12 +111,29 @@ $scope.news_readMore = function(new_id){
             });
     }
 });
+app.controller("newsPageCtrl", function($scope,$http, $location, $routeParams) {
+    var url = window.location;
+    console.log(url);
+    var urlAux = window.location.href.split("=")[1]
+    console.log(urlAux);
+    var img_id = urlAux;
+    $http.get("/rest/news/"+urlAux)
+        .success(function (data) {
+            console.log(data);
+            //window.location.replace('/news.html'+'?id='+new_id)
+            $scope.currentNews = data;
+        }
+    )
+//    $scope.location = $location.url();
+//    console.log($scope.location)
+//    $scope.token = $location.hash().split('=')[1];
+//    console.log($scope.token)
+});
+
 app.controller("loginCtrl", function($scope,$http, $alert, $rootScope) {
     $rootScope.name = {};
     var parol = $alert({
         title: "Невірний пароль",
-        //content: 'Best check yo self, you\'re not looking too good.',
-        //placement: 'top',
         type: 'danger',
         container : "#error_msg",
         duration : '3',
