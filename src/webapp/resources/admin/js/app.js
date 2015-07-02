@@ -1,10 +1,10 @@
-var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap','ngRoute']);
+var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute']);
 
 'use strict';
 
 angular.module('mgcrea.ngStrapDocs');
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
         //.when('/', {
         //    templateUrl: 'login_page.html',
@@ -17,19 +17,19 @@ app.config(function($routeProvider) {
         .when('/clientpage', {
             templateUrl: 'news.html',
             controller: 'clientpageCtrl'
-        })  
+        })
         .when('/clientpage/news', {
             templateUrl: 'news.html',
             controller: 'newsCtrl'
-        }) 
+        })
         .when('/clientpage/teams', {
             templateUrl: 'teams.html',
             controller: 'teamsCtrl'
-        })   
+        })
         .when('/clientpage/feedback', {
             templateUrl: 'feedback.html',
             controller: 'feedbackCtrl'
-        })  
+        })
         .when('/clientpage/news/news_edit', {
             templateUrl: 'news_edit.html',
             controller: 'news_editCtrl'
@@ -51,43 +51,48 @@ app.config(function($routeProvider) {
         });
     //$locationProvider.html5Mode(true);
 });
-app.controller("mainCtrl", function($scope,$http) {
+app.controller("mainCtrl", function ($scope, $http) {
 
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
-        $scope.news = data;
-        for (var i=0; i<data.length;i++) {
-            var tempDate = new Date(data[i].date);
-            data[i].date=tempDate.getDate()+"/"+tempDate.getMonth()+"/"+tempDate.getFullYear();
-        }
+            $scope.news = data;
+            for (var i = 0; i < data.length; i++) {
+                var tempDate = new Date(data[i].date);
+                data[i].date = tempDate.getDate() + "/" + tempDate.getMonth() + "/" + tempDate.getFullYear();
+            }
         }
     )
-        .error(function (data){
+        .error(function (data) {
             console.log(data)
         });
 
-$scope.news_readMore = function(new_id){
+    $scope.news_readMore = function (new_id) {
 //console.log(new_id);
 //        var news_info = {"id":new_id};
 //        console.log(new_id);
-        $http.get("/rest/news/"+new_id)
+        $http.get("/rest/news/" + new_id)
             .success(function (data) {
-            console.log(data);
-                window.location.replace('/news.html'+'?id='+new_id)
+                console.log(data);
+                window.location.replace('/news.html' + '?id=' + new_id)
                 $scope.currentNews = data;
 
             }
         )
-            .error(function (data){
+            .error(function (data) {
                 console.log(data)
             });
-        }
-        $scope.feedback_submit = function(){
+    }
+    $scope.feedback_submit = function () {
 
-        var feedback_info = {name:$scope.feedback_name, email:$scope.feedback_email, subject:$scope.feedback_subject, message:$scope.feedback_message};
+        var feedback_info = {
+            name: $scope.feedback_name,
+            email: $scope.feedback_email,
+            subject: $scope.feedback_subject,
+            message: $scope.feedback_message
+        };
         console.log(feedback_info);
 //        window.location.replace("#/clientpage");
-        $http.post("/rest/feedbacks",feedback_info)
+        $http.post("/rest/feedbacks", feedback_info)
             .success(function (data) {
 //                if (data !== ""){
 //                    window.location.replace("#/clientpage");
@@ -98,26 +103,27 @@ $scope.news_readMore = function(new_id){
                 $scope.feedback_subject = undefined;
                 $scope.feedback_message = undefined;
                 alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.")
-            console.log(data)
-                }
+                console.log(data)
+            }
 //                else{
 ////                    parol.show();
 //                     alert("error");
 //                }
 
-            )
-            .error(function (data){
+        )
+            .error(function (data) {
                 console.log(data)
             });
     }
 });
-app.controller("newsPageCtrl", function($scope,$http, $location, $routeParams) {
+
+app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams) {
     var url = window.location;
     console.log(url);
     var urlAux = window.location.href.split("=")[1]
     console.log(urlAux);
     var img_id = urlAux;
-    $http.get("/rest/news/"+urlAux)
+    $http.get("/rest/news/" + urlAux)
         .success(function (data) {
             console.log(data);
             //window.location.replace('/news.html'+'?id='+new_id)
@@ -130,18 +136,18 @@ app.controller("newsPageCtrl", function($scope,$http, $location, $routeParams) {
 //    console.log($scope.token)
 });
 
-app.controller("loginCtrl", function($scope,$http, $alert, $rootScope) {
+app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
     $rootScope.name = {};
     var parol = $alert({
         title: "Невірний пароль",
         type: 'danger',
-        container : "#error_msg",
-        duration : '3',
+        container: "#error_msg",
+        duration: '3',
         show: false
     });
-    $scope.login_submit = function user_authorization(){
+    $scope.login_submit = function user_authorization() {
 
-        var user_info = {name:$scope.user_name, Pass:$scope.user_pass };
+        var user_info = {name: $scope.user_name, Pass: $scope.user_pass};
         console.log(user_info);
         window.location.replace("#/clientpage");
 //        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
@@ -162,12 +168,13 @@ app.controller("loginCtrl", function($scope,$http, $alert, $rootScope) {
 //            });
     }
 });
-app.controller("clientpageCtrl", function($scope,$http, $alert, $rootScope){
-    $scope.user_slugebkis = function(){
+
+app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
+    $scope.user_slugebkis = function () {
         return $rootScope.slugebkis;
     };
     $scope.slugebka_submit = function slugebka_otpravka(kod) {
-        var user_info = {Id:$rootScope.userData.Id, kod: kod, status:true};
+        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: true};
         console.log(user_info);
         //alert('delete ' + reg_n);
 //        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
@@ -190,7 +197,7 @@ app.controller("clientpageCtrl", function($scope,$http, $alert, $rootScope){
 //            });
     }
     $scope.slugebka_decline = function slugebka_otpravka(kod) {
-        var user_info = {Id:$rootScope.userData.Id, kod: kod, status:false};
+        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: false};
         console.log(user_info);
 //        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
 //
@@ -203,20 +210,42 @@ app.controller("clientpageCtrl", function($scope,$http, $alert, $rootScope){
     }
 });
 
-app.controller("applyController", function($scope,$http) {
-    $scope.applicationSubmit = function(){
+app.controller("applyController", function ($scope, $http) {
+    $scope.applicationSubmit = function () {
 
-        var team_info = {league:"STARTUP", company:$scope.company, website:$scope.website,
-        name:$scope.name,telephone:$scope.telephone,email:$scope.email,payed:false,logo:"blob",
-        players:[
-            {name:$scope.captain.split(' ')[0],surname:$scope.captain.split(' ')[1],role:$scope.captainPost,captain:true},
-            {name:$scope.player2.split(' ')[0],surname:$scope.player2.split(' ')[1],role:$scope.player2Post,captain:false},
-            {name:$scope.player3.split(' ')[0],surname:$scope.player3.split(' ')[1],role:$scope.player3Post,captain:false},
-            {name:$scope.player4.split(' ')[0],surname:$scope.player4.split(' ')[1],role:$scope.player4Post,captain:false}
-        ]};
+        var team_info = {
+            league: "STARTUP", company: $scope.company, website: $scope.website,
+            name: $scope.name, telephone: $scope.telephone, email: $scope.email, payed: false, logo: imgData.split(',')[1],
+            players: [
+                {
+                    name: $scope.captain.split(' ')[0],
+                    surname: $scope.captain.split(' ')[1],
+                    role: $scope.captainPost,
+                    captain: true
+                },
+                {
+                    name: $scope.player2.split(' ')[0],
+                    surname: $scope.player2.split(' ')[1],
+                    role: $scope.player2Post,
+                    captain: false
+                },
+                {
+                    name: $scope.player3.split(' ')[0],
+                    surname: $scope.player3.split(' ')[1],
+                    role: $scope.player3Post,
+                    captain: false
+                },
+                {
+                    name: $scope.player4.split(' ')[0],
+                    surname: $scope.player4.split(' ')[1],
+                    role: $scope.player4Post,
+                    captain: false
+                }
+            ]
+        };
         console.log(team_info);
 
-        $http.post("/rest/teams",team_info)
+        $http.post("/rest/teams", team_info)
             .success(function (data) {
 //                if (data !== ""){
 //                    window.location.replace("#/clientpage");
@@ -241,7 +270,7 @@ app.controller("applyController", function($scope,$http) {
                 //$scope.player4=undefined;
                 //$scope.player4Post=undefined;
             })
-            .error(function (data){
+            .error(function (data) {
                 console.log("WRONG")
             });
     }
@@ -255,27 +284,22 @@ function fileLoaderClickImitation() {
     document.getElementById("inputFileToLoad").click();
 }
 
-
+var imgData = "";
 //function to upload image
-function encodeImageFileAsURL(){
-    var imgData="";
+function encodeImageFileAsURL() {
+
     var filesSelected = document.getElementById("inputFileToLoad").files;
-    if (filesSelected.length > 0)
-    {
+    if (filesSelected.length > 0) {
         var fileToLoad = filesSelected[0];
 
         var fileReader = new FileReader();
 
-        fileReader.onload = function(fileLoadedEvent) {
+        fileReader.onload = function (fileLoadedEvent) {
             var srcData = fileLoadedEvent.target.result; // <--- data: base64
 
-            //var newImage = document.createElement('img');
-            //newImage.src = srcData;
-            //document.getElementById("teamLogo").innerHTML = newImage.outerHTML;
-
-            imgData=srcData.toString();
+            imgData = srcData.toString();
             console.log(imgData);
-            $("#imgLoader").css({'background-image':'url(' + imgData + ')','background-size':'100% 100%'});
+            $("#imgLoader").css({'background-image': 'url(' + imgData + ')', 'background-size': '100% 100%'});
         }
         fileReader.readAsDataURL(fileToLoad);
 
