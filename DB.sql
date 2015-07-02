@@ -1,5 +1,5 @@
 DROP SCHEMA `football`;
-CREATE SCHEMA if not exists `football` ;
+CREATE SCHEMA if not exists `football` CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `football`;
 
 DROP TABLE IF EXISTS `users`;

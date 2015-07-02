@@ -6,10 +6,10 @@ angular.module('mgcrea.ngStrapDocs');
 
 app.config(function($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'login_page.html',
-            controller: 'loginCtrl'
-        })
+        //.when('/', {
+        //    templateUrl: 'login_page.html',
+        //    controller: 'loginCtrl'
+        //})
         .when('/home', {
             templateUrl: 'login_page.html',
             controller: 'loginCtrl'
@@ -38,52 +38,28 @@ app.config(function($routeProvider) {
         //    templateUrl: 'apply.html',
         //    controller: 'applyController'
         //})
-        .when('/news', {
-            templateUrl: 'news.html',
-            controller: 'mainCtrl'
-        })
-        .when('/', {
-            templateUrl: 'index.html',
-            controller: 'mainCtrl'
-        })
+        //.when('/news', {
+        //    templateUrl: 'news.html',
+        //    controller: 'mainCtrl'
+        //})
+        //.when('/', {
+        //    templateUrl: 'index.html',
+        //    controller: 'mainCtrl'
+        //})
         .otherwise({
             redirectTo: '/404'
         });
     //$locationProvider.html5Mode(true);
 });
 app.controller("mainCtrl", function($scope,$http) {
-    //$scope.news = [{
-    //    "id":1,
-    //    //"author":"Тарас Михалевич",
-    //    "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”",
-    //    "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
-    //    //"active":true,
-    //    "date":1435145358001
-    //    //"picture":null
-    //    },{
-    //    "id":2,
-    //    //"author":"Тарас Михалевич",
-    //    "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup1”",
-    //    "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
-    //    //"active":true,
-    //    "date":1435145358002
-    //    //"picture":null
-    //    },
-    //    {
-    //        "id":3,
-    //    "author":"Тарас Михалевич",
-    //    "header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup2”",
-    //    "shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...",
-    //    //"active":true,
-    //    "date":1435145358003
-    //    //"picture":null
-    //    }];
-
 
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
         $scope.news = data;
-        //$scope.news = {"id":3,"author":"Тарас Михалевич","titleTags":null,"descriptionTags":null,"keywords":null,"header":"Ознакомься со схемой розыгрыша“StartUpFootball3x3Cup”","shortDescription":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги...","text":"Немного о подаче заявки, схеме розыгрыша и лигах чемпионата. В чемпионате играется 3 лиги – «Startups League» , «Investor League», «IT-Industry League».\n\n«Startups League»  - собиарет 32 команды исключительно от украинских стартапов.\n«Investor League» - собирает 16 команд от украинских и международных венчурных фондов, бизнес-ангелов, инвест банков, Private Equity фондов и бизнес инкубаторов.\n«IT-Industry League» - собирает 64 команды от украинских девелоперов, веб-масетеров, студий веб-дизайна, платежных систем, информационных порталов и других представителей IT индустрии Украины.\n\nДля того, что бы стать участниками чемпионата, обязательно нужно пройти тщательную процедуру регистрации команд. Мы подходим к регистрации команд очень аккуратно и предусмотрительно, так как хотим что бы все игры проходили по принципу Fair-Play и в равных условиях. К чемпионату не допускаются игроки, не являющиеся официальными представителями компании, в которой работают или стартапа, который только выходит или уже вышел на рынок. Правда для Startup League организаторы предоставляют опцию привлечь сразу двух игроков со стороны, в случае, если в команде стартапа только один человек играет в футбол.\nСхема розыгрыша состоит из двух этапов - групповой и play-off.\nНа групповом этапе все команды делятся на группы по 4 команды и играют один круг каждая с каждой. По результату набранных очей на групповом этапе первые два места в группе выходят в Play-off Gold, а третье и четвертое места - в Play-off Silver. \nТаким образом, каждая команда сыграет четыре гарантированных игры - три на групповом этапе и одну на этапе Play-off. Дальше игры  идут на вылет до определения первого, второго и третьего мест.\nКак думаете, до какого этапа дойдет ваша команда?","active":true,"date":1435145358000,"picture":null}
+        for (var i=0; i<data.length;i++) {
+            var tempDate = new Date(data[i].date);
+            data[i].date=tempDate.getDate()+"/"+tempDate.getMonth()+"/"+tempDate.getFullYear();
+        }
         }
     )
         .error(function (data){
@@ -97,7 +73,7 @@ $scope.news_readMore = function(new_id){
         $http.get("/rest/news/"+new_id)
             .success(function (data) {
             console.log(data);
-                window.location.replace('#/news.html')
+                window.location.replace('/news.html'+'?id='+new_id)
                 $scope.currentNews = data;
 
             }
@@ -135,12 +111,29 @@ $scope.news_readMore = function(new_id){
             });
     }
 });
+app.controller("newsPageCtrl", function($scope,$http, $location, $routeParams) {
+    var url = window.location;
+    console.log(url);
+    var urlAux = window.location.href.split("=")[1]
+    console.log(urlAux);
+    var img_id = urlAux;
+    $http.get("/rest/news/"+urlAux)
+        .success(function (data) {
+            console.log(data);
+            //window.location.replace('/news.html'+'?id='+new_id)
+            $scope.currentNews = data;
+        }
+    )
+//    $scope.location = $location.url();
+//    console.log($scope.location)
+//    $scope.token = $location.hash().split('=')[1];
+//    console.log($scope.token)
+});
+
 app.controller("loginCtrl", function($scope,$http, $alert, $rootScope) {
     $rootScope.name = {};
     var parol = $alert({
         title: "Невірний пароль",
-        //content: 'Best check yo self, you\'re not looking too good.',
-        //placement: 'top',
         type: 'danger',
         container : "#error_msg",
         duration : '3',
