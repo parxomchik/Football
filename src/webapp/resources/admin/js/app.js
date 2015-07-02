@@ -122,7 +122,7 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
     console.log(url);
     var urlAux = window.location.href.split("=")[1]
     console.log(urlAux);
-    var img_id = urlAux;
+    //var img_id = urlAux;
     $http.get("/rest/news/" + urlAux)
         .success(function (data) {
             console.log(data);
@@ -130,7 +130,34 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
             $scope.currentNews = data;
         }
     )
-//    $scope.location = $location.url();
+
+    $scope.nextNews = function(){
+        var urlAux = window.location.href.split("=")[1]
+        console.log(urlAux);
+        var urlNext = parseInt(urlAux, 10) + 1;
+        console.log(urlNext);
+        window.location.replace('/news.html'+'?id='+urlNext)
+        //$http.get("/rest/news/" + urlNext)
+        //    .success(function (data) {
+        //        console.log(data);
+        //        $scope.currentNews = data;
+        //    }
+        //)
+    };
+    $scope.prevNews = function(){
+        var urlAux = window.location.href.split("=")[1]
+        console.log(urlAux);
+        var urlPrev = parseInt(urlAux, 10) - 1;
+        console.log(urlPrev);
+        window.location.replace('/news.html'+'?id='+urlPrev)
+        //$http.get("/rest/news/" + urlNext)
+        //    .success(function (data) {
+        //        console.log(data);
+        //        $scope.currentNews = data;
+        //    }
+        //)
+    };
+    //    $scope.location = $location.url();
 //    console.log($scope.location)
 //    $scope.token = $location.hash().split('=')[1];
 //    console.log($scope.token)
