@@ -86,9 +86,12 @@
                         <span>добавить лого</span>
 
                         <div class="clearfix"></div>
-                        <div class="add_logo btn">
+
+                        <div id="imgLoader" class="add_logo btn" onclick="fileLoaderClickImitation()">
                             <!-- <i class="fa fa-plus fa-5x"></i> -->
+                            <input id="inputFileToLoad" type="file" multiple="false" accept="image/*" onchange="encodeImageFileAsURL();" />
                         </div>
+                        <div id="teamLogo"></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-6 col-xs- col-md-offset-1 col-sm-offset-1 inputs_block">
@@ -274,6 +277,7 @@
 <script src="./resources/admin/js/angular-strap.tpl.min.js"></script>
 <script src="./resources/admin/js/angular-route.min.js"></script>
 <script src="./resources/admin/js/app.js"></script>
+
 
 </body>
 </html>
