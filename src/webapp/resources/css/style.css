@@ -226,6 +226,11 @@ ul.nav {
 	margin-top: 15px;
 	border:2px solid  #fff; 
 	border-radius: 50%;
+	-webkit-transition: all linear .3s!important;
+	-moz-transition: all linear .3s!important;
+	-ms-transition: all linear .3s!important;
+	-o-transition: all linear .3s!important;
+	transition: all linear .3s!important;
 }
 .circle img {
 	position: absolute;
@@ -236,6 +241,15 @@ ul.nav {
 	width: 65%;
 	height: 65%;
 	margin: auto;
+	cursor: default;
+	pointer-events: none;
+  	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-webkit-transition: all linear .3s!important;
+	-moz-transition: all linear .3s!important;
+	-ms-transition: all linear .3s!important;
+	-o-transition: all linear .3s!important;
+	transition: all linear .3s!important;
 }
 .circle img.big {
 	width: 100%;
@@ -247,6 +261,23 @@ ul.nav {
 	margin-top: 25px;
 	font-family: 'MyriadProBoldCondenced', sans-serif;
 
+}
+.circle:hover {
+	background-color: #fff;
+	-webkit-transition: all linear .3s!important;
+	-moz-transition: all linear .3s!important;
+	-ms-transition: all linear .3s!important;
+	-o-transition: all linear .3s!important;
+	transition: all linear .3s!important;
+}
+.steps .col-md-4:nth-child(2) .circle:hover {
+	content:url("../images/step1.hover.svg");
+}
+.steps .col-md-4:nth-child(3) .circle:hover img {
+	content:url("../images/step2.hover.svg");
+}
+.steps .col-md-4:nth-child(4) .circle:hover img {
+	content:url("../images/step3.hover.svg");
 }
 /*end section 2*/
 /*section 3*/
