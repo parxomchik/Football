@@ -51,6 +51,7 @@ app.config(function ($routeProvider) {
         });
     //$locationProvider.html5Mode(true);
 });
+
 app.controller("mainCtrl", function ($scope, $http) {
 
     $http.get("/rest/news/active?count=3")
@@ -90,26 +91,21 @@ app.controller("mainCtrl", function ($scope, $http) {
             message: $scope.feedback_message
         };
         console.log(feedback_info);
-//        window.location.replace("#/clientpage");
+
         $http.post("/rest/feedbacks", feedback_info)
             .success(function (data) {
-//                if (data !== ""){
-//                    window.location.replace("#/clientpage");
-//                    $rootScope.slugebkis = JSON.parse(data)
-//                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
+
                 $scope.feedback_name = undefined;
                 $scope.feedback_email = undefined;
                 $scope.feedback_subject = undefined;
                 $scope.feedback_message = undefined;
-                alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.")
-                console.log(data)
-            }
-//                else{
-////                    parol.show();
-//                     alert("error");
-//                }
+                $scope.feedbackForm.$setPristine();
 
-        )
+                alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function(){
+                    alertify.message('OK');
+                });
+
+            })
             .error(function (data) {
                 console.log(data)
             });

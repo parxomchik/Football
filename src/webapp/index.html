@@ -329,7 +329,7 @@
                             <span class="validate-msg feedback-validate-msg"
                                   ng-show="feedbackForm.name.$error.required && feedbackForm.name.$dirty">Необходимо ввести имя.</span>
                             <span class="validate-msg feedback-validate-msg"
-                                  ng-show="feedbackForm.name.$error.pattern && feedbackForm.name.$dirty">Имя должно состоять из русских букв.</span>
+                                  ng-show="feedbackForm.name.$error.pattern && feedbackForm.name.$dirty">Используйте кириллицу.</span>
                             <label for="name"><input type="text" required
                                                      ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$)/"
                                                      ng-model="feedback_name" name="name" id="name"
@@ -466,6 +466,5 @@
 <script src="./resources/js/loader.js"></script>
 <script src="./resources/js/script.js"></script>
 <script src="./resources/js/alertify.min.js"></script>
-<script src="./resources/js/alertify.js"></script>
 </body>
 </html>
