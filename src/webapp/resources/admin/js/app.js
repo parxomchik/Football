@@ -283,12 +283,12 @@ app.controller("applyController", function ($scope, $http) {
                 }
             ]
         };
-        console.log(team_info);
 
         $http.post("/rest/teams", team_info)
             .success(function (data) {
-                console.log(data);
-                alert("Спасибо за заявку!");
+                alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function(){
+                    alertify.message('OK');
+                });
                 window.location.replace("./index.html")
 
             })
