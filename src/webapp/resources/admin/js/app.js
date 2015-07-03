@@ -68,9 +68,6 @@ app.controller("mainCtrl", function ($scope, $http) {
         });
 
     $scope.news_readMore = function (new_id) {
-//console.log(new_id);
-//        var news_info = {"id":new_id};
-//        console.log(new_id);
         $http.get("/rest/news/" + new_id)
             .success(function (data) {
                 console.log(data);
@@ -83,6 +80,7 @@ app.controller("mainCtrl", function ($scope, $http) {
                 console.log(data)
             });
     }
+
     $scope.feedback_submit = function () {
 
         var feedback_info = {
@@ -242,10 +240,19 @@ app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
 });
 
 app.controller("applyController", function ($scope, $http) {
+    var league = window.location.toString().split("=")[1].toUpperCase()
+    switch (league) {
+        case "STARTUP": $scope.leagueName = "START-UP"; break;
+        case "INVESTOR": $scope.leagueName = "INVESTOR"; break;
+        case "ITINDUSTRY": $scope.leagueName = "IT-INDUSTRY"; break;
+        default : $scope.leagueName = "START-UP";
+    }
+
+
     $scope.applicationSubmit = function () {
 
         var team_info = {
-            league: "STARTUP",
+            league: league,
             company: $scope.company,
             website: $scope.website,
             name: $scope.name,
@@ -284,28 +291,10 @@ app.controller("applyController", function ($scope, $http) {
 
         $http.post("/rest/teams", team_info)
             .success(function (data) {
-//                if (data !== ""){
-//                    window.location.replace("#/clientpage");
-//                    $rootScope.slugebkis = JSON.parse(data)
-//                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
-
-
                 console.log(data);
                 alert("Спасибо за заявку!");
+                window.location.replace("./index.html")
 
-                //$scope.company=undefined;
-                //$scope.website=undefined;
-                //$scope.name=undefined;
-                //$scope.telephone=undefined;
-                //$scope.email=undefined;
-                //$scope.captain=undefined;
-                //$scope.captainPost=undefined;
-                //$scope.player2=undefined;
-                //$scope.player2Post=undefined;
-                //$scope.player3=undefined;
-                //$scope.player3Post=undefined;
-                //$scope.player4=undefined;
-                //$scope.player4Post=undefined;
             })
             .error(function (data) {
                 console.log("WRONG")
