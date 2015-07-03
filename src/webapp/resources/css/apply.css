@@ -82,6 +82,11 @@ nav #bs-example-navbar-collapse-1 {
 .add_logo_block:hover .add_logo:before {
 	background-color: rgba(0,0,0, .07);
 }
+
+#inputFileToLoad {
+    visibility: hidden;
+}
+
 .inputs_block {
 	margin-top: 40px;	
 }

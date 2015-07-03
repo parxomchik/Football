@@ -16,6 +16,7 @@
     <link href="./resources/css/responsive.css" rel="stylesheet">
     <link href="./resources/css/apply_responsive.css" rel="stylesheet">
     <link href="./resources/css/fonts.css" rel="stylesheet">
+    <link href="./resources/css/alertify.min.css" rel="stylesheet">
     <!--GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
 
@@ -67,18 +68,17 @@
     <div id="apply_page" ng-controller="applyController" ng-form="applyForm">
         <div class="row">
             <div class="container">
-                <h1 class="text-center">Заявка на Start-UP League</h1>
+                <h1 class="text-center">Заявка на {{leagueName}} League</h1>
 
                 <h3 class="text-center">Для того что бы стать участником чемпионата, пожалуйста, пройдите процедуру
                     регистрации своей команды в этом разделе.</h3>
 
                 <p>Для регистрации команды необходимо:</p>
                 <ol>
-                    <li>Закачать фотографию команды и логотип компании в разделе вашей лиги участника</li>
-                    <li>Внести оплату за участие и принесте подтверждающий документ на месте проведения чемпионата</li>
-                    <li>Доставить всех игроков свой команды на место проведения чемпионата вовремя и в хорошем на
-                        строении
-                    </li>
+                    <li>Заполнить все обязательные поля с данными о своей команде.</li>
+                    <li>Позадавать все интересующие Вас вопросы организаторам мероприятия - они свяжутся с Вами в ближайшем времени после подачи заявки.</li>
+                    <li>Внести оплату за участие.</li>
+                    <li>Получить подтверждение о заявке вашей команды на чемпионат от организаторов и  доставить всех игроков на место проведения чемпионата вовремя и в хорошем на строении.</li>
                 </ol>
                 <div class="clearfix"></div>
                 <div class="col-md-2 col-lg-2 col-sm-3 col-xs- padding_left_fix">
@@ -86,15 +86,17 @@
                         <span>добавить лого</span>
 
                         <div class="clearfix"></div>
-                        <div class="add_logo btn">
+
+                        <div id="imgLoader" class="add_logo btn" onclick="fileLoaderClickImitation()">
                             <!-- <i class="fa fa-plus fa-5x"></i> -->
+                            <input id="inputFileToLoad" type="file" multiple="false" accept="image/*" onchange="encodeImageFileAsURL();" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-6 col-xs- col-md-offset-1 col-sm-offset-1 inputs_block">
                     <p>
                         <label for="company_site">имя вашей компании</label>
-                        <input required type="text" id="company_name" name="company_name" placeholder="Bionic"
+                        <input required type="text" id="company_name" name="company_name" placeholder="Global Logic"
                                ng-model="company">
                         <span class="validate-msg"
                               ng-show="applyForm.company_name.$error.required && applyForm.company_name.$dirty">Необходимо ввести имя компании.</span>
@@ -274,6 +276,7 @@
 <script src="./resources/admin/js/angular-strap.tpl.min.js"></script>
 <script src="./resources/admin/js/angular-route.min.js"></script>
 <script src="./resources/admin/js/app.js"></script>
+<script src="./resources/js/alertify.min.js"></script>
 
 </body>
 </html>
