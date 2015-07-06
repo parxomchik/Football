@@ -34,62 +34,29 @@
                 <div class="tab-pane active" id="prices" >
                     <div class="panel-body">
  <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-12" ng-repeat="feedback in feedbacks">
     <div class="thumbnail col-xs-12">
       <div class="">
        <div class="col-xs-3 border_right">        
          <dl class="dl-horizontal margin_fix">
           <dt class="">Дата:</dt>
-          <dd>222@sdad</dd>    
+          <dd>{{feedback.date}}</dd>
           <dt>Имя:</dt>
-          <dd>222</dd>
+          <dd>{{feedback.name}}</dd>
           <dt>Почта:</dt>
-          <dd>222</dd>    
+          <dd>{{feedback.email}}</dd>
           <dt>Тема:</dt>
-          <dd>222</dd>
+          <dd>{{feedback.subject}}</dd>
         </dl>
         <button type="button" class="btn btn-primary center-block margin_top_10">Обработано</button>        
         </div>
        <div class="col-xs-6">
-            <p>Текст сообщения</p>
+            <p>{{feedback.message}}</p>
        </div>
       </div>
     </div>
   </div>
-      </div> 
-      <div class="row">
-  <div class="col-xs-12">
-    <div class="thumbnail col-xs-12">
-      <div class="">
-       <div class="col-xs-3 border_right">        
-         <dl class="dl-horizontal margin_fix">
-          <dt class="">Дата:</dt>
-          <dd>222@sdad</dd>    
-          <dt>Имя:</dt>
-          <dd>222</dd>
-          <dt>Почта:</dt>
-          <dd>222</dd>    
-          <dt>Тема:</dt>
-          <dd>222</dd>
-        </dl> 
-        <button type="button" class="btn btn-primary center-block margin_top_10">Обработано</button>
-        </div>
-       <div class="col-xs-9">
-            <p>Текст сообщения</p>
-       </div>
-<!--
-       <div class="col-xs-2 padding_fix">
-           <button type="button" class="btn btn-primary btn-block feedback_btn">Обработано</button>
-       </div>
--->
       </div>
-    </div>
-  </div>
-     
-     
-     
-      </div>
-    
                 </div>
             </div>
         </div>

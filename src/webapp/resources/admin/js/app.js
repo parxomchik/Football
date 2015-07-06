@@ -6,10 +6,10 @@ angular.module('mgcrea.ngStrapDocs');
 
 app.config(function ($routeProvider) {
     $routeProvider
-        //.when('/', {
-        //    templateUrl: 'login_page.html',
-        //    controller: 'loginCtrl'
-        //})
+        .when('/', {
+            templateUrl: 'login_page.html',
+            controller: 'loginCtrl'
+        })
         .when('/home', {
             templateUrl: 'login_page.html',
             controller: 'loginCtrl'
@@ -192,6 +192,28 @@ app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
 //                console.log(data)
 //            });
     }
+});
+app.controller("feedbackCtrl", function ($scope, $http) {
+    $http.get("/rest/feedbacks")
+        .success(function (data) {
+            //console.log(data);
+            $scope.feedbacks = data;
+
+
+        }
+    )
+});
+app.controller("teamsCtrl", function ($scope, $http) {
+    $http.get("/rest/teams")
+        .success(function (data) {
+            console.log(data);
+            $scope.teams = data;
+            $scope.players = data[0].players;
+            console.log($scope.players);
+            //console.log($scope.teams);
+
+        }
+    )
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
