@@ -37,7 +37,7 @@
       <div class="col-sm-6 col-md-4" ng-repeat="team in teams">
         <div class="thumbnail col-md-12">
          <div class="col-md-5">          
-          <img data-src="holder.js/100%x100" alt="100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkyLjc3MzQzNzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMXB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjI0MngyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 100px; width: 100%; display: block;"></div>
+          <img src="{{team.logo}}" height="100" width="100"></div>
          <div class="col-md-7 caption">
              <h4 class="margin_fix">{{team.name}}</h4>
              <!--Название команды:-->
@@ -66,7 +66,7 @@
           </li>
         </ul>
         </div>
-        <button type="button" class="btn btn-primary btn-block">Оплатить</button>
+        <button ng-click="setPaymentStatus(id)" type="button" class="btn btn-primary btn-block">Оплатить</button>
         </div>
       </div>
     </div>

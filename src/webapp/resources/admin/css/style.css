@@ -140,7 +140,7 @@ hr {
 #logo {
     color: #1d4f8e;
     font-size: 30px;
-    font-weight: 550;
+    /*font-weight: 550px;*/
 }
 #tab {
     padding: 10px;
@@ -169,3 +169,20 @@ hr {
     margin-top: 10px;
 }
  #editor {overflow:scroll; max-height:300px}
+.description{
+    /*height: 50px;*/
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+.news_header{
+display: block;
+height: 50px;
+/*white-space: pre-line;*/
+    overflow: scroll; /* Обрезаем все, что не помещается в область */
+
+}
+ .thumbnail>.admin_news_picture{
+    height: 300px;
+    /*width: 300px;*/
+}

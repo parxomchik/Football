@@ -209,6 +209,39 @@ app.controller("teamsCtrl", function ($scope, $http) {
         .success(function (data) {
             console.log(data);
             $scope.teams = data;
+            for (var i = 0; i < data.length; i++) {
+                data[i].logo = "data:image/jpeg;base64," + data[i].logo;
+            }
+        }
+    )
+    $scope.setPaymentStatus = function (id) {
+
+        var payment_status = {
+            payed: true
+        };
+        console.log(team_info);
+        $http.put("/rest/teams/payment/"+id, payment_status)
+            .success(function (data) {
+                //alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function(){
+                //    alertify.message('OK');
+                //});
+                //window.location.replace("./index.html")
+                alert("ok");
+
+            })
+            .error(function () {
+                console.log("WRONG")
+            });
+    }
+});
+app.controller("newsCtrl", function ($scope, $http) {
+    $http.get("/rest/news")
+        .success(function (data) {
+            console.log(data);
+            $scope.news = data;
+            for (var i = 0; i < data.length; i++) {
+                data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+            }
         }
     )
 });
