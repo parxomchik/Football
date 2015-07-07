@@ -57,8 +57,6 @@ app.controller("mainCtrl", function ($scope, $http) {
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
             for (var i = 0; i < data.length; i++) {
-                var tempDate = new Date(data[i].date);
-                data[i].date = tempDate.getDate() + "/" + tempDate.getMonth() + "/" + tempDate.getFullYear();
                 data[i].picture = "data:image/jpeg;base64," + data[i].picture;
             }
             $scope.news = data;
@@ -91,7 +89,6 @@ app.controller("mainCtrl", function ($scope, $http) {
             subject: $scope.feedback_subject,
             message: $scope.feedback_message
         };
-        console.log(feedback_info);
 
         $http.post("/rest/feedbacks", feedback_info)
             .success(function (data) {
