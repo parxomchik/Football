@@ -69,17 +69,18 @@ app.controller("mainCtrl", function ($scope, $http) {
         });
 
     $scope.news_readMore = function (new_id) {
-        $http.get("/rest/news/" + new_id)
-            .success(function (data) {
-                console.log(data);
+        //$http.get("/rest/news/" + new_id)
+        //    .success(function (data) {
+        //        console.log(data);
+        //        $scope.currentNews = data;
+        //
+        //    }
+        //)
+        //    .error(function (data) {
+        //        console.log(data)
+        //    });
                 window.location.replace('/news.html' + '?id=' + new_id)
-                $scope.currentNews = data;
 
-            }
-        )
-            .error(function (data) {
-                console.log(data)
-            });
     }
 
     $scope.feedback_submit = function () {
@@ -208,10 +209,6 @@ app.controller("teamsCtrl", function ($scope, $http) {
         .success(function (data) {
             console.log(data);
             $scope.teams = data;
-            $scope.players = data[0].players;
-            console.log($scope.players);
-            //console.log($scope.teams);
-
         }
     )
 });
