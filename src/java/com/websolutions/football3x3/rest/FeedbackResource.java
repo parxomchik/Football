@@ -31,6 +31,13 @@ public class FeedbackResource {
     }
 
     @GET
+    @Path("notProcessed")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Feedback> getNotProcessedFeedbacks() {
+        return feedbackDao.findFeedbacksByProcessedStatus(false);
+    }
+
+    @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Feedback getFeedbackById(@PathParam("id") Integer id) {
