@@ -56,12 +56,10 @@ app.controller("mainCtrl", function ($scope, $http) {
 
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
-            $scope.news = data;
             for (var i = 0; i < data.length; i++) {
-                var tempDate = new Date(data[i].date);
-                data[i].date = tempDate.getDate() + "/" + tempDate.getMonth() + "/" + tempDate.getFullYear();
                 data[i].picture = "data:image/jpeg;base64," + data[i].picture;
             }
+            $scope.news = data;
         }
     )
         .error(function (data) {
@@ -79,7 +77,7 @@ app.controller("mainCtrl", function ($scope, $http) {
         //    .error(function (data) {
         //        console.log(data)
         //    });
-                window.location.replace('/news.html' + '?id=' + new_id)
+        window.location.replace('/news.html' + '?id=' + new_id)
 
     }
 
@@ -91,7 +89,6 @@ app.controller("mainCtrl", function ($scope, $http) {
             subject: $scope.feedback_subject,
             message: $scope.feedback_message
         };
-        console.log(feedback_info);
 
         $http.post("/rest/feedbacks", feedback_info)
             .success(function (data) {
@@ -102,7 +99,7 @@ app.controller("mainCtrl", function ($scope, $http) {
                 $scope.feedback_message = undefined;
                 $scope.feedbackForm.$setPristine();
 
-                alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function(){
+                alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function () {
                     alertify.message('OK');
                 });
 
@@ -128,12 +125,12 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
         }
     )
 
-    $scope.nextNews = function(){
+    $scope.nextNews = function () {
         var urlAux = window.location.href.split("=")[1]
         console.log(urlAux);
         var urlNext = parseInt(urlAux, 10) + 1;
         console.log(urlNext);
-        window.location.replace('/news.html'+'?id='+urlNext)
+        window.location.replace('/news.html' + '?id=' + urlNext)
         //$http.get("/rest/news/" + urlNext)
         //    .success(function (data) {
         //        console.log(data);
@@ -141,12 +138,12 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
         //    }
         //)
     };
-    $scope.prevNews = function(){
+    $scope.prevNews = function () {
         var urlAux = window.location.href.split("=")[1]
         console.log(urlAux);
         var urlPrev = parseInt(urlAux, 10) - 1;
         console.log(urlPrev);
-        window.location.replace('/news.html'+'?id='+urlPrev)
+        window.location.replace('/news.html' + '?id=' + urlPrev)
         //$http.get("/rest/news/" + urlNext)
         //    .success(function (data) {
         //        console.log(data);
@@ -159,8 +156,6 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
 //    $scope.token = $location.hash().split('=')[1];
 //    console.log($scope.token)
 });
-
-
 
 app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
     $rootScope.name = {};
@@ -194,23 +189,94 @@ app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
 //            });
     }
 });
+
 app.controller("feedbackCtrl", function ($scope, $http) {
-    $http.get("/rest/feedbacks")
+    $http.get("/rest/feedbacks/notProcessed")
         .success(function (data) {
-            //console.log(data);
             $scope.feedbacks = data;
-
-
         }
-    )
+    );
+
+    $scope.processFeedback = function (id) {
+
+        for (var i = 0; i < $scope.feedbacks.length; i++) {
+            if ($scope.feedbacks[i].id == id) {
+                var  feedback_info = $scope.feedbacks[i];
+                feedback_info.processed = true;
+            }
+        }
+
+        $http.put("/rest/feedbacks/" + id, feedback_info)
+            .success(function (data) {
+                alert("ok");
+                $http.get("/rest/feedbacks/notProcessed")
+                    .success(function (data) {
+                        $scope.feedbacks = data;
+                    }
+                );
+            })
+            .error(function () {
+                console.log("WRONG")
+            });
+
+    }
+
 });
+
 app.controller("teamsCtrl", function ($scope, $http) {
     $http.get("/rest/teams")
         .success(function (data) {
             console.log(data);
             $scope.teams = data;
+            for (var i = 0; i < data.length; i++) {
+                data[i].logo = "data:image/jpeg;base64," + data[i].logo;
+            }
         }
     )
+    $scope.setPaymentStatus = function (id) {
+        $http.put("/rest/teams/payment/" + id, "true")
+            .success(function (data) {
+                for (var i = 0; i < $scope.teams.length; i++) {
+                    if ($scope.teams[i].id == id) {
+                        $scope.teams[i].payed = true;
+                    }
+                }
+            })
+            .error(function () {
+                console.log("WRONG")
+            });
+    }
+});
+
+app.controller("newsCtrl", function ($scope, $http) {
+    $http.get("/rest/news")
+        .success(function (data) {
+            $scope.news = data;
+            for (var i = 0; i < data.length; i++) {
+                data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+            }
+        }
+    );
+
+    $scope.deleteNews = function(id) {
+        $http.delete("/rest/news/"+id)
+            .success(function () {
+                alert("Succesfully deleted");
+                $http.get("/rest/news")
+                    .success(function (data) {
+                        $scope.news = data;
+                        for (var i = 0; i < data.length; i++) {
+                            data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+                        }
+                    }
+                );
+            })
+            .error(function (data) {
+                console.log(data);
+            }
+        )
+    }
+
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
@@ -257,10 +323,17 @@ app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
 app.controller("applyController", function ($scope, $http) {
     var league = window.location.toString().split("=")[1].toUpperCase()
     switch (league) {
-        case "STARTUP": $scope.leagueName = "START-UP"; break;
-        case "INVESTOR": $scope.leagueName = "INVESTOR"; break;
-        case "ITINDUSTRY": $scope.leagueName = "IT-INDUSTRY"; break;
-        default : $scope.leagueName = "START-UP";
+        case "STARTUP":
+            $scope.leagueName = "START-UP";
+            break;
+        case "INVESTOR":
+            $scope.leagueName = "INVESTOR";
+            break;
+        case "ITINDUSTRY":
+            $scope.leagueName = "IT-INDUSTRY";
+            break;
+        default :
+            $scope.leagueName = "START-UP";
     }
 
 
@@ -305,7 +378,7 @@ app.controller("applyController", function ($scope, $http) {
 
         $http.post("/rest/teams", team_info)
             .success(function (data) {
-                alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function(){
+                alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function () {
                     alertify.message('OK');
                 });
                 window.location.replace("./index.html")

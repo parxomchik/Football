@@ -81,21 +81,17 @@ public class TeamResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Team createTeam(Team team) {
-        Team t = null;
         try {
-            t = teamDao.save(team);
+            Team t = teamDao.save(team);
             for (Player p : team.getPlayers()) {
                 p.setTeam(t);
                 playerDao.save(p);
             }
+            emailService.sendNotificationAboutNewTeam(team, "vladik.kopilash@gmail.com");
+            return team;
         } catch (PersistenceException e) {
             throw new WebApplicationException(e, 403);
         }
-
-
-        Team resultTeam = teamDao.find(t.getId());
-        emailService.sendNotificationAboutNewTeam(resultTeam, "vladik.kopilash@gmail.com");
-        return resultTeam;
     }
 
     @PUT
@@ -103,17 +99,11 @@ public class TeamResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Team updateTeam(@PathParam("id") Integer id, Team team) {
-        Team fromDb = teamDao.find(id);
-        if (team.isPayed() == true && team.isPayed() != fromDb.isPayed()) {
-            emailService.sendManagerPaymentNotification(team, "vladik.kopilash@gmail.com");
-        }
         for (Player p: team.getPlayers()) {
             p.setTeam(team);
             playerDao.save(p);
         }
         teamDao.save(team);
-
-
         return teamDao.find(id);
     }
 
@@ -123,5 +113,22 @@ public class TeamResource {
         teamDao.delete(id);
     }
 
+    @PUT
+    @Path("/payment/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Team setPaymentStatus(@PathParam("id") Integer id, Boolean paymentStatus) {
+        try {
+            Team team = teamDao.find(id);
+            team.setPayed(paymentStatus);
+            teamDao.save(team);
+            if (paymentStatus==true) {
+                emailService.sendManagerPaymentNotification(team, "vladik.kopilash@gmail.com");
+            }
+            return team;
+        } catch (PersistenceException e) {
+            throw new WebApplicationException(404);
+        }
+
+    }
 
 }
