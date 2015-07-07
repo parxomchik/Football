@@ -1,80 +1,65 @@
 <div ng-controller="newsCtrl">
-<div class="col-xs-12">
+    <div class="col-xs-12">
         <nav class="navbar navbar-default border_radius_0 margin_fix">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-            <a class="navbar-brand" href="#/clientpage">Football 3x3</a>              
-                 </div>
+                    <a class="navbar-brand" href="#/clientpage">Football 3x3</a>
+                </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                        <a href="#/clientpage/news">Новости<span class="sr-only">(current)</span></a>
+                            <a href="#/clientpage/news">Новости<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="">
-                        <a href="#/clientpage/teams">Команды</a>
+                            <a href="#/clientpage/teams">Команды</a>
                         </li>
-                <li><a href="#/clientpage/feedback">Обратная связь</a></li>   
-                   </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#/home">Выйти</a></li>
+                        <li><a href="#/clientpage/feedback">Обратная связь</a></li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/home">Выйти</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
         </nav>
-        <div class="panel panel-default border_radius_0" >
+        <div class="panel panel-default border_radius_0">
             <div class="tab-content">
-                <div class="tab-pane active" id="prices" >
+                <div class="tab-pane active" id="prices">
                     <div class="panel-body">
                         <div class="row">
-                         <div class="col-xs-12 margin_bottom_10"><button class="btn btn-success" role="button">Добавить новость</button> </div>
-                          <div class="col-sm-6 col-md-4" ng-repeat= "new in news">
-                            <div class="thumbnail col-xs-12">
-                              <img class="admin_news_picture" src="{{new.picture}}" alt="...">
-                              <div class="caption">
-                                <h3 class="news_header">{{new.header}}</h3>
-                                <p class="description">{{new.shortDescription}}</p>
-                                    <div class="center-block col-xs-12">  
-                                    <input type="checkbox" name="my-checkbox" checked >
-                                <button class="btn btn-primary" role="button">Редактировать</button> 
-                                <button class="btn btn-danger" role="button">Удалить</button></div>          
+                            <div class="col-xs-12 margin_bottom_10">
+                                <button class="btn btn-success" role="button">Добавить новость</button>
                             </div>
-                          </div>
-                        </div>       
-                          <!--<div class="col-sm-6 col-md-4">-->
-                            <!--<div class="thumbnail col-xs-12">-->
-                              <!--<img src="../resources/images/section2_img.jpg" alt="...">-->
-                              <!--<div class="caption">-->
-                                <!--<h3>Заголовок новости</h3>-->
-                                <!--<p>Текст новости</p>-->
-                                    <!--<div class="center-block col-xs-12">  -->
-                                    <!--<input type="checkbox" name="my-checkbox" checked >-->
-                                <!--<a href="#/clientpage/news/news_edit" class="btn btn-primary" role="button">Редактировать</a> -->
-                                <!--<button class="btn btn-danger" role="button">Удалить</button></div>          -->
-                            <!--</div>-->
-                          <!--</div>-->
-                        <!--</div>      -->
-                          <!--<div class="col-sm-6 col-md-4">-->
-                            <!--<div class="thumbnail col-xs-12">-->
-                              <!--<img src="../resources/images/section2_img.jpg" alt="...">-->
-                              <!--<div class="caption">-->
-                                <!--<h3>Заголовок новости</h3>-->
-                                <!--<p>Текст новости</p>-->
-                                    <!--<div class="center-block col-xs-12">  -->
-                                    <!--<input type="checkbox" name="my-checkbox" checked >-->
-                                <!--<button class="btn btn-primary" role="button">Редактировать</button> -->
-                                <!--<button class="btn btn-danger" role="button">Удалить</button></div>          -->
-                            <!--</div>-->
-                          <!--</div>-->
-                        <!--</div>-->
-                      </div>
+                            <div class="col-sm-6 col-md-4" ng-repeat="new in news">
+                                <div class="thumbnail col-xs-12">
+                                    <img class="admin_news_picture" src="{{new.picture}}" alt="...">
+
+                                    <div class="caption">
+                                        <h3 class="news_header">{{new.header}}</h3>
+
+                                        <p class="description">{{new.shortDescription}}</p>
+
+                                        <div class="center-block col-xs-12">
+                                            <input type="checkbox" name="my-checkbox" checked>
+                                            <button class="btn btn-primary" role="button">Редактировать</button>
+                                            <button class="btn btn-danger" type="button" ng-click="deleteNews(new.id)">
+                                                Удалить
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

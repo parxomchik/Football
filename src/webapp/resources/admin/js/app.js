@@ -157,7 +157,6 @@ app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams)
 //    console.log($scope.token)
 });
 
-
 app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
     $rootScope.name = {};
     var parol = $alert({
@@ -252,13 +251,32 @@ app.controller("teamsCtrl", function ($scope, $http) {
 app.controller("newsCtrl", function ($scope, $http) {
     $http.get("/rest/news")
         .success(function (data) {
-            console.log(data);
             $scope.news = data;
             for (var i = 0; i < data.length; i++) {
                 data[i].picture = "data:image/jpeg;base64," + data[i].picture;
             }
         }
-    )
+    );
+
+    $scope.deleteNews = function(id) {
+        $http.delete("/rest/news/"+id)
+            .success(function () {
+                alert("Succesfully deleted");
+                $http.get("/rest/news")
+                    .success(function (data) {
+                        $scope.news = data;
+                        for (var i = 0; i < data.length; i++) {
+                            data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+                        }
+                    }
+                );
+            })
+            .error(function (data) {
+                console.log(data);
+            }
+        )
+    }
+
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
