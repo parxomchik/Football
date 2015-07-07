@@ -328,10 +328,7 @@
                         <div class="row padding_fix">
                             <span class="validate-msg feedback-validate-msg"
                                   ng-show="feedbackForm.name.$error.required && feedbackForm.name.$dirty">Необходимо ввести имя.</span>
-                            <span class="validate-msg feedback-validate-msg"
-                                  ng-show="feedbackForm.name.$error.pattern && feedbackForm.name.$dirty">Используйте кириллицу.</span>
-                            <label for="name"><input type="text" required
-                                                     ng-pattern="/(^[\u0410-\u044f\u0406-\u0407\u0456-\u0457]+$)/"
+                            <label for="name"><input type="text" required maxlength="45"
                                                      ng-model="feedback_name" name="name" id="name"
                                                      placeholder="ВАШЕ ИМЯ *"></label>
                         </div>
@@ -340,12 +337,12 @@
                                   ng-show="feedbackForm.email.$error.required && feedbackForm.email.$dirty">Необходимо ввести email.</span>
                             <span class="validate-msg feedback-validate-msg" ng-show="feedbackForm.email.$error.email">Неверный формат.</span>
                             <label for="email"><input required="true" ng-model="feedback_email" type="email"
-                                                      name="email" id="email"
+                                                      name="email" id="email" maxlength="45"
                                                       placeholder="ВАШ E-MAIL *"></label>
                         </div>
                         <div class="row padding_fix">
                             <label for="subject"><input type="text" name="subject" ng-model="feedback_subject"
-                                                        id="subject" placeholder="ТЕМА"></label>
+                                                        id="subject" placeholder="ТЕМА" maxlength="45"></label>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix animated hiding"

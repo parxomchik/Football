@@ -6,10 +6,10 @@ angular.module('mgcrea.ngStrapDocs');
 
 app.config(function ($routeProvider) {
     $routeProvider
-        //.when('/', {
-        //    templateUrl: 'login_page.html',
-        //    controller: 'loginCtrl'
-        //})
+        .when('/', {
+            templateUrl: 'login_page.html',
+            controller: 'loginCtrl'
+        })
         .when('/home', {
             templateUrl: 'login_page.html',
             controller: 'loginCtrl'
@@ -69,17 +69,18 @@ app.controller("mainCtrl", function ($scope, $http) {
         });
 
     $scope.news_readMore = function (new_id) {
-        $http.get("/rest/news/" + new_id)
-            .success(function (data) {
-                console.log(data);
+        //$http.get("/rest/news/" + new_id)
+        //    .success(function (data) {
+        //        console.log(data);
+        //        $scope.currentNews = data;
+        //
+        //    }
+        //)
+        //    .error(function (data) {
+        //        console.log(data)
+        //    });
                 window.location.replace('/news.html' + '?id=' + new_id)
-                $scope.currentNews = data;
 
-            }
-        )
-            .error(function (data) {
-                console.log(data)
-            });
     }
 
     $scope.feedback_submit = function () {
@@ -192,6 +193,24 @@ app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
 //                console.log(data)
 //            });
     }
+});
+app.controller("feedbackCtrl", function ($scope, $http) {
+    $http.get("/rest/feedbacks")
+        .success(function (data) {
+            //console.log(data);
+            $scope.feedbacks = data;
+
+
+        }
+    )
+});
+app.controller("teamsCtrl", function ($scope, $http) {
+    $http.get("/rest/teams")
+        .success(function (data) {
+            console.log(data);
+            $scope.teams = data;
+        }
+    )
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
