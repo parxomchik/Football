@@ -62,7 +62,7 @@
           <li class="col-md-12" ng-repeat="player in team.players">
           <p class="col-md-7 margin_fix padding_fix">{{player.name}}</p>
           <p class="col-md-4 margin_fix padding_fix">{{player.role}}</p>
-          <!--<span  class="glyphicon glyphicon-star" aria-hidden="true"></span> -->
+          <span ng-if="$first" class="glyphicon glyphicon-star" aria-hidden="true"></span>
           </li>
         </ul>
         </div>
