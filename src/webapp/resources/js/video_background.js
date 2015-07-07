@@ -30,5 +30,5 @@ setTimeout("bg()", 2800);
 
 // });
 $('#bg').vide({
-  mp4: './resources/video/background.mp4',
+  mp4: './resources/video/background.mp4'
 });
