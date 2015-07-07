@@ -9,5 +9,5 @@ import java.util.List;
  * Created by Владислав on 09.06.2015.
  */
 public interface FeedbackDao extends Dao<Feedback,Integer> {
-    public List<Feedback> findNotProcessedFeedbacks();
+    public List<Feedback> findFeedbacksByProcessedStatus(boolean status);
 }

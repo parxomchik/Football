@@ -16,7 +16,7 @@ public class FeedbackJpaDao extends JpaDao<Feedback,Integer> implements Feedback
     }
 
     @Override
-    public List<Feedback> findNotProcessedFeedbacks() {
-        return getEntityManager().createQuery("select f from Feedback f where f.processed=false").getResultList();
+    public List<Feedback> findFeedbacksByProcessedStatus(boolean status) {
+        return getEntityManager().createQuery("select f from Feedback f where f.processed=:status").setParameter("status",status).getResultList();
     }
 }
