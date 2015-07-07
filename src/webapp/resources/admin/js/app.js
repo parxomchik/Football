@@ -215,19 +215,13 @@ app.controller("teamsCtrl", function ($scope, $http) {
         }
     )
     $scope.setPaymentStatus = function (id) {
-
-        var payment_status = {
-            payed: true
-        };
-        console.log(team_info);
-        $http.put("/rest/teams/payment/"+id, payment_status)
+        $http.put("/rest/teams/payment/"+id, "true")
             .success(function (data) {
-                //alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function(){
-                //    alertify.message('OK');
-                //});
-                //window.location.replace("./index.html")
-                alert("ok");
-
+                for (var i = 0; i < $scope.teams.length; i++) {
+                    if ($scope.teams[i].id == id ){
+                        $scope.teams[i].payed = true;
+                    }
+                }
             })
             .error(function () {
                 console.log("WRONG")
