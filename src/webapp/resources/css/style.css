@@ -384,13 +384,13 @@ ul.nav {
 .team .teammate img{
   position: relative;
   display: block;
-  right: 110px;
-  height: 200%;
-  left: -80px;
+  /*right: 110px;*/
+  height: 100%;
+  /*left: -80px;*/
 }
 .team .col-md-4:last-child .teammate img {
 	left: auto;
-	right: 35px;
+	/*right: 35px;*/
 }
 .about_teammate {
 	margin-top: 10px;
