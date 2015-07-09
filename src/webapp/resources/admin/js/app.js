@@ -247,6 +247,30 @@ app.controller("teamsCtrl", function ($scope, $http) {
             });
     }
 });
+app.controller("news_editCtrl", function ($scope, $http) {
+    $http.get("/rest/news/")
+        .success(function (data) {
+            console.log(data);
+            //$scope.teams = data;
+            //for (var i = 0; i < data.length; i++) {
+            //    data[i].logo = "data:image/jpeg;base64," + data[i].logo;
+            //}
+        }
+    )
+    //$scope.setPaymentStatus = function (id) {
+    //    $http.put("/rest/teams/payment/" + id, "true")
+    //        .success(function (data) {
+    //            for (var i = 0; i < $scope.teams.length; i++) {
+    //                if ($scope.teams[i].id == id) {
+    //                    $scope.teams[i].payed = true;
+    //                }
+    //            }
+    //        })
+    //        .error(function () {
+    //            console.log("WRONG")
+    //        });
+    //}
+});
 
 app.controller("newsCtrl", function ($scope, $http) {
     $http.get("/rest/news")
