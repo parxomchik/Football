@@ -38,12 +38,14 @@
     <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
     <div class="input-group">
       <div class="input-group-addon">Заголовок</div>
-      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Заголовок">
+      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Заголовок" ng-model="news.header">
     </div>
   </div>
-                     <div id="summernote">Текст новости</div>
-
-                      </div>
+                            <div class="col-xs-12">
+                                <summernote height="200" ng-model="news.text"></summernote>
+                            </div>
+                            <button ng-click="editNewsSubmit()" class="btn btn-primary col-xs-12 margin_top_20" role="button">Сохранить</button>
+                        </div>
                     </div>
                 </div>
             </div>

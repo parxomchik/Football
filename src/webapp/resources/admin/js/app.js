@@ -284,9 +284,10 @@ app.controller("news_addCtrl", function ($scope, $http) {
 
 });
 app.controller("news_editCtrl", function ($scope, $http) {
+
     $http.get("/rest/news/")
         .success(function (data) {
-            console.log(data);
+            //console.log(data);
 
             //$scope.teams = data;
             //for (var i = 0; i < data.length; i++) {
@@ -339,7 +340,20 @@ app.controller("newsCtrl", function ($scope, $http) {
             }
         )
     }
-
+    $scope.newsEdit = function(id){
+        window.location.replace("#/clientpage/news/news_edit");
+        $http.get("/rest/news/" + id)
+            .success(function (data) {
+                $scope.news = data;
+                for (var i = 0; i < data.length; i++) {
+                    data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+                }
+            })
+            .error(function (data) {
+                console.log(data);
+            }
+        )
+    }
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
