@@ -107,6 +107,9 @@ footer {
 .margin_bottom_10 {
     margin-bottom: 10px;
 }
+.margin_top_20 {
+    margin-top: 20px;
+}
 .padding_fix {
     padding: 0px;
 }
@@ -185,4 +188,7 @@ height: 50px;
  .thumbnail>.admin_news_picture{
     height: 300px;
     /*width: 300px;*/
+}
+.panel-body {
+    min-height: 200px;
 }

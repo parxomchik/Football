@@ -1,4 +1,4 @@
-var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute']);
+var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute','summernote']);
 
 'use strict';
 
@@ -46,6 +46,11 @@ app.config(function ($routeProvider) {
         //    templateUrl: 'index.html',
         //    controller: 'mainCtrl'
         //})
+        .when('/clientpage/news/news_add', {
+            templateUrl: 'news_add.html',
+            controller: 'news_addCtrl'
+        })
+
         .otherwise({
             redirectTo: '/404'
         });
@@ -247,6 +252,62 @@ app.controller("teamsCtrl", function ($scope, $http) {
             });
     }
 });
+app.controller("news_addCtrl", function ($scope, $http) {
+    $scope.addNews = {}
+    //console.log($scope.addNews);
+    $scope.addNewsSubmit = function(){
+        console.log($scope.addNews);
+    }
+    $http.get("/rest/news/")
+        .success(function (data) {
+            //console.log(data);
+
+            //$scope.teams = data;
+            //for (var i = 0; i < data.length; i++) {
+            //    data[i].logo = "data:image/jpeg;base64," + data[i].logo;
+            //}
+        }
+    )
+    //$scope.setPaymentStatus = function (id) {
+    //    $http.put("/rest/teams/payment/" + id, "true")
+    //        .success(function (data) {
+    //            for (var i = 0; i < $scope.teams.length; i++) {
+    //                if ($scope.teams[i].id == id) {
+    //                    $scope.teams[i].payed = true;
+    //                }
+    //            }
+    //        })
+    //        .error(function () {
+    //            console.log("WRONG")
+    //        });
+    //}
+
+});
+app.controller("news_editCtrl", function ($scope, $http) {
+    $http.get("/rest/news/")
+        .success(function (data) {
+            console.log(data);
+
+            //$scope.teams = data;
+            //for (var i = 0; i < data.length; i++) {
+            //    data[i].logo = "data:image/jpeg;base64," + data[i].logo;
+            //}
+        }
+    )
+    //$scope.setPaymentStatus = function (id) {
+    //    $http.put("/rest/teams/payment/" + id, "true")
+    //        .success(function (data) {
+    //            for (var i = 0; i < $scope.teams.length; i++) {
+    //                if ($scope.teams[i].id == id) {
+    //                    $scope.teams[i].payed = true;
+    //                }
+    //            }
+    //        })
+    //        .error(function () {
+    //            console.log("WRONG")
+    //        });
+    //}
+});
 
 app.controller("newsCtrl", function ($scope, $http) {
     $http.get("/rest/news")
@@ -257,7 +318,9 @@ app.controller("newsCtrl", function ($scope, $http) {
             }
         }
     );
-
+    $scope.addNews = function(){
+        window.location.replace("#/clientpage/news/news_add");
+    }
     $scope.deleteNews = function (id) {
         $http.delete("/rest/news/" + id)
             .success(function () {
