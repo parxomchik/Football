@@ -441,8 +441,8 @@ nav*/
 	  	font-size: 60px;
 	}
 	.team .teammate {
-  		height: 360px;
- 		width: 360px;
+  		height: 300px;
+ 		width: 300px;
 	}
 	.team .about_teammate {
 		margin-bottom: 100px;
@@ -461,8 +461,8 @@ nav*/
 	  	margin-bottom: 120px;
 	}
 	.team .teammate img {
-  		right: 150px;
-  		height: 200%;
+  		/*right: 150px;*/
+  		height: 100%;
 	}
 	.team .col-md-6:last-child .teammate img {
   		right: 60px;
