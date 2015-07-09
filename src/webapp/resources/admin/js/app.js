@@ -201,7 +201,7 @@ app.controller("feedbackCtrl", function ($scope, $http) {
 
         for (var i = 0; i < $scope.feedbacks.length; i++) {
             if ($scope.feedbacks[i].id == id) {
-                var  feedback_info = $scope.feedbacks[i];
+                var feedback_info = $scope.feedbacks[i];
                 feedback_info.processed = true;
             }
         }
@@ -282,8 +282,8 @@ app.controller("newsCtrl", function ($scope, $http) {
         }
     );
 
-    $scope.deleteNews = function(id) {
-        $http.delete("/rest/news/"+id)
+    $scope.deleteNews = function (id) {
+        $http.delete("/rest/news/" + id)
             .success(function () {
                 alert("Succesfully deleted");
                 $http.get("/rest/news")
@@ -404,9 +404,9 @@ app.controller("applyController", function ($scope, $http) {
             .success(function (data) {
                 alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function () {
                     alertify.message('OK');
+                }).set('onok', function (closeEvent) {
+                    window.location.replace("./index.html");
                 });
-                window.location.replace("./index.html")
-
             })
             .error(function (data) {
                 console.log("WRONG")
