@@ -34,7 +34,8 @@
                 <div class="tab-pane active" id="prices" >
                     <div class="panel-body">
                         <div class="row col-xs-12 ">
-  <div class="form-group padding_right_fix col-xs-12">
+                            <img class="margin_bottom_10" height="300" src="{{news.picture}}" alt=""/>
+                            <div class="form-group padding_right_fix col-xs-12">
     <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
     <div class="input-group">
       <div class="input-group-addon">Заголовок</div>
@@ -56,7 +57,7 @@
                                 <div class="input-group">
                                     <div class="input-group-addon">TitleTags</div>
                                     <input type="text" class="form-control" id="exampleInputAmount"
-                                           ng-model="news.title" placeholder="TitleTags">
+                                           ng-model="news.titleTags" placeholder="TitleTags">
                                 </div>
                             </div>
                             <div class="form-group col-xs-12 padding_right_fix">
@@ -65,12 +66,12 @@
                                 <div class="input-group">
                                     <div class="input-group-addon">DescriptionTags</div>
                                     <input type="text" class="form-control" id="exampleInputAmount"
-                                           ng-model="news.description" placeholder="DescriptionTags">
+                                           ng-model="news.descriptionTags" placeholder="DescriptionTags">
                                 </div>
                             </div>
                             <strong class="col-xs-12">Short Description</strong>
                             <div class="col-xs-12">
-                                <summernote height="100" ng-model="news.text"></summernote>
+                                <summernote height="100" ng-model="news.shortDescription"></summernote>
                             </div>
                             <strong class="col-xs-12 margin_top_20">Text</strong>
                             <div class="col-xs-12 ">

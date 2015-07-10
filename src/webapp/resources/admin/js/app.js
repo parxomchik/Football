@@ -284,30 +284,15 @@ app.controller("news_addCtrl", function ($scope, $http) {
 
 });
 app.controller("news_editCtrl", function ($scope, $http) {
-
-    $http.get("/rest/news/")
+    var urlAux = window.location.href.split("=")[1]
+    console.log(urlAux);
+    $http.get("/rest/news/" + urlAux)
         .success(function (data) {
-            //console.log(data);
+            $scope.news = data;
+            data.picture = "data:image/jpeg;base64," + data.picture;
 
-            //$scope.teams = data;
-            //for (var i = 0; i < data.length; i++) {
-            //    data[i].logo = "data:image/jpeg;base64," + data[i].logo;
-            //}
         }
     )
-    //$scope.setPaymentStatus = function (id) {
-    //    $http.put("/rest/teams/payment/" + id, "true")
-    //        .success(function (data) {
-    //            for (var i = 0; i < $scope.teams.length; i++) {
-    //                if ($scope.teams[i].id == id) {
-    //                    $scope.teams[i].payed = true;
-    //                }
-    //            }
-    //        })
-    //        .error(function () {
-    //            console.log("WRONG")
-    //        });
-    //}
 });
 
 app.controller("newsCtrl", function ($scope, $http) {
@@ -341,28 +326,28 @@ app.controller("newsCtrl", function ($scope, $http) {
         )
     }
     $scope.newsEdit = function (id) {
-        window.location.replace("#/clientpage/news/news_edit");
-        $http.get("/rest/news/" + id)
-            .success(function (data) {
-                $scope.news = data;
-                for (var i = 0; i < data.length; i++) {
-                    data[i].picture = "data:image/jpeg;base64," + data[i].picture;
-                }
-            })
-            .error(function (data) {
-                console.log(data);
-            }
-        )
+        window.location.replace("#/clientpage/news/news_edit"+ '?id=' +id);
+        //$http.get("/rest/news/" + id)
+        //    .success(function (data) {
+        //        $scope.news = data;
+        //        for (var i = 0; i < data.length; i++) {
+        //            data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+        //        }
+        //    })
+        //    .error(function (data) {
+        //        console.log(data);
+        //    }
+        //)
     }
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
-    $scope.user_slugebkis = function () {
-        return $rootScope.slugebkis;
-    };
-    $scope.slugebka_submit = function slugebka_otpravka(kod) {
-        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: true};
-        console.log(user_info);
+    //$scope.user_slugebkis = function () {
+    //    return $rootScope.slugebkis;
+    //};
+    //$scope.slugebka_submit = function slugebka_otpravka(kod) {
+    //    var user_info = {Id: $rootScope.userData.Id, kod: kod, status: true};
+    //    console.log(user_info);
         //alert('delete ' + reg_n);
 //        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
 //
@@ -382,19 +367,19 @@ app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
 //                //console.log(user_info)
 //                console.log(data)
 //            });
-    }
-    $scope.slugebka_decline = function slugebka_otpravka(kod) {
-        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: false};
-        console.log(user_info);
-//        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
-//
-//            .success(function (data) {
-//
-//            })
-//            .error(function (data) {
-//                console.log(data)
-//            });
-    }
+//    }
+//    $scope.slugebka_decline = function slugebka_otpravka(kod) {
+//        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: false};
+//        console.log(user_info);
+////        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
+////
+////            .success(function (data) {
+////
+////            })
+////            .error(function (data) {
+////                console.log(data)
+////            });
+//    }
 });
 
 app.controller("applyController", function ($scope, $http) {
