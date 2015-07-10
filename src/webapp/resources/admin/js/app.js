@@ -239,7 +239,7 @@ app.controller("teamsCtrl", function ($scope, $http) {
             });
     }
 });
-app.controller("news_addCtrl", function ($scope, $http) {
+app.controller("news_addCtrl", function ($scope, $http, $location) {
     $scope.addNews = {}
 
     $scope.addNewsSubmit = function () {
@@ -248,6 +248,7 @@ app.controller("news_addCtrl", function ($scope, $http) {
         $http.post("/rest/news/",$scope.addNews)
             .success(function (data) {
                 alert("Success");
+                $location.path("/clientpage/news");
             })
             .error(function (data) {
                 console.log("WRONG")
