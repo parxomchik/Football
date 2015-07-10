@@ -1,4 +1,4 @@
-var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute','summernote']);
+var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote']);
 
 'use strict';
 
@@ -255,7 +255,7 @@ app.controller("teamsCtrl", function ($scope, $http) {
 app.controller("news_addCtrl", function ($scope, $http) {
     $scope.addNews = {}
     //console.log($scope.addNews);
-    $scope.addNewsSubmit = function(){
+    $scope.addNewsSubmit = function () {
         console.log($scope.addNews);
     }
     $http.get("/rest/news/")
@@ -319,7 +319,7 @@ app.controller("newsCtrl", function ($scope, $http) {
             }
         }
     );
-    $scope.addNews = function(){
+    $scope.addNews = function () {
         window.location.replace("#/clientpage/news/news_add");
     }
     $scope.deleteNews = function (id) {
@@ -340,7 +340,7 @@ app.controller("newsCtrl", function ($scope, $http) {
             }
         )
     }
-    $scope.newsEdit = function(id){
+    $scope.newsEdit = function (id) {
         window.location.replace("#/clientpage/news/news_edit");
         $http.get("/rest/news/" + id)
             .success(function (data) {
@@ -477,7 +477,7 @@ function fileLoaderClickImitation() {
 
 var imgData = "";
 //function to upload image
-function encodeImageFileAsURL() {
+function encodeImageFileAsURL(id) {
 
     var filesSelected = document.getElementById("inputFileToLoad").files;
     if (filesSelected.length > 0) {
@@ -487,10 +487,21 @@ function encodeImageFileAsURL() {
 
         fileReader.onload = function (fileLoadedEvent) {
             var srcData = fileLoadedEvent.target.result; // <--- data: base64
-
             imgData = srcData.toString();
-            console.log(imgData);
-            $("#imgLoader").css({'background-image': 'url(' + imgData + ')', 'background-size': '100% 100%'});
+            switch (id) {
+                case 'applyImgLoader':
+                    $("#applyImgLoader").css({
+                        'background-image': 'url(' + imgData + ')',
+                        'background-size': '100% 100%'
+                    });
+                    break;
+                case 'newsImgLoader':
+                    var newImage = document.createElement('img');
+                    newImage.src = srcData;
+                    $("#newsImgLoader").append("<img src='"+srcData+"' alt='News image'/>");
+                    break;
+                default :;
+            }
         }
         fileReader.readAsDataURL(fileToLoad);
 
