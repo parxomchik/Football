@@ -293,7 +293,23 @@ app.controller("news_editCtrl", function ($scope, $http) {
 
         }
     )
+    $scope.editNewsSubmit = function(id){
+        var newsEditData = $scope.news;
+        $http.put("/rest/news/" + id, newsEditData)
+            .success(function (data) {
+                //for (var i = 0; i < $scope.teams.length; i++) {
+                //    if ($scope.teams[i].id == id) {
+                //        $scope.teams[i].payed = true;
+                //    }
+                //}
+
+            })
+            .error(function () {
+                console.log("WRONG")
+            });
+    }
 });
+
 
 app.controller("newsCtrl", function ($scope, $http) {
     $http.get("/rest/news")
