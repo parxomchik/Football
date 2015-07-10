@@ -498,7 +498,7 @@ function encodeImageFileAsURL(id) {
                 case 'newsImgLoader':
                     var newImage = document.createElement('img');
                     newImage.src = srcData;
-                    $("#newsImgLoader").append("<img src='"+srcData+"' alt='News image'/>");
+                    $("#newsImgLoader").html("<img src='"+srcData+"' alt='News image'/>");
                     break;
                 default :;
             }
