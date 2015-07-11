@@ -57,11 +57,12 @@ app.config(function ($routeProvider) {
     //$locationProvider.html5Mode(true);
 });
 
-app.controller("mainCtrl", function ($scope, $http) {
+app.controller("mainCtrl", function ($scope, $http, $sce) {
 
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
             for (var i = 0; i < data.length; i++) {
+                data[i].shortDescription=$sce.trustAsHtml(data[i].shortDescription);
                 data[i].picture = "data:image/jpeg;base64," + data[i].picture;
             }
             $scope.news = data;
@@ -72,18 +73,7 @@ app.controller("mainCtrl", function ($scope, $http) {
         });
 
     $scope.news_readMore = function (new_id) {
-        //$http.get("/rest/news/" + new_id)
-        //    .success(function (data) {
-        //        console.log(data);
-        //        $scope.currentNews = data;
-        //
-        //    }
-        //)
-        //    .error(function (data) {
-        //        console.log(data)
-        //    });
         window.location.replace('/news.html' + '?id=' + new_id)
-
     }
 
     $scope.feedback_submit = function () {
@@ -115,16 +105,13 @@ app.controller("mainCtrl", function ($scope, $http) {
     }
 });
 
-app.controller("newsPageCtrl", function ($scope, $http, $location, $routeParams) {
+app.controller("newsPageCtrl", function ($scope, $http, $sce) {
     var url = window.location;
     console.log(url);
     var urlAux = window.location.href.split("=")[1]
-    console.log(urlAux);
-    //var img_id = urlAux;
     $http.get("/rest/news/" + urlAux)
         .success(function (data) {
-            console.log(data);
-            //window.location.replace('/news.html'+'?id='+new_id)
+            data.text=$sce.trustAsHtml(data.text);
             data.picture = "data:image/jpeg;base64," + data.picture;
             $scope.currentNews = data;
         }
@@ -252,71 +239,57 @@ app.controller("teamsCtrl", function ($scope, $http) {
             });
     }
 });
-app.controller("news_addCtrl", function ($scope, $http) {
+app.controller("news_addCtrl", function ($scope, $http, $location) {
     $scope.addNews = {}
-    //console.log($scope.addNews);
-    $scope.addNewsSubmit = function () {
-        console.log($scope.addNews);
-    }
-    $http.get("/rest/news/")
-        .success(function (data) {
-            //console.log(data);
 
-            //$scope.teams = data;
-            //for (var i = 0; i < data.length; i++) {
-            //    data[i].logo = "data:image/jpeg;base64," + data[i].logo;
-            //}
-        }
-    )
-    //$scope.setPaymentStatus = function (id) {
-    //    $http.put("/rest/teams/payment/" + id, "true")
-    //        .success(function (data) {
-    //            for (var i = 0; i < $scope.teams.length; i++) {
-    //                if ($scope.teams[i].id == id) {
-    //                    $scope.teams[i].payed = true;
-    //                }
-    //            }
-    //        })
-    //        .error(function () {
-    //            console.log("WRONG")
-    //        });
-    //}
+    $scope.addNewsSubmit = function () {
+        $scope.addNews.picture = imgData.split(',')[1];
+        $scope.addNews.active=true;
+        $http.post("/rest/news/",$scope.addNews)
+            .success(function (data) {
+                alert("Success");
+                $location.path("/clientpage/news");
+            })
+            .error(function (data) {
+                console.log("WRONG")
+            });
+    }
+
+
 
 });
 app.controller("news_editCtrl", function ($scope, $http) {
-
-    $http.get("/rest/news/")
-        .success(function (data) {
-            //console.log(data);
-
-            //$scope.teams = data;
-            //for (var i = 0; i < data.length; i++) {
-            //    data[i].logo = "data:image/jpeg;base64," + data[i].logo;
-            //}
-        }
-    )
-    //$scope.setPaymentStatus = function (id) {
-    //    $http.put("/rest/teams/payment/" + id, "true")
-    //        .success(function (data) {
-    //            for (var i = 0; i < $scope.teams.length; i++) {
-    //                if ($scope.teams[i].id == id) {
-    //                    $scope.teams[i].payed = true;
-    //                }
-    //            }
-    //        })
-    //        .error(function () {
-    //            console.log("WRONG")
-    //        });
-    //}
-});
-
-app.controller("newsCtrl", function ($scope, $http) {
-    $http.get("/rest/news")
+    var urlAux = window.location.href.split("=")[1]
+    $http.get("/rest/news/" + urlAux)
         .success(function (data) {
             $scope.news = data;
+            data.picture = "data:image/jpeg;base64," + data.picture;
+
+        }
+    );
+
+    $scope.editNewsSubmit = function(id){
+        var newsEditData = $scope.news;
+        newsEditData.picture=newsEditData.picture.split(',')[1];
+        $http.put("/rest/news/" + id, newsEditData)
+            .success(function (data) {
+
+            })
+            .error(function () {
+                console.log("WRONG")
+            });
+    }
+});
+
+
+app.controller("newsCtrl", function ($scope, $http, $sce) {
+    $http.get("/rest/news")
+        .success(function (data) {
             for (var i = 0; i < data.length; i++) {
+                data[i].shortDescription=$sce.trustAsHtml(data[i].shortDescription);
                 data[i].picture = "data:image/jpeg;base64," + data[i].picture;
             }
+            $scope.news = data;
         }
     );
     $scope.addNews = function () {
@@ -341,28 +314,28 @@ app.controller("newsCtrl", function ($scope, $http) {
         )
     }
     $scope.newsEdit = function (id) {
-        window.location.replace("#/clientpage/news/news_edit");
-        $http.get("/rest/news/" + id)
-            .success(function (data) {
-                $scope.news = data;
-                for (var i = 0; i < data.length; i++) {
-                    data[i].picture = "data:image/jpeg;base64," + data[i].picture;
-                }
-            })
-            .error(function (data) {
-                console.log(data);
-            }
-        )
+        window.location.replace("#/clientpage/news/news_edit"+ '?id=' +id);
+        //$http.get("/rest/news/" + id)
+        //    .success(function (data) {
+        //        $scope.news = data;
+        //        for (var i = 0; i < data.length; i++) {
+        //            data[i].picture = "data:image/jpeg;base64," + data[i].picture;
+        //        }
+        //    })
+        //    .error(function (data) {
+        //        console.log(data);
+        //    }
+        //)
     }
 });
 
 app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
-    $scope.user_slugebkis = function () {
-        return $rootScope.slugebkis;
-    };
-    $scope.slugebka_submit = function slugebka_otpravka(kod) {
-        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: true};
-        console.log(user_info);
+    //$scope.user_slugebkis = function () {
+    //    return $rootScope.slugebkis;
+    //};
+    //$scope.slugebka_submit = function slugebka_otpravka(kod) {
+    //    var user_info = {Id: $rootScope.userData.Id, kod: kod, status: true};
+    //    console.log(user_info);
         //alert('delete ' + reg_n);
 //        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
 //
@@ -382,19 +355,19 @@ app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
 //                //console.log(user_info)
 //                console.log(data)
 //            });
-    }
-    $scope.slugebka_decline = function slugebka_otpravka(kod) {
-        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: false};
-        console.log(user_info);
-//        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
-//
-//            .success(function (data) {
-//
-//            })
-//            .error(function (data) {
-//                console.log(data)
-//            });
-    }
+//    }
+//    $scope.slugebka_decline = function slugebka_otpravka(kod) {
+//        var user_info = {Id: $rootScope.userData.Id, kod: kod, status: false};
+//        console.log(user_info);
+////        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
+////
+////            .success(function (data) {
+////
+////            })
+////            .error(function (data) {
+////                console.log(data)
+////            });
+//    }
 });
 
 app.controller("applyController", function ($scope, $http) {

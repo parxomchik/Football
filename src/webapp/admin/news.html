@@ -47,7 +47,7 @@
                                     <div class="caption">
                                         <h3 class="news_header">{{new.header}}</h3>
 
-                                        <p class="description">{{new.shortDescription}}</p>
+                                        <p class="description" ng-bind-html="new.shortDescription"></p>
 
                                         <div class="center-block col-xs-12">
                                             <input type="checkbox" name="my-checkbox" checked>
