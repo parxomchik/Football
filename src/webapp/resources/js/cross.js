@@ -26,3 +26,22 @@ var browser = get_name_browser();
 if (browser == 'Firefox') {
     $('.circle').on("mouseover", function() { $('.circle').css('background', 'transparent');});
 }
+
+//blur effect
+// if($('.ajs-no-overflow').is()){
+//     $('.section, #navbar-top').addClass('blur');
+// }
+// Один раз объявляем функцию, потом используем так, как в примере
+jQuery.fn.exists = function() {
+   return $(this).length;
+}
+// Пример использования:
+// $('body').on('click', function() {
+$('body').on('mousemove', function() {
+if($('body').hasClass('modal-open') || $('body').hasClass('ajs-no-overflow')) {
+    $('.section, #navbar-top').addClass('blur');
+}
+else {
+    $('.section, #navbar-top').removeClass('blur'); 
+} 
+});

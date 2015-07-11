@@ -582,7 +582,7 @@ ul.nav {
    	border: none!important; 
    	border-radius: 0;  
   	color: #fff;
-  	font-size: 26px;
+  	font-size: 24px;
   	font-weight: normal;
   	font-family: 'MyriadProRegular', sans-serif;
 }
@@ -756,4 +756,12 @@ ul.nav {
 	height: 100%;
 	z-index: 1982;
 
+}
+/*blur*/
+.blur {
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-ms-filter: blur(2px);
+	-o-filter: blur(2px);
+	filter: blur(2px);
 }
