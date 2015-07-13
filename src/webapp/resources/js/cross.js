@@ -45,3 +45,9 @@ else {
     $('.section, #navbar-top').removeClass('blur'); 
 } 
 });
+if (navigator.userAgent.indexOf ('Mac')!= -1) {
+    // $('.header_text .special, .btn-request, .order_button').
+    $('.header_text .special').css('padding-top', '8px');
+    $('.btn-request').css('padding-top', '17px');
+    $('.order_button').css('padding-top', '8px');
+}
