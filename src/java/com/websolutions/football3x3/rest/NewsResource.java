@@ -5,6 +5,7 @@ import com.websolutions.football3x3.entity.News;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
+import javax.persistence.PersistenceException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Timestamp;
@@ -31,6 +32,23 @@ public class NewsResource {
     }
 
     /**
+     * Get News entity by id.
+     * @param id news identifier
+     * @return single News in JSON format
+     * @throws javax.ws.rs.WebApplicationException 404
+     */
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public News getNewsById(@PathParam("id") Integer id) {
+        News news = newsDao.find(id);
+        if (news==null) {
+            throw new WebApplicationException(404);
+        }
+        return news;
+    }
+
+    /**
      * Method to get all active news, list is ordered by date desc.
      * @param count number of news from list
      * @return list of news in JSON format
@@ -51,22 +69,28 @@ public class NewsResource {
 
     }
 
-    /**
-     * Get News entity by id.
-     * @param id news identifier
-     * @return single News in JSON format
-     * @throws javax.ws.rs.WebApplicationException 404
-     */
     @GET
-    @Path("{id}")
+    @Path("active/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public News getNewsById(@PathParam("id") Integer id) {
-        News news = newsDao.find(id);
-        if (news==null) {
+    public News getActiveById(@PathParam("id") Integer id) {
+        try {
+            return newsDao.findActiveById(id);
+        } catch (PersistenceException e) {
             throw new WebApplicationException(404);
         }
-        return news;
     }
+
+    @GET
+    @Path("activeIds")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Integer> getActiveNewsIds() {
+        try {
+            return newsDao.findActiveNewsIds();
+        } catch (PersistenceException e) {
+            throw new WebApplicationException(404);
+        }
+    }
+
 
     /**
      * Saves new entity to database.
