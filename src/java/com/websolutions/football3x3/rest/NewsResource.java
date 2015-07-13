@@ -5,6 +5,7 @@ import com.websolutions.football3x3.entity.News;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
+import javax.persistence.PersistenceException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Timestamp;
@@ -48,6 +49,18 @@ public class NewsResource {
             return newsDao.findActive();
         }
         return newsDao.findActive();
+
+    }
+
+    @GET
+    @Path("active/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public News getActiveById(@PathParam("id") Integer id) {
+        try {
+            return newsDao.findActiveById(id);
+        } catch (PersistenceException e) {
+            throw new WebApplicationException(404);
+        }
 
     }
 
