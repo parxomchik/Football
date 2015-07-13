@@ -32,6 +32,23 @@ public class NewsResource {
     }
 
     /**
+     * Get News entity by id.
+     * @param id news identifier
+     * @return single News in JSON format
+     * @throws javax.ws.rs.WebApplicationException 404
+     */
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public News getNewsById(@PathParam("id") Integer id) {
+        News news = newsDao.find(id);
+        if (news==null) {
+            throw new WebApplicationException(404);
+        }
+        return news;
+    }
+
+    /**
      * Method to get all active news, list is ordered by date desc.
      * @param count number of news from list
      * @return list of news in JSON format
@@ -61,25 +78,19 @@ public class NewsResource {
         } catch (PersistenceException e) {
             throw new WebApplicationException(404);
         }
-
     }
 
-    /**
-     * Get News entity by id.
-     * @param id news identifier
-     * @return single News in JSON format
-     * @throws javax.ws.rs.WebApplicationException 404
-     */
     @GET
-    @Path("{id}")
+    @Path("activeIds")
     @Produces(MediaType.APPLICATION_JSON)
-    public News getNewsById(@PathParam("id") Integer id) {
-        News news = newsDao.find(id);
-        if (news==null) {
+    public List<Integer> getActiveNewsIds() {
+        try {
+            return newsDao.findActiveNewsIds();
+        } catch (PersistenceException e) {
             throw new WebApplicationException(404);
         }
-        return news;
     }
+
 
     /**
      * Saves new entity to database.

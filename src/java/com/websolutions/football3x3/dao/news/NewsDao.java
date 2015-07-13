@@ -11,4 +11,5 @@ import java.util.List;
 public interface NewsDao extends Dao<News,Integer> {
     public List<News> findActive();
     public News findActiveById(int id);
+    public List<Integer> findActiveNewsIds();
 }
