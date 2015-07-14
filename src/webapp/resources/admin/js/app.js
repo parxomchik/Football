@@ -248,7 +248,7 @@ app.controller("news_addCtrl", function ($scope, $http, $location) {
     }
 });
 
-app.controller("news_editCtrl", function ($scope, $http) {
+app.controller("news_editCtrl", function ($scope, $http, $location) {
     var newsId = window.location.href.split("=")[1]
     $http.get("/rest/news/" + newsId)
         .success(function (data) {
@@ -259,10 +259,11 @@ app.controller("news_editCtrl", function ($scope, $http) {
 
     $scope.editNewsSubmit = function (id) {
         var newsEditData = $scope.news;
-        newsEditData.picture = newsEditData.picture.split(',')[1];
+        newsEditData.picture = imgData.split(',')[1];
         $http.put("/rest/news/" + id, newsEditData)
             .success(function (data) {
-
+                alert("Success");
+                $location.path("/clientpage/news");
             })
             .error(function () {
                 console.log("WRONG")
@@ -400,9 +401,10 @@ function encodeImageFileAsURL(id) {
                     });
                     break;
                 case 'newsImgLoader':
-                    var newImage = document.createElement('img');
-                    newImage.src = srcData;
-                    $("#newsImgLoader").html("<img src='" + srcData + "' alt='News image'/>");
+                    $("#newsImgLoader").html("<img src='" + srcData + "' width='800' height='600' alt='News image'/>");
+                    break;
+                case 'newsEditImgLoader':
+                     $("#newsEditImgLoader").attr("src",srcData);
                     break;
                 default :
                     ;
