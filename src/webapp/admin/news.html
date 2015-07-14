@@ -50,7 +50,7 @@
                                         <p class="description" ng-bind-html="new.shortDescription"></p>
 
                                         <div class="center-block col-xs-12">
-                                            <input type="checkbox" name="my-checkbox" checked>
+                                            <input type="checkbox" name="my-checkbox" ng-model="new.active" ng-change="changeActiveStatus(new.id)">
                                             <button class="btn btn-primary" role="button" ng-click="newsEdit(new.id)">Редактировать</button>
                                             <button class="btn btn-danger" type="button" ng-click="deleteNews(new.id)">
                                                 Удалить

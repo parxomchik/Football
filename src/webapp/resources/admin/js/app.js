@@ -259,7 +259,11 @@ app.controller("news_editCtrl", function ($scope, $http, $location) {
 
     $scope.editNewsSubmit = function (id) {
         var newsEditData = $scope.news;
-        newsEditData.picture = imgData.split(',')[1];
+        if (imgData=="") {
+            newsEditData.picture = newsEditData.picture.split(',')[1];
+        } else {
+            newsEditData.picture = imgData.split(',')[1];
+        }
         $http.put("/rest/news/" + id, newsEditData)
             .success(function (data) {
                 alert("Success");
@@ -282,7 +286,7 @@ app.controller("newsCtrl", function ($scope, $http, $sce, $location) {
         }
     );
     $scope.addNews = function () {
-        window.location.assign("#/clientpage/news/news_add");
+        $location.path("/clientpage/news/news_add");
     }
     $scope.deleteNews = function (id) {
         $http.delete("/rest/news/" + id)
@@ -297,6 +301,29 @@ app.controller("newsCtrl", function ($scope, $http, $sce, $location) {
     }
     $scope.newsEdit = function (id) {
         window.location.assign("#/clientpage/news/news_edit" + '?id=' + id);
+    }
+    $scope.changeActiveStatus = function(id) {
+        for (var i=0; i<$scope.news.length;i++) {
+            if ($scope.news[i].id==id) {
+                var newsEntry = $scope.news[i];
+                newsEntry.picture = newsEntry.picture.split(',')[1];
+                newsEntry.shortDescription=$sce.getTrustedHtml(newsEntry.shortDescription);
+                $http.put("/rest/news/"+id,newsEntry)
+                    .success(function(data) {
+                        alert("Active status is "+data.active +" now.");
+                        newsEntry.picture = "data:image/jpeg;base64," + newsEntry.picture;
+                        newsEntry.shortDescription=$sce.trustAsHtml(newsEntry.shortDescription);
+                    })
+                    .error(function() {
+                        console.log("wrong");
+                        newsEntry.picture = "data:image/jpeg;base64," + newsEntry.picture;
+                        newsEntry.shortDescription=$sce.trustAsHtml(newsEntry.shortDescription);
+                    })
+
+                break;
+            }
+        }
+
     }
 });
 
