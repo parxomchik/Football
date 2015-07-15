@@ -117,6 +117,7 @@ public class NewsResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public News updateNews(@PathParam("id") Integer id, News newsEntry) {
+        newsEntry.setDate(new Timestamp(new java.util.Date().getTime()));
         return newsDao.save(newsEntry);
     }
 
