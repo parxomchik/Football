@@ -1,6 +1,16 @@
 /**
  * Created by 1 on 07.07.2015.
  */
+$(document).ready(function() {
+    $('.blur').on('click', function() {
+        $('.section, nav').addClass('blured');
+    $(".alertify .ajs-modal, .modal").hover(
+        function(){},function(){
+            $('.section, nav').removeClass('blured');
+        });
+    });
+});
+
 function get_name_browser(){
     // получаем данные userAgent
     var ua = navigator.userAgent;
@@ -36,15 +46,22 @@ jQuery.fn.exists = function() {
    return $(this).length;
 }
 // Пример использования:
-// $('body').on('click', function() {
-$('body').on('mousemove', function() {
-if($('body').hasClass('modal-open') || $('body').hasClass('ajs-no-overflow')) {
-    $('.section, #navbar-top').addClass('blur');
-}
-else {
-    $('.section, #navbar-top').removeClass('blur'); 
-} 
-});
+//if($('body').hasClass('modal-open') || $('body').hasClass('ajs-no-overflow')) {
+// if($('body').hasClass('modal-open') || $('body').hasClass('ajs-no-overflow')) {
+// $('.blur').on('click', function() {
+//     $('.section, #navbar-top').addClass('blured');
+//     // $('.section, #navbar-top').removeClass('blur');
+//     $('body')on('click', function() {
+//         $('.section, #navbar-top').removeClass('blured');
+//     });
+// });
+
+
+
+// $('.modal, .close, .ajs-dimmer, button.ajs-button.ajs-ok').on('click', function() {
+        
+// });
+
 if (navigator.userAgent.indexOf ('Mac')!= -1) {
     // $('.header_text .special, .btn-request, .order_button').
     $('.header_text .special').css('padding-top', '8px');

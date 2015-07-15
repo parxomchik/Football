@@ -1,3 +1,7 @@
+$('.alertify .ajs-modal, .modal').hover(
+function(){},function(){
+$('.section, nav').removeClass('blured');
+});
 var cSpeed=9;
 	var cWidth=64;
 	var cHeight=64;

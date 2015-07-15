@@ -6,6 +6,7 @@ body {
 	width:100%;
     height:100%;
     overflow-y: scroll!important;
+    padding: 0!important;
 }
 hr {
 	margin: 0;
@@ -108,7 +109,7 @@ ul.nav {
 	background-size: cover;
 	color:#fff;
 	text-transform: uppercase;
-	z-index: 0!important;
+	/*z-index: 0!important;*/
 	overflow: hidden;
 /*	-webkit-transition: all linear .3s;
 	-moz-transition: all linear .3s;
@@ -119,13 +120,17 @@ ul.nav {
 #fullpage #section1, #fullpage #section2/*, #fullpage #section3*//*,#fullpage #section4, #fullpage #section5, #fullpage #section6,*/ {
 	position: relative;
 	width: 100%;
-	z-index: 1;
+	z-index: 2;
 }
 #bg {
+	display: none;
 	position: absolute;
 	top: -90px;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+	/*background: url('../images/section1.jpg') no-repeat;*/
+	/*background-size: cover;*/
+/*	z-index: 1!important;*/
 }
 #fullpage .section:first-child:before {
 	position: absolute;
@@ -134,13 +139,15 @@ ul.nav {
 	width: 100%;
 	height: 100%;
 	max-height: 1600px;
+	/*background: url('../images/section1.jpg') no-repeat;*/
+	/*background-size: cover;*/
 	/*background: rg(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .1));*/
-    background: -moz-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+/*    background: -moz-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -webkit-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -o-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -ms-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
-    background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
-    z-index: -1;
+    background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));*/
+    z-index: -1!important;
 }
 .fp-tableCell {
 	vertical-align: inherit!important;
@@ -151,12 +158,16 @@ ul.nav {
 	word-spacing: 5px;
   	line-height: 70px;
   	font-family: 'MyriadProBoldCondenced', sans-serif;
+  	z-index: 3!important;
 }
 .header_text .special, .header_text_mob .special {
 	background: rgba(255,255,255, .7);
 	color: #ff0c3a;
 	padding: 5px;
   	margin: -5px;
+}
+#fullpage .section:first-child #btn-request {
+	z-index: 3!important;
 }
 /*end section1*/
 /*section 2*/
@@ -283,6 +294,8 @@ ul.nav {
 /*section 3*/
 #section2 {
 	padding-top: 25px;
+	z-index: 2;
+	background-color: #fff;
 }
 #section2 .row:first-child {
 	height: 680px;
@@ -337,6 +350,7 @@ ul.nav {
 	background-position: 0 -150px;
 	background-size: cover;
 	color: #fff;
+	z-index: 2;
 }
 .about_footbal h1 {
 	margin-top: 150px;
@@ -548,6 +562,7 @@ ul.nav {
   	color: red;
   	background-color: #000;
   	opacity: .8;
+  	padding: 0!important;
 }
 /*.modal-open {
   	padding: 0!important;
@@ -560,9 +575,7 @@ ul.nav {
 	border: none;
 	font-family: 'MyriadProBold', sans-serif;
 }
-.modal-header button{
-	padding: 8px 10px;
-	border: 2px solid #fff;
+/*.modal-header button{
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -572,9 +585,15 @@ ul.nav {
 	font-family: 'MyriadProRegular', sans-serif!important;
 	outline: none;
 	font-weight: 500;
-}
+}*/
 .modal-header button:hover {
 	opacity: 1;
+}
+.modal .modal-header .close {
+	width: 45px;
+	height:45px;
+	background: url('../images/close.png') no-repeat;
+	background-size: 100%; 
 }
 .modal-content {
   	box-shadow: none!important;
@@ -758,10 +777,21 @@ ul.nav {
 
 }
 /*blur*/
-.blur {
+.blured {
 	-webkit-filter: blur(2px);
 	-moz-filter: blur(2px);
 	-ms-filter: blur(2px);
 	-o-filter: blur(2px);
 	filter: blur(2px);
 }
+/*video*/
+/*#tubular-container {
+   overflow: visible!important; 
+  position: relative!important;
+}*/
+/*#tubular-shield {
+	display: none;
+}*/
+/*#bg, #tubular-shield, #tubular-container {
+	z-index: -1!important;
+} */
