@@ -1,10 +1,10 @@
-var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote']);
+var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote', 'app.services']);
 
 'use strict';
 
 angular.module('mgcrea.ngStrapDocs');
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $httpProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'login_page.html',
@@ -54,7 +54,52 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/404'
         });
-    //$locationProvider.html5Mode(true);
+}).run(function($rootScope, $location, $http) {
+    $rootScope.isAdmin = function() {
+
+        if ($rootScope.user === undefined) {
+            return false;
+        }
+
+        if ($rootScope.user.role === undefined) {
+            return false;
+        }
+
+        return true;
+    };
+
+    $rootScope.logout = function() {
+        delete $rootScope.user;
+        $location.path("/home");
+    }
+
+    /* Try getting valid user from cookie or go to login page */
+    //var originalPath = $location.path();
+    //$location.path("#/home");
+    //
+    //    $http.get('/rest/user')
+    //        .success(function(user) {
+    //            $rootScope.user = user;
+    //            $location.path(originalPath);
+    //        });
+    $rootScope.initialized = true;
+});
+
+var services = angular.module('app.services', ['ngResource']);
+
+services.factory('UserService', function($resource) {
+    return $resource('/rest/user/:action', {},
+        {
+            authenticate: {
+                method: 'POST',
+                params: {'action' : 'authenticate'},
+                headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            },
+            get: {
+                method:'GET'
+            }
+        }
+    );
 });
 
 app.controller("mainCtrl", function ($scope, $http, $sce) {
@@ -122,24 +167,24 @@ app.controller("newsPageCtrl", function ($scope, $http, $sce) {
 
     $scope.nextNews = function () {
 
-        for (var i=0; i<newsIdList.length; i++) {
-            if (newsIdList[i]===newsId) {
-                if (i>=newsIdList.length-1) {
+        for (var i = 0; i < newsIdList.length; i++) {
+            if (newsIdList[i] === newsId) {
+                if (i >= newsIdList.length - 1) {
                     window.location.assign('/news.html' + '?id=' + newsIdList[0]);
                 } else {
-                    window.location.assign('/news.html' + '?id=' + newsIdList[i+1]);
+                    window.location.assign('/news.html' + '?id=' + newsIdList[i + 1]);
                 }
                 break;
             }
         }
     };
     $scope.prevNews = function () {
-        for (var i=0; i<newsIdList.length; i++) {
-            if (newsIdList[i]===newsId) {
-                if (i==0) {
-                    window.location.assign('/news.html' + '?id=' + newsIdList[newsIdList.length-1]);
+        for (var i = 0; i < newsIdList.length; i++) {
+            if (newsIdList[i] === newsId) {
+                if (i == 0) {
+                    window.location.assign('/news.html' + '?id=' + newsIdList[newsIdList.length - 1]);
                 } else {
-                    window.location.assign('/news.html' + '?id=' + newsIdList[i-1]);
+                    window.location.assign('/news.html' + '?id=' + newsIdList[i - 1]);
                 }
                 break;
             }
@@ -148,37 +193,21 @@ app.controller("newsPageCtrl", function ($scope, $http, $sce) {
 
 });
 
-app.controller("loginCtrl", function ($scope, $http, $alert, $rootScope) {
-    $rootScope.name = {};
-    var parol = $alert({
-        title: "Невірний пароль",
-        type: 'danger',
-        container: "#error_msg",
-        duration: '3',
-        show: false
-    });
-    $scope.login_submit = function user_authorization() {
-
-        var user_info = {name: $scope.user_name, Pass: $scope.user_pass};
-        console.log(user_info);
-        window.location.assign("#/clientpage");
-//        $http.post("http://10.7.131.134/exampleService/UserRegistry2/",user_info)
-//
-//            .success(function (data) {
-//                if (data !== ""){
-//                    window.location.replace("#/clientpage");
-//                    $rootScope.slugebkis = JSON.parse(data)
-//                    $rootScope.userData = {Id:$scope.user_id, Pass:$scope.user_pass };
-//                }
-//                else{
-//                    parol.show();
-//                }
-//
-//            })
-//            .error(function (data){
-//                console.log(data)
-//            });
+app.controller("loginCtrl", function ($scope, $rootScope, $location, $http, UserService) {
+    var request= {
+        method: 'POST',
+        url:'/rest/user/authenticate',
+        headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+        data: $.param({username: $scope.username, password: $scope.password})
     }
+
+    $scope.login = function() {
+        UserService.authenticate($.param({username: $scope.username, password: $scope.password}), function(user) {
+            $rootScope.user = user;
+            console.log($rootScope.user);
+            $location.path("/clientpage");
+        });
+    };
 });
 
 app.controller("feedbackCtrl", function ($scope, $http) {
@@ -259,7 +288,7 @@ app.controller("news_editCtrl", function ($scope, $http, $location) {
 
     $scope.editNewsSubmit = function (id) {
         var newsEditData = $scope.news;
-        if (imgData=="") {
+        if (imgData == "") {
             newsEditData.picture = newsEditData.picture.split(',')[1];
         } else {
             newsEditData.picture = imgData.split(',')[1];
@@ -302,22 +331,22 @@ app.controller("newsCtrl", function ($scope, $http, $sce, $location) {
     $scope.newsEdit = function (id) {
         window.location.assign("#/clientpage/news/news_edit" + '?id=' + id);
     }
-    $scope.changeActiveStatus = function(id) {
-        for (var i=0; i<$scope.news.length;i++) {
-            if ($scope.news[i].id==id) {
+    $scope.changeActiveStatus = function (id) {
+        for (var i = 0; i < $scope.news.length; i++) {
+            if ($scope.news[i].id == id) {
                 var newsEntry = $scope.news[i];
                 newsEntry.picture = newsEntry.picture.split(',')[1];
-                newsEntry.shortDescription=$sce.getTrustedHtml(newsEntry.shortDescription);
-                $http.put("/rest/news/"+id,newsEntry)
-                    .success(function(data) {
-                        alert("Active status is "+data.active +" now.");
+                newsEntry.shortDescription = $sce.getTrustedHtml(newsEntry.shortDescription);
+                $http.put("/rest/news/" + id, newsEntry)
+                    .success(function (data) {
+                        alert("Active status is " + data.active + " now.");
                         newsEntry.picture = "data:image/jpeg;base64," + newsEntry.picture;
-                        newsEntry.shortDescription=$sce.trustAsHtml(newsEntry.shortDescription);
+                        newsEntry.shortDescription = $sce.trustAsHtml(newsEntry.shortDescription);
                     })
-                    .error(function() {
+                    .error(function () {
                         console.log("wrong");
                         newsEntry.picture = "data:image/jpeg;base64," + newsEntry.picture;
-                        newsEntry.shortDescription=$sce.trustAsHtml(newsEntry.shortDescription);
+                        newsEntry.shortDescription = $sce.trustAsHtml(newsEntry.shortDescription);
                     })
 
                 break;
@@ -431,7 +460,7 @@ function encodeImageFileAsURL(id) {
                     $("#newsImgLoader").html("<img src='" + srcData + "' width='800' height='600' alt='News image'/>");
                     break;
                 case 'newsEditImgLoader':
-                     $("#newsEditImgLoader").attr("src",srcData);
+                    $("#newsEditImgLoader").attr("src", srcData);
                     break;
                 default :
                     ;

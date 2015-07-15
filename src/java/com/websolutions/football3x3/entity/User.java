@@ -1,6 +1,7 @@
 package com.websolutions.football3x3.entity;
 
 import com.websolutions.football3x3.entity.enums.Role;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +20,7 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id
     private String username;
+    @JsonIgnore
     private String password;
     private boolean enabled;
 

@@ -5,7 +5,7 @@ USE `football`;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE users (
   `username` VARCHAR(45) NOT NULL ,
-  `password` VARCHAR(45) NOT NULL ,
+  `password` VARCHAR(70) NOT NULL ,
   `enabled` TINYINT NOT NULL DEFAULT 1 ,
   `role` ENUM('ADMIN'),
   PRIMARY KEY (username));
@@ -24,8 +24,8 @@ DROP TABLE IF EXISTS `teams`;
   create table teams (
   `id` INT(11)  NOT NULL AUTO_INCREMENT,
   `league` VARCHAR(45) NOT NULL,
-  `company` VARCHAR(45) NOT NULL,
-  `website` VARCHAR(45),
+  `company` VARCHAR(60) NOT NULL,
+  `website` VARCHAR(60),
   `name` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(20) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
@@ -49,12 +49,12 @@ DROP TABLE IF EXISTS `news`;
   create table news(
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `active` TINYINT,
-  `author` VARCHAR(45),
+  `author` VARCHAR(70),
   `titleTags` VARCHAR(200),
   `descriptionTags` VARCHAR(200),
   `keywords` VARCHAR(200),
   `header` VARCHAR(100) not null,
-  `shortDescription` VARCHAR(200),
+  `shortDescription` TEXT,
   `text` TEXT,
   `picture` LONGBLOB,
   `date` TIMESTAMP,
