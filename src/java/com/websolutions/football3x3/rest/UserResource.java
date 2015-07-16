@@ -1,11 +1,10 @@
 package com.websolutions.football3x3.rest;
 
 import com.websolutions.football3x3.entity.User;
-import com.websolutions.football3x3.transfer.TokenTransfer;
-import com.websolutions.football3x3.util.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -67,13 +66,17 @@ public class UserResource {
     @Path("authenticate")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public User authenticate(@FormParam("username") String username, @FormParam("password") String password)
+    public User authenticate(@FormParam("username") String username, @FormParam("password") String password) throws WebApplicationException
     {
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(username, password);
 
-        Authentication authentication = this.authManager.authenticate(authenticationToken);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        try {
+            Authentication authentication = this.authManager.authenticate(authenticationToken);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+        } catch (BadCredentialsException e) {
+            throw new WebApplicationException(403);
+        }
 
 
 		/*
