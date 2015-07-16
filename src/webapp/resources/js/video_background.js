@@ -3,7 +3,7 @@ $(document).ready(function() {
 })
 window_w = document.body.clientWidth;
 
-bg_height = $('#bg').innerHeight();
+bg_height = $('#section').innerHeight();
 $('#bg').css('height', bg_height + 90 +'px');
 
 if(window_w >= '992'){
@@ -15,7 +15,7 @@ else {
 }
 
 function bg_hide() {
-	// $('#bg').fadeOut("slow");
+	$('#bg').fadeOut("slow");
 	// $('#bg').fadeIn('slow');
 }
 function bg_show() {

@@ -1,16 +1,6 @@
 /**
  * Created by 1 on 07.07.2015.
  */
-$(document).ready(function() {
-    $('.blur').on('click', function() {
-        $('.section, nav').addClass('blured');
-    $(".alertify .ajs-modal, .modal").hover(
-        function(){},function(){
-            $('.section, nav').removeClass('blured');
-        });
-    });
-});
-
 function get_name_browser(){
     // получаем данные userAgent
     var ua = navigator.userAgent;

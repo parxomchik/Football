@@ -1,5 +1,6 @@
 body{
-    background:url(../img/bg.jpg)  repeat-x top left, #4395D1 ;
+    background:url(../img/admin_bg.jpg)  repeat top left, #4395D1 ;
+    background-size: 100%;
     margin-bottom: 45px;
 }
 html {
@@ -180,10 +181,18 @@ hr {
 }
 .news_header{
 display: block;
-height: 50px;
+height: 52px;
 /*white-space: pre-line;*/
-    overflow: scroll; /* Обрезаем все, что не помещается в область */
-
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+}
+.news_header:hover {
+    height: auto;
+    outline: 1px solid #ccc;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    transition: all linear .2s;
 }
  .thumbnail>.admin_news_picture{
     height: 300px;
