@@ -6,13 +6,13 @@ window_w = document.body.clientWidth;
 bg_height = $('#section').innerHeight();
 $('#bg').css('height', bg_height + 90 +'px');
 
-if(window_w >= '992'){
-	setTimeout("$('#section').css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'})", 1000);
-	$('#section').css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'});
-}
-else {
-	$('#bg').css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'});
-}
+ if(window_w >= '992'){
+ 	setTimeout("$('#section').css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'})", 1000);
+ 	$('#section').css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'});
+ }
+ else {
+ 	$('#bg').css({'background': 'url(./resources/images/section1.jpg) no-repeat', 'background-size': 'cover'});
+ }
 
 function bg_hide() {
 	$('#bg').fadeOut("slow");

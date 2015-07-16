@@ -109,7 +109,7 @@ ul.nav {
 	background-size: cover;
 	color:#fff;
 	text-transform: uppercase;
-	/*z-index: 0!important;*/
+	z-index: 0!important;
 	overflow: hidden;
 /*	-webkit-transition: all linear .3s;
 	-moz-transition: all linear .3s;
@@ -130,7 +130,7 @@ ul.nav {
 	height: 100vh;
 	/*background: url('../images/section1.jpg') no-repeat;*/
 	/*background-size: cover;*/
-	z-index: 0!important;
+	/*z-index: 1!important;*/
 }
 #fullpage .section:first-child:before {
 	position: absolute;
@@ -147,7 +147,7 @@ ul.nav {
     background: -o-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -ms-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));*/
-    z-index: 0!important;
+    z-index: -1!important;
 }
 .fp-tableCell {
 	vertical-align: inherit!important;
