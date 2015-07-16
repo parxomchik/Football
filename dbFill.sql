@@ -2,8 +2,11 @@ insert into teams values (1,'INVESTOR', 'BU', 'bu.com', 'Zermon','+380672693543'
 insert into players(name,surname,role,captain,team_id) values ('Max', 'Mad', 'forward',true,1);
 insert into players(name,surname,role,captain,team_id) values ('Max', 'Awesome', 'defender',false,1);
 insert into players(name,surname,role,captain,team_id) values ('Max', 'Lazy', 'goalkeeper',false,1);
+insert into players(name,surname,role,captain,team_id) values ('Max', 'Lazy2', 'goalkeeper2',false,1);
 
 insert into feedbacks(name,email,subject,message,date,processed) values ('Max', 'madmax@gmail.com','Champ','I wanna take part in Investor league...',NOW(),false);
+
+insert into users() values ('admin','$2a$10$py6Dvrhh5VDsrH.KsDZxxuKUTu3GyMWmpNxZcA/oWsxAOg3GKGIDq',true,'ADMIN');
 
 insert into news(active,author,header,shortDescription,`text`,`date`,picture) values (true,'Тарас Михалевич','Самый масштабный футбольный ивент для всей StartUP&IT индустрии Украины.','С Вами на связи организаторы первого, самого масштабного ивента для всей футбольной StartUp&IT индустрии Украины “StartUpFootball3x3Cup” -  Игорь Герасимов и Тарас Михалевич.',
 'Дорогие друзья,

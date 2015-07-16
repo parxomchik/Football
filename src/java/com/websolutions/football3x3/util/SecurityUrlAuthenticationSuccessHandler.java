@@ -56,7 +56,7 @@ public class SecurityUrlAuthenticationSuccessHandler implements AuthenticationSu
         if (isUser) {
             return "/index.html";
         } else if (isAdmin) {
-            return "/admin/index.html";
+            return "/admin/#/clientpage";
         } else {
             throw new IllegalStateException();
         }

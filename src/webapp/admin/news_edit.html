@@ -1,5 +1,5 @@
 <div ng-controller="news_editCtrl">
-    <div class="col-xs-12">
+    <div class="col-xs-12" ng-show="isAdmin()">
         <nav class="navbar navbar-default border_radius_0 margin_fix">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,7 +25,7 @@
                         <li><a href="#/clientpage/feedback">Обратная связь</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#/home">Выйти</a></li>
+                        <li><a href="j_spring_security_logout" ng-click="logout()">Выйти</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -39,9 +39,12 @@
                         <div class="row col-xs-12 ">
                             <div class="add_logo_block text-center">
                                 <span>Редактировать лого</span>
+
                                 <div class="clearfix"></div>
-                                <input id="inputFileToLoad" class="imgLoader" type="file" multiple="false" accept="image/*" onchange="encodeImageFileAsURL('newsEditImgLoader');" />
-                                <img id="newsEditImgLoader" class="margin_bottom_10" width="800" height="450" src="{{news.picture}}" alt="News image"/>
+                                <input id="inputFileToLoad" class="imgLoader" type="file" multiple="false"
+                                       accept="image/*" onchange="encodeImageFileAsURL('newsEditImgLoader');"/>
+                                <img id="newsEditImgLoader" class="margin_bottom_10" width="800" height="450"
+                                     src="{{news.picture}}" alt="News image"/>
 
                             </div>
 

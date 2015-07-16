@@ -63,9 +63,9 @@ public class NewsResource {
                 return resultList.subList(0, count);
             }
         } catch (IndexOutOfBoundsException e) {
-            return newsDao.findActive();
+            return resultList;
         }
-        return newsDao.findActive();
+        return resultList;
 
     }
 
