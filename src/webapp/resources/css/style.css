@@ -127,7 +127,7 @@ ul.nav {
 	position: absolute;
 	top: -90px;
 	width: 100%;
-	height: 100vh;
+	/*height: 100vh;*/
 	/*background: url('../images/section1.jpg') no-repeat;*/
 	/*background-size: cover;*/
 	/*z-index: 1!important;*/
@@ -187,6 +187,8 @@ ul.nav {
 	margin-top: 0;
 	margin-bottom: 5px;
 	font-family: 'MyriadProBoldCondenced', sans-serif;
+	height: 42px;
+	overflow: hidden;
 
 }
 .news hr {
@@ -594,6 +596,7 @@ ul.nav {
 	height:45px;
 	background: url('../images/close.png') no-repeat;
 	background-size: 100%; 
+	opacity: .8;
 }
 .modal-content {
   	box-shadow: none!important;
