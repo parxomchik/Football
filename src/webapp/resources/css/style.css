@@ -11,6 +11,9 @@ body {
 hr {
 	margin: 0;
 }
+.min_h {
+	min-height: 50px;
+}
 /*animation*/
 .hiding { opacity: 0 }
 .showing { opacity: 1 }
@@ -388,8 +391,8 @@ ul.nav {
 }
 .team .teammate {
 	display: inline-block;
-  	height: 200px;
-  	width: 200px;
+  	height: 260px;
+  	width: 260px;
   	border: 5px solid #fff;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -592,8 +595,8 @@ ul.nav {
 	opacity: 1;
 }
 .modal .modal-header .close {
-	width: 45px;
-	height:45px;
+	width: 30px;
+	height:30px;
 	background: url('../images/close.png') no-repeat;
 	background-size: 100%; 
 	opacity: .8;
@@ -801,3 +804,7 @@ body.modal-open .section, body.modal-open nav, body.ajs-no-overflow .section, bo
 /*#bg, #tubular-shield, #tubular-container {
 	z-index: -1!important;
 } */
+/*hover social*/
+.social a:hover {
+	color: #f00;
+}
