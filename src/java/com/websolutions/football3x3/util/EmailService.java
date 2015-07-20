@@ -16,7 +16,7 @@ import java.util.List;
 @Named
 public class EmailService {
     private static final String GMAIL_LOGIN = "itfootball3x3@gmail.com";
-    private static final String GMAIL_PASSWORD = "blablabla32";
+    private static final String GMAIL_PASSWORD = "rhzhmfutcuvjfyfr";
 
 
     public void sendNotificationAboutNewTeam(Team team, String managerEmail) {
@@ -93,7 +93,7 @@ public class EmailService {
             for (String sendTo : sendTos) {
                 email.addTo(sendTo, "");
             }
-            email.setFrom(GMAIL_LOGIN, "football3x3.ua");
+            email.setFrom(GMAIL_LOGIN, "3x3football.com");
             email.setSubject(subject);
 
             // set the html message
