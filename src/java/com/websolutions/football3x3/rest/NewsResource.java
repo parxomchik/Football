@@ -103,6 +103,7 @@ public class NewsResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public News createNews(News newsEntry) {
         newsEntry.setDate(new Timestamp(new java.util.Date().getTime()));
+        newsEntry.setAuthor("Тарас Михалевич");
         return newsDao.save(newsEntry);
     }
 
