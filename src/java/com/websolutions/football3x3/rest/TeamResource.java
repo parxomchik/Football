@@ -80,7 +80,7 @@ public class TeamResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Transactional(rollbackFor = PersistenceException.class)
-    public Team createTeam(Team team) {
+    public Team createTeam(Team team) throws WebApplicationException {
         try {
             Team t = teamDao.save(team);
             for (Player p : team.getPlayers()) {
