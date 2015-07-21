@@ -691,6 +691,10 @@ ul.nav {
 .clearfix {
 	clear: both;
 }
+
+.cursor-wait {
+    cursor: wait !important;
+}
 /*.font_size_46 {
 	font-size: 46px;
 }

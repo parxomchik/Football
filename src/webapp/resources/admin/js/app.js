@@ -361,7 +361,7 @@ app.controller("clientpageCtrl", function ($scope, $http, $alert, $rootScope) {
 });
 
 app.controller("applyController", function ($scope, $http) {
-    var league = window.location.toString().split("=")[1].toUpperCase()
+    var league = window.location.toString().split("=")[1].toUpperCase();
     switch (league) {
         case "STARTUP":
             $scope.leagueName = "START-UP";
@@ -376,7 +376,10 @@ app.controller("applyController", function ($scope, $http) {
             $scope.leagueName = "START-UP";
     }
 
+    $scope.cursorLoading=false;
+
     $scope.applicationSubmit = function () {
+        $scope.cursorLoading=true;
         var team_info = {
             league: league,
             company: $scope.company,
@@ -416,6 +419,7 @@ app.controller("applyController", function ($scope, $http) {
 
         $http.post("/rest/teams", team_info)
             .success(function (data) {
+                $scope.cursorLoading=false;
                 alertify.alert("Спасибо за вашу заявку, мы свяжемся с Вами в ближайшее время.", function () {
                     alertify.message('OK');
                 }).set('onok', function (closeEvent) {
@@ -423,6 +427,7 @@ app.controller("applyController", function ($scope, $http) {
                 });
             })
             .error(function (data) {
+                $scope.cursorLoading=false;
                 console.log("WRONG")
             });
     }
