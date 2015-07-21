@@ -145,6 +145,9 @@ app.controller("mainCtrl", function ($scope, $http, $sce) {
             })
             .error(function (data) {
                 $scope.cursorLoading=false;
+                alertify.alert("Возможно, вы заполнили не все поля правильно, попробуйте еще раз.", function () {
+                    alertify.message('OK');
+                });
             });
     }
 });
@@ -429,7 +432,9 @@ app.controller("applyController", function ($scope, $http) {
             })
             .error(function (data) {
                 $scope.cursorLoading=false;
-                console.log("WRONG")
+                alertify.alert("Возможно, вы заполнили некоторые поля неверно или имя команды не уникально.", function () {
+                    alertify.message('OK');
+                });
             });
     }
 });

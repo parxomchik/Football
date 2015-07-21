@@ -6,6 +6,7 @@ import com.websolutions.football3x3.util.EmailService;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
+import javax.persistence.PersistenceException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Timestamp;
@@ -48,11 +49,15 @@ public class FeedbackResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Feedback createFeedback(Feedback feedback) {
-        feedback.setDate(new Timestamp(new java.util.Date().getTime()));
-        Feedback savedFeedback = feedbackDao.save(feedback);
-        emailService.sendManagerFeedbackNotification(savedFeedback,"vladik.kopilash@gmail.com");
-        return savedFeedback;
+    public Feedback createFeedback(Feedback feedback) throws WebApplicationException {
+        try {
+            feedback.setDate(new Timestamp(new java.util.Date().getTime()));
+            Feedback savedFeedback = feedbackDao.save(feedback);
+            emailService.sendManagerFeedbackNotification(savedFeedback, "vladik.kopilash@gmail.com");
+            return savedFeedback;
+        } catch (PersistenceException e) {
+            throw new WebApplicationException(e, 403);
+        }
     }
 
     @PUT
