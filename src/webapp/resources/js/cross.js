@@ -59,3 +59,15 @@ if (navigator.userAgent.indexOf ('Mac')!= -1) {
     $('.order_button').css('padding-top', '8px');
     $('.ajs-ok"').css('padding-top', '3px');
 }
+
+//for animation
+window_w = document.body.clientWidth;
+if(window_w <= '768'){
+    $('.hiding').removeClass('animated');
+}
+// $( window ).resize(function() {
+// if(window_w > '768'){
+//     $('.hiding').addClass('animated');
+// }
+    
+// });

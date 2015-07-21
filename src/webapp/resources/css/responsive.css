@@ -126,7 +126,7 @@ nav*/
 	}
 	.steps {
 	   height: auto;
-	   background-position: 0px -20px;
+	   /*background-position: 0px -20px;*/
 	   background-size: 100% 121%; 
 	}
 	.steps h2 {
@@ -637,6 +637,11 @@ nav*/
 	width: 960px;
 	}
 } 
+@media(max-width: 768px) { 
+	.modal-content {
+		font-size: 12px;
+	}	
+}
 /*diferent style*/
 @media(max-width: 768px) { 
 	.text_center_mob{

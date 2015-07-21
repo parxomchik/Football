@@ -130,6 +130,7 @@ ul.nav {
 	position: absolute;
 	top: -90px;
 	width: 100%;
+	min-height: 900px;
 	/*height: 100vh;*/
 	/*background: url('../images/section1.jpg') no-repeat;*/
 	/*background-size: cover;*/
@@ -145,11 +146,11 @@ ul.nav {
 	background: url('../images/section1.jpg') no-repeat;
 	background-size: cover;
 	/*background: rg(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .1));*/
-/*    background: -moz-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
+    background: -moz-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -webkit-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -o-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     background: -ms-radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
-    background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));*/
+    background: radial-gradient(center, circle, rgba(0,0,0, .3), rgba(0,0,0, .0));
     z-index: -1!important;
 }
 .fp-tableCell {
@@ -161,7 +162,7 @@ ul.nav {
 	word-spacing: 5px;
   	line-height: 70px;
   	font-family: 'MyriadProBoldCondenced', sans-serif;
-  	z-index: 3!important;
+  	/*z-index: 3!important;*/
 }
 .header_text .special, .header_text_mob .special {
 	background: rgba(255,255,255, .7);
@@ -170,7 +171,7 @@ ul.nav {
   	margin: -5px;
 }
 #fullpage .section:first-child #btn-request {
-	z-index: 3!important;
+	/*z-index: 3!important;*/
 }
 /*end section1*/
 /*section 2*/
@@ -213,7 +214,7 @@ ul.nav {
 
 .steps {
 	background: url('../images/section2.jpg') no-repeat;
-	background-position: 0px -50px;
+	/*background-position: 0px -50px;*/
 	background-color: rgb(43, 43, 45);
 	background-size: 100% 120%;
 	height: auto;
@@ -805,6 +806,18 @@ body.modal-open .section, body.modal-open nav, body.ajs-no-overflow .section, bo
 	z-index: -1!important;
 } */
 /*hover social*/
+.social a {
+	-webkit-transition: all linear .2s;
+	-moz-transition: all linear .2s;
+	-ms-transition: all linear .2s;
+	-o-transition: all linear .2s;
+	transition: all linear .2s;	
+}
 .social a:hover {
 	color: #f00;
+	-webkit-transition: all linear .2s;
+	-moz-transition: all linear .2s;
+	-ms-transition: all linear .2s;
+	-o-transition: all linear .2s;
+	transition: all linear .2s;
 }
