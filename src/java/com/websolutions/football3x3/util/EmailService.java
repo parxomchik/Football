@@ -19,7 +19,7 @@ public class EmailService {
     private static final String GMAIL_PASSWORD = "rhzhmfutcuvjfyfr";
 
 
-    public void sendNotificationAboutNewTeam(Team team, String managerEmail) {
+    public void sendManagerNotificationAboutNewTeam(Team team, String managerEmail) {
         StringBuilder text = new StringBuilder("<html lang=\"en\">\n").append(
                 "  <head>\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n")
                 .append("<body>Господин!\n")
@@ -80,6 +80,24 @@ public class EmailService {
                 .append("</body></html>");
 
         sendEmail(text.toString(), "Новое уведомление", Collections.singletonList(managerEmail));
+    }
+
+    public void sendNotificationToCaptain(Team team) {
+        StringBuilder text = new StringBuilder("<html lang=\"en\">\n").append(
+                "  <head>\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n")
+                .append("<body><table>")
+                .append("<tr><td>")
+                .append("Уважаемый ").append(team.getCaptain().getName()).append(" ").append(team.getCaptain().getSurname()).append(",</td></tr>")
+                .append("<tr><td>")
+                .append("Вы успешно прошли первые два этапа регистрации вашей команды на StartUpfootball3x3Cup.<br/>")
+                .append("Ознакомьтесь с регламентом проведения чемпионата, схемой розыгрыша а также графиком дня в приложенных файлах.<br/>")
+                .append("Наша добрая и дружелюбная команда из отдела продаж свяжется с Вами в ближайшее время и поможет пройти регистрацию до конца.<br/>")
+                .append("Мы рады видеть Вас и Вашу команду среди наших участников!<br/>")
+                .append("До связи в ближайшие 5 часов!</td></tr>")
+                .append("<tr><td>")
+                .append("С уважением, <br/> Оргкомитет</td></tr>")
+                .append("</body></html>");
+        sendEmail(text.toString(), "StartUpfootball3x3Cup", Collections.singletonList(team.getEmail()));
     }
 
     private void sendEmail(String content, String subject, List<String> sendTos) {

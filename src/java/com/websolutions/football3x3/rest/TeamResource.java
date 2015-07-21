@@ -6,14 +6,13 @@ import com.websolutions.football3x3.entity.Player;
 import com.websolutions.football3x3.entity.Team;
 import com.websolutions.football3x3.entity.enums.League;
 import com.websolutions.football3x3.util.EmailService;
-import org.hibernate.Hibernate;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
 import javax.persistence.PersistenceException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -80,6 +79,7 @@ public class TeamResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional(rollbackFor = PersistenceException.class)
     public Team createTeam(Team team) {
         try {
             Team t = teamDao.save(team);
@@ -87,7 +87,8 @@ public class TeamResource {
                 p.setTeam(t);
                 playerDao.save(p);
             }
-            emailService.sendNotificationAboutNewTeam(team, "vladik.kopilash@gmail.com");
+            emailService.sendManagerNotificationAboutNewTeam(team, "vladik.kopilash@gmail.com");
+            emailService.sendNotificationToCaptain(team);
             return team;
         } catch (PersistenceException e) {
             throw new WebApplicationException(e, 403);

@@ -113,6 +113,15 @@ public class Team {
         this.players = players;
     }
 
+    public Player getCaptain() {
+        for (Player p:players) {
+            if (p.isCaptain()) {
+                return p;
+            }
+        }
+        return null;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
