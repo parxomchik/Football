@@ -197,7 +197,7 @@ app.controller("newsPageCtrl", function ($scope, $http, $sce) {
 
 });
 
-app.controller("loginCtrl", function ($scope, $rootScope, $location, $http, UserService) {
+app.controller("loginCtrl", function ($scope, $rootScope, $location, $http, UserService,$alert) {
     var request= {
         method: 'POST',
         url:'/rest/user/authenticate',
@@ -210,6 +210,8 @@ app.controller("loginCtrl", function ($scope, $rootScope, $location, $http, User
             $rootScope.user = user;
             console.log($rootScope.user);
             $location.path("/clientpage");
+        }, function() {
+            $alert({title: 'Неправильный пароль!', content: 'Попробуйте еще раз.', placement: 'top-right', type: 'info'});
         });
     };
 });
