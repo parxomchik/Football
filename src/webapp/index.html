@@ -339,7 +339,7 @@
             </div>
         </div>
     </div>
-    <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section6">
+    <div class="section animated hiding" data-animation="fadeIn" data-delay="100" id="section6" ng-class="{'cursor-wait':cursorLoading}">
         <div class="row contact">
             <div class="container">
                 <h1 class="text-center animated hiding" data-animation="fadeIn" data-delay="200">Свяжитесь с нами</h1>
@@ -352,7 +352,7 @@
                                   ng-show="feedbackForm.name.$error.required && feedbackForm.name.$dirty">Необходимо ввести имя.</span>
                             <label for="name"><input type="text" required maxlength="45"
                                                      ng-model="feedback_name" name="name" id="name"
-                                                     placeholder="ВАШЕ ИМЯ *"></label>
+                                                     placeholder="ВАШЕ ИМЯ *" ng-class="{'cursor-wait':cursorLoading}"></label>
                         </div>
                         <div class="row padding_fix">
                             <span class="validate-msg feedback-validate-msg"
@@ -360,11 +360,11 @@
                             <span class="validate-msg feedback-validate-msg" ng-show="feedbackForm.email.$error.email">Неверный формат.</span>
                             <label for="email"><input required="true" ng-model="feedback_email" type="email"
                                                       name="email" id="email" maxlength="45"
-                                                      placeholder="ВАШ E-MAIL *"></label>
+                                                      placeholder="ВАШ E-MAIL *" ng-class="{'cursor-wait':cursorLoading}"></label>
                         </div>
                         <div class="row padding_fix">
                             <label for="subject"><input type="text" name="subject" ng-model="feedback_subject"
-                                                        id="subject" placeholder="ТЕМА" maxlength="45"></label>
+                                                        id="subject" placeholder="ТЕМА" maxlength="45" ng-class="{'cursor-wait':cursorLoading}"></label>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 padding_left_fix animated hiding"
@@ -373,15 +373,15 @@
                               ng-show="feedbackForm.message.$error.required && feedbackForm.message.$dirty">Введите сообщение.</span>
                         <label for="message">
                             <textarea required="true" maxlength="500" name="message" ng-model="feedback_message"
-                                      id="message"
+                                      id="message" ng-class="{'cursor-wait':cursorLoading}"
                                       placeholder="ВАШЕ СООБЩЕНИЕ *"></textarea>
                         </label>
                     </div>
                 </form>
                 <div id="section-contact" class="text-center margin_top_20">
                     <div class="btn-box_contact animated hiding" data-animation="fadeInUp" data-delay="100">
-                        <a id="contact_submit_button" ng-disabled="feedbackForm.$invalid" ng-click="feedback_submit()"
-                           class="btn btn-request blur" data-text="отправить">
+                        <a id="contact_submit_button" ng-disabled="feedbackForm.$invalid || cursorLoading" ng-click="feedback_submit()"
+                           class="btn btn-request blur" data-text="отправить" ng-class="{'cursor-wait':cursorLoading}">
                             <span>о</span>
                             <span>т</span>
                             <span>п</span>

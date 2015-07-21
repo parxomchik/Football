@@ -103,7 +103,7 @@ services.factory('UserService', function($resource) {
 });
 
 app.controller("mainCtrl", function ($scope, $http, $sce) {
-
+    $scope.cursorLoading=false;
     $http.get("/rest/news/active?count=3")
         .success(function (data) {
             for (var i = 0; i < data.length; i++) {
@@ -121,7 +121,7 @@ app.controller("mainCtrl", function ($scope, $http, $sce) {
     }
 
     $scope.feedback_submit = function () {
-
+        $scope.cursorLoading=true;
         var feedback_info = {
             name: $scope.feedback_name,
             email: $scope.feedback_email,
@@ -131,7 +131,7 @@ app.controller("mainCtrl", function ($scope, $http, $sce) {
 
         $http.post("/rest/feedbacks", feedback_info)
             .success(function (data) {
-
+                $scope.cursorLoading=false;
                 $scope.feedback_name = undefined;
                 $scope.feedback_email = undefined;
                 $scope.feedback_subject = undefined;
@@ -144,6 +144,7 @@ app.controller("mainCtrl", function ($scope, $http, $sce) {
 
             })
             .error(function (data) {
+                $scope.cursorLoading=false;
             });
     }
 });
