@@ -1,4 +1,4 @@
-var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote', 'app.services']);
+var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote', 'app.services','ngCookies']);
 
 'use strict';
 
@@ -34,18 +34,6 @@ app.config(function ($routeProvider, $httpProvider) {
             templateUrl: 'news_edit.html',
             controller: 'news_editCtrl'
         })
-        //.when('/apply', {
-        //    templateUrl: 'apply.html',
-        //    controller: 'applyController'
-        //})
-        //.when('/news', {
-        //    templateUrl: 'news.html',
-        //    controller: 'mainCtrl'
-        //})
-        //.when('/', {
-        //    templateUrl: 'index.html',
-        //    controller: 'mainCtrl'
-        //})
         .when('/clientpage/news/news_add', {
             templateUrl: 'news_add.html',
             controller: 'news_addCtrl'
@@ -54,14 +42,14 @@ app.config(function ($routeProvider, $httpProvider) {
         .otherwise({
             redirectTo: '/404'
         });
-}).run(function($rootScope, $location, $http) {
+}).run(function($rootScope, $location, $cookies) {
     $rootScope.isAdmin = function() {
 
-        if ($rootScope.user === undefined) {
+        if ($cookies.getObject('currentUser') === undefined) {
             return false;
         }
 
-        if ($rootScope.user.role === undefined) {
+        if ($cookies.getObject('currentUser').role === undefined) {
             return false;
         }
 
@@ -69,19 +57,10 @@ app.config(function ($routeProvider, $httpProvider) {
     };
 
     $rootScope.logout = function() {
-        delete $rootScope.user;
+        $cookies.remove('currentUser');
         $location.path("/home");
     }
 
-    /* Try getting valid user from cookie or go to login page */
-    //var originalPath = $location.path();
-    //$location.path("#/home");
-    //
-    //    $http.get('/rest/user')
-    //        .success(function(user) {
-    //            $rootScope.user = user;
-    //            $location.path(originalPath);
-    //        });
     $rootScope.initialized = true;
 });
 
@@ -197,18 +176,14 @@ app.controller("newsPageCtrl", function ($scope, $http, $sce) {
 
 });
 
-app.controller("loginCtrl", function ($scope, $rootScope, $location, $http, UserService,$alert) {
-    var request= {
-        method: 'POST',
-        url:'/rest/user/authenticate',
-        headers : {'Content-Type': 'application/x-www-form-urlencoded'},
-        data: $.param({username: $scope.username, password: $scope.password})
+app.controller("loginCtrl", function ($scope, $cookies, $location, $http, UserService,$alert) {
+    if ($cookies.getObject('currentUser') != undefined) {
+        $location.path('/clientpage');
     }
 
     $scope.login = function() {
         UserService.authenticate($.param({username: $scope.username, password: $scope.password}), function(user) {
-            $rootScope.user = user;
-            console.log($rootScope.user);
+            $cookies.putObject('currentUser',user);
             $location.path("/clientpage");
         }, function() {
             $alert({title: 'Неправильный пароль!', content: 'Попробуйте еще раз.', placement: 'top-right', type: 'info'});
