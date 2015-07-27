@@ -220,22 +220,26 @@ app.controller("feedbackCtrl", function ($scope, $http) {
     }
 });
 
-app.controller("teamsCtrl", function ($scope, $http) {
+app.controller("teamsCtrl", function ($scope, $http,$alert) {
     $http.get("/rest/teams")
         .success(function (data) {
             for (var i = 0; i < data.length; i++) {
                 data[i].logo = "data:image/jpeg;base64," + data[i].logo;
             }
             $scope.teams = data;
-        })
+        });
+
     $scope.setPaymentStatus = function (id) {
         $http.put("/rest/teams/payment/" + id, "true")
             .success(function (data) {
                 for (var i = 0; i < $scope.teams.length; i++) {
                     if ($scope.teams[i].id == id) {
                         $scope.teams[i].payed = true;
+                        $alert({title: 'Оплачено!', content: 'Для команды '+$scope.teams[i].name+' установлен статус оплачено.', placement: 'top-right', type: 'success'});
+                        break;
                     }
                 }
+
             })
             .error(function () {
             });
