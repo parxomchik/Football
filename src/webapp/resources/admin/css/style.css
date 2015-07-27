@@ -185,16 +185,7 @@ height: 52px;
 /*white-space: pre-line;*/
     overflow: hidden; /* Обрезаем все, что не помещается в область */
 }
-.news_header:hover {
-    height: auto;
-    outline: 1px solid #ccc;
-    -webkit-transition: all linear .2s;
-    -moz-transition: all linear .2s;
-    -ms-transition: all linear .2s;
-    -o-transition: all linear .2s;
-    transition: all linear .2s;
-}
- .thumbnail>.admin_news_picture{
+.thumbnail>.admin_news_picture{
     height: 300px;
     /*width: 300px;*/
 }

@@ -186,7 +186,7 @@ app.controller("loginCtrl", function ($scope, $cookies, $location, $http, UserSe
             $cookies.putObject('currentUser',user);
             $location.path("/clientpage");
         }, function() {
-            $alert({title: 'Неправильный пароль!', content: 'Попробуйте еще раз.', placement: 'top-right', type: 'info'});
+            $alert({title: 'Неправильный пароль!', content: 'Попробуйте еще раз.', placement: 'top-right', type: 'danger'});
         });
     };
 });
