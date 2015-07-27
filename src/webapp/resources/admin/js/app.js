@@ -1,4 +1,4 @@
-var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote', 'app.services','ngCookies']);
+var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'ngRoute', 'summernote', 'app.services','ngCookies','toggle-switch']);
 
 'use strict';
 

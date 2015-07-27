@@ -51,11 +51,11 @@
                                         <p class="description" ng-bind-html="new.shortDescription"></p>
 
                                         <div class="center-block col-xs-12">
-                                            <!--<div class="checkbox">-->
-                                                <input type="checkbox" id="checkbox1" name="my-checkbox" ng-model="new.active"
-                                                       ng-change="changeActiveStatus(new.id)">
-                                                <!--<label for="checkbox1"></label>-->
-                                            <!--</div>-->
+
+                                            <toggle-switch type="checkbox" ng-model="new.active"
+                                                           ng-change="changeActiveStatus(new.id)"
+                                                           class="switch-success"></toggle-switch>
+
                                             <button class="btn btn-primary" role="button" ng-click="newsEdit(new.id)">
                                                 Редактировать
                                             </button>
