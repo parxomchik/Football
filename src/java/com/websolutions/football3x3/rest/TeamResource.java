@@ -87,7 +87,7 @@ public class TeamResource {
                 p.setTeam(t);
                 playerDao.save(p);
             }
-            emailService.sendManagerNotificationAboutNewTeam(team, "vladik.kopilash@gmail.com");
+            emailService.sendManagerNotificationAboutNewTeam(team, "itfootball3x3@gmail.com");
             emailService.sendNotificationToCaptain(team);
             return team;
         } catch (PersistenceException e) {
@@ -123,7 +123,7 @@ public class TeamResource {
             team.setPayed(paymentStatus);
             teamDao.save(team);
             if (paymentStatus==true) {
-                emailService.sendManagerPaymentNotification(team, "vladik.kopilash@gmail.com");
+                emailService.sendManagerPaymentNotification(team, "itfootball3x3@gmail.com");
             }
             return team;
         } catch (PersistenceException e) {

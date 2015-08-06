@@ -53,7 +53,7 @@ public class FeedbackResource {
         try {
             feedback.setDate(new Timestamp(new java.util.Date().getTime()));
             Feedback savedFeedback = feedbackDao.save(feedback);
-            emailService.sendManagerFeedbackNotification(savedFeedback, "vladik.kopilash@gmail.com");
+            emailService.sendManagerFeedbackNotification(savedFeedback, "itfootball3x3@gmail.com");
             return savedFeedback;
         } catch (PersistenceException e) {
             throw new WebApplicationException(e, 403);
